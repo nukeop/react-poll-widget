@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from 'semantic-ui-react';
 
 import { RoundButton } from '..';
 
@@ -7,5 +8,5 @@ export default {
 }
 
 export const Basic = () => <RoundButton>
-  <box-icon name="hot" color="red" type="solid"></box-icon>
+  <Icon name='chart bar' size='large' />
 </RoundButton> 

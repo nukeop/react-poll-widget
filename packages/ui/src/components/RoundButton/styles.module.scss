@@ -1,0 +1,15 @@
+@import "../../colors";
+
+.round_button {
+  width: 4rem;
+  height: 4rem;
+
+  background: $darkblue;
+  border-radius: 2rem;
+  border: none;
+
+  & #icon {
+    width: 4rem;
+    height: 4rem;
+  }
+}
