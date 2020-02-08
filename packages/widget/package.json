@@ -1,5 +1,5 @@
 {
-  "name": "widget",
+  "name": "@poll-widget/widget",
   "version": "0.0.0",
   "dependencies": {
     "@poll-widget/ui": "0.0.0",
