@@ -6,26 +6,55 @@ import './styles.scss';
 
 const RoundButton: React.FC<{
   children: React.ReactNode,
+  color: 'red' | 'orange' | 'yellow' | 'green' | 'blue' | 'violet' | 'olive' | 'teal' | 'purple' | 'pink' | 'brown' | 'grey' | 'black',
   animate: boolean,
-  toggleAnimation: () => void
-}> = ({ children, animate, toggleAnimation }) => (
-  <Button
-    circular
-    icon
-    size='huge'
-    color='blue'
-    onClick={toggleAnimation}
-    className='round-button'
-  >
-    <Transition animation='jiggle' visible={animate}>
-      {children}
-    </Transition>
-  </Button>
-)
+  withCloseButton: boolean,
+  onClick: () => void,
+  onCloseClick?: () => void
+}> = ({
+  children,
+  color='blue',
+  animate,
+  withCloseButton,
+  onClick,
+  onCloseClick
+}) => (
+      <Button
+        circular
+        icon
+        size='huge'
+        color={color}
+        onClick={onClick}
+        className='round-button'
+      >
+        <Transition animation='jiggle' visible={animate}>
+          {children}
+        </Transition>
+        {
+          withCloseButton &&
+          <Button
+            icon='close'
+            basic
+            className='close-button'
+            onClick={onCloseClick}
+          />
+        }
+      </Button>
+    )
 
 export default compose(
   withState('animate', 'setAnimate', true),
   withHandlers({
     toggleAnimation: ({ animate, setAnimate }) => () => setAnimate(!animate)
+  }),
+  withHandlers({
+    onClick: ({ toggleAnimation, onClick }) => () => {
+      toggleAnimation();
+      onClick();
+    },
+    onCloseClick: ({ onCloseClick }) => (e: MouseEvent) => {
+      e.stopPropagation();
+      onCloseClick();
+    }
   })
 )(RoundButton)
