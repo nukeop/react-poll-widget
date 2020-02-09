@@ -1,0 +1,17 @@
+@import './colors';
+
+@mixin shadow-1 {
+  box-shadow: 0 1px 1px rgba($black, 0.12), 
+              0 2px 2px rgba($black,0.12), 
+              0 4px 4px rgba($black,0.12), 
+              0 8px 8px rgba($black,0.24),
+              0 16px 16px rgba($black,0.24);
+}
+
+@mixin shadow-2 {
+  box-shadow: 0 1px 1px rgba($black, 0.12), 
+              0 2px 2px rgba($black,0.12), 
+              0 4px 4px rgba($black,0.12), 
+              0 8px 8px rgba($black,0.12),
+              0 16px 16px rgba($black,0.12);
+}

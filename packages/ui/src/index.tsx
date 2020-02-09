@@ -1,3 +1,3 @@
 import 'semantic-ui-css/semantic.min.css';
 
-export { RoundButton } from './components/RoundButton';
+export { default as RoundButton } from './components/RoundButton';
