@@ -1,0 +1,17 @@
+@import "../../../colors";
+@import "../../../mixin";
+
+.panel-footer {
+  @include upwards-shadow;
+  position: relative;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+
+  flex: 0 0 auto;
+  width: 100%;
+  height: 2em;
+
+  background: $truewhite;
+}
