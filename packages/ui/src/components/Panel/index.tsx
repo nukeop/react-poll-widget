@@ -3,34 +3,49 @@ import React from 'react';
 import PanelContent from './PanelContent';
 import PanelHeader from './PanelHeader';
 import PanelFooter, { DefaultFooter } from './PanelFooter';
+import { PanelColor } from './Panel.types';
 
 import './styles.scss';
 
 const Panel: React.FC<{
   children: React.ReactNode,
   hasFooter: boolean,
-  footerContent: React.ReactNode
+  hasHeader: boolean,
+  footerContent: React.ReactNode,
+  headerContent: React.ReactNode,
+  color: PanelColor
 }> = ({
   children,
   hasFooter,
-  footerContent
+  hasHeader,
+  footerContent,
+  headerContent,
+  color
 }) => (
       <div className="panel">
-        <PanelHeader>
+        {
+          hasHeader &&
+          <PanelHeader
+            color={color}
+          >
+            {headerContent}
+          </PanelHeader>
+        }
 
-        </PanelHeader>
-
-        <PanelContent>
+        <PanelContent
+        color={color}
+        >
           {children}
         </PanelContent>
-        
+
         {
-          hasFooter &&
-          footerContent
-          ? <PanelFooter>
-            {footerContent}
-          </PanelFooter>
-          : <DefaultFooter />
+          hasFooter && (
+            footerContent
+              ? <PanelFooter>
+                {footerContent}
+              </PanelFooter>
+              : <DefaultFooter />
+          )
         }
       </div>
     )

@@ -3,14 +3,14 @@
 
 .panel {
   @include shadow-2;
+  @include roundCorners;
+  position: absolute;
   display: flex;
   flex-flow: column;
 
-  min-width: 20em;
+  min-width: 24em;
   min-height: 12em;
 
   background: $white;
-  border-radius: 0.5em;
-  padding-top: 1em;
   overflow: hidden;
 }

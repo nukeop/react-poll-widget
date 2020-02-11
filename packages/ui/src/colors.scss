@@ -33,3 +33,31 @@ $darkblack: #2c3e50;
 
 $truewhite: #fff;
 $trueblack: #000;
+
+$colorToDark: (
+  "yellow": $darkyellow,
+  "orange": $darkorange,
+  "blue": $darkblue,
+  "teal": $darkteal,
+  "pink": $darkpink,
+  "rose": $darkrose,
+  "peach": $darkpeach,
+  "purple": $darkpurple,
+  "gray": $darkgray,
+  "white": $darkwhite,
+  "black": $darkblack
+);
+
+$colorMap: (
+  "yellow": $yellow,
+  "orange": $orange,
+  "blue": $blue,
+  "teal": $teal,
+  "pink": $pink,
+  "rose": $rose,
+  "peach": $peach,
+  "purple": $purple,
+  "gray": $gray,
+  "white": $white,
+  "black": $black
+);

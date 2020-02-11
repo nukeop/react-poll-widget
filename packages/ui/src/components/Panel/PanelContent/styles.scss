@@ -1,5 +1,31 @@
+@import "../../../colors";
+@import "../../../mixin";
+
 .panel-content {
+  position: relative;
   display: flex;
   width: 100%;
   flex: 1 1 auto;
+  padding: 1em;
+
+  @each $colorname, $value in $colorMap {
+    &.#{$colorname} {
+      .panel-content-inner {
+        border-color: lighten($value, 10%);
+      }
+    }
+  }
+
+  .panel-content-inner {
+    @include roundCorners;
+    position: relative;
+    width: 100%;
+    top: -2em;
+    height: calc(100% + 2em;
+    padding: 1em 1.5em;
+
+    background: $truewhite;
+    color: $black;
+    border-top: 3px solid;
+  }
 }

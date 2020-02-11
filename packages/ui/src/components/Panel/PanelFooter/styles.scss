@@ -14,4 +14,14 @@
   height: 2em;
 
   background: $truewhite;
+
+  &.default-footer {
+    font-size: 14px;
+    font-variant: small-caps;
+    color: rgba($black, 0.8);
+
+    a {
+      padding-left: 0.25em;
+    }
+  }
 }

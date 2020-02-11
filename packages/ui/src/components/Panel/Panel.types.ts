@@ -1,0 +1,1 @@
+export type PanelColor =  'blue' | 'teal' | 'pink' | 'yellow' | 'purple' | 'orange' | 'rose' | 'peach' | 'black';

@@ -1,0 +1,16 @@
+@import "../../../colors";
+
+.panel-header {
+  color: $truewhite;
+  padding: 1.75em 1.5em 2.25em 1.75em;
+
+  @each $colorname, $value in $colorToDark {
+    &.#{$colorname} {
+      background: $value;
+    }
+  }
+
+  h3 {
+    font-size: 1.75em !important;
+  }
+}

@@ -23,3 +23,7 @@ $shadowAmbient: 0.12;
 @mixin upwards-shadow {
   box-shadow: 0 -0.625rem 1.25rem 0rem rgba($black, $shadowAmbient)
 }
+
+@mixin roundCorners {
+  border-radius: 0.5em;
+}
