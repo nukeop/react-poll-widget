@@ -5,14 +5,16 @@ import { withState, withHandlers, compose } from 'recompose';
 import './styles.scss';
 
 const RoundButton: React.FC<{
-  children: React.ReactNode,
+  children?: React.ReactNode,
+  Icon?: React.ReactNode,
   color: 'red' | 'orange' | 'yellow' | 'green' | 'blue' | 'violet' | 'olive' | 'teal' | 'purple' | 'pink' | 'brown' | 'grey' | 'black',
   animate: boolean,
   withCloseButton: boolean,
-  onClick: () => void,
+  onClick?: () => void,
   onCloseClick?: () => void
 }> = ({
   children,
+  Icon,
   color='blue',
   animate,
   withCloseButton,
@@ -28,8 +30,9 @@ const RoundButton: React.FC<{
         className='round-button'
       >
         <Transition animation='jiggle' visible={animate}>
-          {children}
+          { Icon }
         </Transition>
+        { children }
         {
           withCloseButton &&
           <Button

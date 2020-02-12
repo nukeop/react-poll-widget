@@ -33,7 +33,7 @@ const Panel: React.FC<{
         }
 
         <PanelContent
-        color={color}
+          color={color}
         >
           {children}
         </PanelContent>

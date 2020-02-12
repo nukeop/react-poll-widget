@@ -3,6 +3,8 @@
 
 .ui.button.round-button {
   position: relative;
+  display: inline-flex;
+  align-items: center;
 
   &::after {
     @include shadow-1;
@@ -11,7 +13,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    border-radius: 100%;
+    border-radius: 200px;
 
     transition: 0.5s;
     content: "";
@@ -26,6 +28,12 @@
       opacity: 1;
       background: transparent !important;
     }
+  }
+
+  i.icon {
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
   }
 
   .close-button {
