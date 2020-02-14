@@ -1,26 +1,29 @@
 import React from 'react';
+import cx from 'classnames';
 import { Button, Transition } from 'semantic-ui-react';
 import { withState, withHandlers, compose } from 'recompose';
 
 import './styles.scss';
 
 const RoundButton: React.FC<{
-  children?: React.ReactNode,
   Icon?: React.ReactNode,
+  text: string,
   color: 'red' | 'orange' | 'yellow' | 'green' | 'blue' | 'violet' | 'olive' | 'teal' | 'purple' | 'pink' | 'brown' | 'grey' | 'black',
   animate: boolean,
+  collapsed: boolean,
   withCloseButton: boolean,
   onClick?: () => void,
   onCloseClick?: () => void
 }> = ({
-  children,
   Icon,
-  color='blue',
+  text,
+  color = 'blue',
   animate,
+  collapsed,
   withCloseButton,
   onClick,
   onCloseClick
-}) => (
+}) =>  (
       <Button
         circular
         icon
@@ -30,9 +33,9 @@ const RoundButton: React.FC<{
         className='round-button'
       >
         <Transition animation='jiggle' visible={animate}>
-          { Icon }
+          {Icon}
         </Transition>
-        { children }
+        { text && <h5 className={cx({ collapsed })} >{text}</h5> }
         {
           withCloseButton &&
           <Button
@@ -47,17 +50,24 @@ const RoundButton: React.FC<{
 
 export default compose(
   withState('animate', 'setAnimate', true),
+  withState('collapsed', 'setCollapsed', true),
   withHandlers({
-    toggleAnimation: ({ animate, setAnimate }) => () => setAnimate(!animate)
+    toggleAnimation: ({ animate, setAnimate }) => () => setAnimate(!animate),
+    toggleCollapsed: ({ collapsed, setCollapsed }) => () => setCollapsed(!collapsed)
   }),
   withHandlers({
-    onClick: ({ toggleAnimation, onClick }) => () => {
+    onClick: ({ toggleAnimation, toggleCollapsed, onClick }) => () => {
       toggleAnimation();
-      onClick();
+      toggleCollapsed();
+      if (onClick) {
+        onClick();
+      }
     },
     onCloseClick: ({ onCloseClick }) => (e: MouseEvent) => {
       e.stopPropagation();
-      onCloseClick();
+      if (onCloseClick) {
+        onCloseClick();
+      }
     }
   })
 )(RoundButton)

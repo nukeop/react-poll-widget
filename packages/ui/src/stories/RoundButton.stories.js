@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Icon } from 'semantic-ui-react';
 
 import { RoundButton } from '..';
@@ -32,7 +32,6 @@ export const WithCloseButton = () => <div style={{ margin: '2em 0 2em 2em' }}>
 export const WithContent = () => <div style={{ margin: '2em 0 2em 2em' }}>
   <RoundButton
     Icon={<Icon name='question' size='large' />}
-  >
-    <span style={{marginLeft: '0.5em'}}>Test</span>
-  </RoundButton>
+    text='Test'
+  />
 </div>;

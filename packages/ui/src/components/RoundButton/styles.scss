@@ -5,6 +5,7 @@
   position: relative;
   display: inline-flex;
   align-items: center;
+  transition: $transition-duration;
 
   &::after {
     @include shadow-1;
@@ -15,7 +16,7 @@
     left: 0;
     border-radius: 200px;
 
-    transition: 0.5s;
+    transition: $transition-duration;
     content: "";
   }
 
@@ -30,9 +31,24 @@
     }
   }
 
+  h5 {
+    font-size: 20px;
+    margin-top: 0;
+    margin-left: 0.5em;
+    transition: $transition-duration;
+
+    &.collapsed {
+      transform: translateX(50%) translateZ(0rem);
+      margin: 0;
+      opacity: 0;
+      width: 0;
+    }
+  }
+
   i.icon {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     height: 100%;
   }
 
