@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Panel } from '..';
+import PanelContentHeader from '../components/Panel/PanelContentHeader';
 
 export default {
   title: 'Panel'
@@ -30,6 +31,8 @@ export const PanelWithContent = () => <div>
     hasFooter
     headerContent='Test header'
   >
-    This is a panel with some content.
+    <PanelContentHeader>
+      This is a panel with some content.
+    </PanelContentHeader>
   </Panel>
 </div>;
