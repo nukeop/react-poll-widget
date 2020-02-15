@@ -1,0 +1,14 @@
+@import './colors';
+
+button.ui.button {
+    background: $white;
+
+    &:hover {
+        background: rgba($darkwhite, 0.4);
+    }
+
+    &:focus,
+    &:active {
+        background: rgba($darkwhite, 0.7);
+    }
+}

@@ -1,0 +1,7 @@
+@import '../../colors';
+
+.poll-button-group {
+    button.ui.button:not(:last-child) {
+        border-right: 1px solid $darkwhite;
+    }
+}
