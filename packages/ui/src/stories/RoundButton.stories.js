@@ -32,6 +32,18 @@ export const WithCloseButton = () => <div style={{ margin: '2em 0 2em 2em' }}>
 export const WithContent = () => <div style={{ margin: '2em 0 2em 2em' }}>
   <RoundButton
     Icon={<Icon name='question' size='large' />}
-    text='Test'
+    text='Test test'
   />
 </div>;
+
+export const WithChangingIcon = () => {
+  const [ icon, setIcon ] = useState('question');
+
+  return <div style={{ margin: '2em 0 2em 2em' }}>
+  <RoundButton
+    Icon={<Icon name={icon} size='large' />}
+    onClick={() => icon==='question' ? setIcon('close') : setIcon('question')}
+    text='Test test'
+  />
+</div>;
+}

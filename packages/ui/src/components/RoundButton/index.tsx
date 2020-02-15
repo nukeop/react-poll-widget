@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import cx from 'classnames';
 import { Button, Transition } from 'semantic-ui-react';
 import { withState, withHandlers, compose } from 'recompose';
+import _ from 'lodash';
 
 import './styles.scss';
 
@@ -23,7 +24,10 @@ const RoundButton: React.FC<{
   withCloseButton,
   onClick,
   onCloseClick
-}) =>  (
+}) => {
+    const textRef = useRef(null);
+
+    return (
       <Button
         circular
         icon
@@ -31,11 +35,23 @@ const RoundButton: React.FC<{
         color={color}
         onClick={onClick}
         className='round-button'
+
       >
         <Transition animation='jiggle' visible={animate}>
           {Icon}
         </Transition>
-        { text && <h5 className={cx({ collapsed })} >{text}</h5> }
+        {
+          text &&
+          <div 
+          className={cx('text-box', { collapsed })} 
+          style={{
+            paddingRight: `${
+              collapsed ? 0 : _.get(textRef, 'current.offsetWidth')
+              }px`
+          }}>
+            <h5 ref={textRef} className={cx({ collapsed })} >{text}</h5>
+          </div>
+        }
         {
           withCloseButton &&
           <Button
@@ -47,6 +63,7 @@ const RoundButton: React.FC<{
         }
       </Button>
     )
+  }
 
 export default compose(
   withState('animate', 'setAnimate', true),
