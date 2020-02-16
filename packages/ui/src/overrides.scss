@@ -2,13 +2,16 @@
 
 button.ui.button {
     background: $white;
+    color: rgba($darkblack, 0.9);
 
     &:hover {
         background: rgba($darkwhite, 0.4);
+        color: rgba($darkblack, 0.9);
     }
 
     &:focus,
     &:active {
         background: rgba($darkwhite, 0.7);
+        color: rgba($darkblack, 0.9);
     }
 }

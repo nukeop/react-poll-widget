@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from 'semantic-ui-react';
 
 import { PollButtonGroup } from '..';
 
@@ -21,6 +22,17 @@ export const YesNoMaybe = () => <div style={{padding: '2em'}}>
             { content: 'Yes' },
             { content: 'Maybe' },
             { content: 'No' }
+        ]}
+    />
+</div>
+
+export const WithIcons = () => <div style={{padding: '2em'}}>
+    <PollButtonGroup
+        icons
+        buttons={[
+            { content: <Icon size='big' name='smile' /> },
+            { content: <Icon size='big' name='meh' /> },
+            { content: <Icon size='big' name='frown' /> }
         ]}
     />
 </div>

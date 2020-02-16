@@ -1,0 +1,21 @@
+@import "../../colors";
+@import "../../mixin";
+
+.progress-indicator {
+  circle {
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+
+    &:first-child {
+      stroke: rgba($white, 0.25);
+    }
+
+    &:last-child {
+      transition: $transition-duration;
+      stroke: $white;
+      transform-origin: 12px 12px;
+      transform: rotateZ(-90deg);
+    }
+  }
+}

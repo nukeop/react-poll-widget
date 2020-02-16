@@ -9,11 +9,17 @@ type PollButton = {
 }
 
 const PollButtonGroup: React.FC<{
-    buttons: PollButton[]
+    buttons: PollButton[],
+    icons: boolean
 }> = ({
-    buttons
+    buttons,
+    icons
 }) => (
-            <Button.Group fluid className='poll-button-group'>
+            <Button.Group 
+            fluid 
+            icon={icons}
+            className='poll-button-group'
+            >
                 {
                     buttons.map(button => (
                         <Button onClick={button.onClick}>

@@ -4,3 +4,4 @@ import './overrides.scss';
 export { default as Panel } from './components/Panel';
 export { default as RoundButton } from './components/RoundButton';
 export { default as PollButtonGroup } from './components/PollButtonGroup';
+export { default as ProgressIndicator } from './components/ProgressIndicator';
