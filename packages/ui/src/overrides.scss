@@ -1,5 +1,18 @@
 @import './colors';
 
+@mixin buttonColor($color, $darkcolor) {
+    background: $color;
+
+        &:hover {
+            background: rgba($darkcolor, 1);
+        }
+
+        &:focus,
+        &:active {
+            background: rgba($darkcolor, 1);     
+        }
+}
+
 button.ui.button {
     background: $white;
     color: rgba($darkblack, 0.9);
@@ -14,4 +27,42 @@ button.ui.button {
         background: rgba($darkwhite, 0.7);
         color: rgba($darkblack, 0.9);
     }
+
+    &.yellow {
+        @include buttonColor($yellow, $darkyellow)
+    }
+
+    &.orange {
+        @include buttonColor($orange, $darkorange);
+    }
+
+    &.blue {
+        @include buttonColor($blue, $darkblue);
+    }
+
+    &.teal {
+        @include buttonColor($teal, $darkteal);
+    }
+
+    &.pink {
+        @include buttonColor($pink, $darkpink);
+    }
+
+    &.rose {
+        @include buttonColor($rose, $darkrose);
+    }
+
+    &.red {
+        @include buttonColor($peach, $darkpeach);
+    }
+
+    &.purple {
+        @include buttonColor($purple, $darkpurple);
+    }
+
+    &.black {
+        @include buttonColor($black, $darkblack);
+    }
+
+
 }

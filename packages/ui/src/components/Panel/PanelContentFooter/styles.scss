@@ -1,0 +1,30 @@
+.panel-content-footer {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+
+  width: 100%;
+  height: auto;
+  margin: 1em 0;
+
+  .row {
+    display: flex;
+    flex-flow: row;
+    
+    &:not(:last-child) {
+      margin-bottom: 1em;
+    }
+
+    &.right-aligned {
+      justify-content: flex-end;
+    }
+
+    &.left-aligned {
+      justify-content: flex-start;
+    }
+
+    &.two-buttons {
+      justify-content: space-between;
+    }
+  }
+}
