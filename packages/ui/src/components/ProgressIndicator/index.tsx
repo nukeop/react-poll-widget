@@ -11,20 +11,22 @@ const ProgressIndicator: React.FC<{
     step,
     stepsTotal
 }) => (
-            <svg className='progress-indicator'>
-                <circle
-                    cx='12'
-                    cy='12'
-                    r={R}
-                />
-                <circle
-                    cx='12'
-                    cy='12'
-                    r={R}
-                    stroke-dasharray={2 * PI * R}
-                    stroke-dashoffset={2 * PI * R * (step / stepsTotal)}
-                />
-            </svg>
+            <div className="progress-indicator">
+                <svg>
+                    <circle
+                        cx='12'
+                        cy='12'
+                        r={R}
+                    />
+                    <circle
+                        cx='12'
+                        cy='12'
+                        r={R}
+                        stroke-dasharray={2 * PI * R}
+                        stroke-dashoffset={2 * PI * R * (1 - step / stepsTotal)}
+                    />
+                </svg>
+            </div>
         );
 
 export default ProgressIndicator;
