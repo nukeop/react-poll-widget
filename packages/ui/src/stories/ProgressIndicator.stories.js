@@ -12,7 +12,7 @@ export const Empty = () => <div style={{
   padding: '2rem'
 }}>
   <ProgressIndicator />
-</div>
+</div>;
 
 export const Half = () => <div style={{
   background: '#2c3e50',

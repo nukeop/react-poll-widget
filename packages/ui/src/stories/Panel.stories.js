@@ -3,7 +3,6 @@ import React from 'react';
 import { Panel } from '..';
 import PanelContentHeader from '../components/Panel/PanelContentHeader';
 import PanelContentFooter from '../components/Panel/PanelContentFooter';
-import { Button } from 'semantic-ui-react';
 
 export default {
   title: 'Panel'
