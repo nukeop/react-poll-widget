@@ -2,6 +2,7 @@ import React from 'react';
 import { Form, Input, Radio } from 'semantic-ui-react';
 import { compose, withHandlers, withState } from 'recompose';
 
+import Checkbox from '../Checkbox';
 import './styles.scss';
 
 type RadioPollOption = {
@@ -17,7 +18,8 @@ const RadioPoll: React.FC<{
   customSelected: boolean,
   selectCustom: () => void,
   customContent: string,
-  setCustomContent: (content: string) => void
+  setCustomContent: (content: string) => void,
+  onInputChange: (e: React.ChangeEvent) => void
 }> = ({
   options,
   selected,
@@ -26,34 +28,32 @@ const RadioPoll: React.FC<{
   customSelected,
   selectCustom,
   customContent,
-  setCustomContent
+  setCustomContent,
+  onInputChange
 }) => (
       <Form>
         {
           options.map(option => (
             <Form.Field>
-              <Radio
+              <Checkbox
+                type='radio'
                 label={option.label}
-                value={option.value}
                 checked={selected !== null && selected.value === option.value}
-                onChange={() => selectOption(option)}
+                onClick={() => selectOption(option)}
               />
             </Form.Field>
           ))
         }
         {
           hasCustomOption &&
-          <Form.Field>
-            <Radio
-              label={
-                <Input size='mini'
-                  onChange={(e, data) => setCustomContent(e.target.value)}
-                />
-              }
-              checked={customSelected}
-              onChange={selectCustom}
-            />
-          </Form.Field>
+          <Checkbox
+          type='radio'
+            label={
+              <Input size='small' onChange={onInputChange} />
+            }
+            checked={customSelected}
+            onClick={selectCustom}
+          />
         }
       </Form>
     )
@@ -71,5 +71,6 @@ export default compose(
       setSelected(option);
       setCustomSelected(false);
     },
+    onInputChange: ({ setCustomContent }) => (e) => setCustomContent(e.target.value)
   })
 )(RadioPoll);
