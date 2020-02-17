@@ -3,7 +3,7 @@ import React from 'react';
 import { PollResults } from '..';
 
 export default {
-  title: 'Poll results'
+  title: 'Components/Poll results'
 }
 
 export const FourResults = () => <div style={{padding: '2em'}}>

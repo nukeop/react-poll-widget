@@ -5,7 +5,7 @@ import PanelContentHeader from '../components/Panel/PanelContentHeader';
 import PanelContentFooter from '../components/Panel/PanelContentFooter';
 
 export default {
-  title: 'Panel'
+  title: 'Components/Panel'
 }
 
 export const EmptyPanel = () => <div>

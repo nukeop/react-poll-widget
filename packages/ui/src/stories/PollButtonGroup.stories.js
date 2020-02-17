@@ -4,7 +4,7 @@ import { Icon } from 'semantic-ui-react';
 import { PollButtonGroup } from '..';
 
 export default {
-    title: 'Poll button group'
+    title: 'Components/Poll button group'
 }
 
 export const YesNo = () => <div style={{padding: '2em'}}>

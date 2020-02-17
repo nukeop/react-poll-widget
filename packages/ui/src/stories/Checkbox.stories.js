@@ -5,7 +5,7 @@ import { Button, Form, Input } from 'semantic-ui-react';
 import { Checkbox } from '..';
 
 export default {
-  title: 'Checkbox'
+  title: 'Components/Checkbox'
 };
 
 export const SquareCheckbox = () => {

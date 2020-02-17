@@ -3,7 +3,7 @@ import React from 'react';
 import { RadioPoll } from '..';
 
 export default {
-  title: 'Radio poll'
+  title: 'Components/Radio poll'
 };
 
 export const Basic = () => <div>
