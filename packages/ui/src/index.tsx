@@ -7,3 +7,4 @@ export { default as RoundButton } from './components/RoundButton';
 export { default as PollButtonGroup } from './components/PollButtonGroup';
 export { default as ProgressIndicator } from './components/ProgressIndicator';
 export { default as RadioPoll } from './components/RadioPoll';
+export { default as PollResults } from './components/PollResults';

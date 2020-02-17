@@ -1,0 +1,35 @@
+@import '../../colors';
+
+.poll-results {
+  display: flex;
+  flex-flow: column;
+  font-size: 16px;
+  font-weight: bold;
+
+  .poll-result {
+    position: relative;
+
+    .ui.progress {
+      margin-bottom: 0.5em;
+      background: $white;
+
+      .bar {
+        height: 2.25em;
+        background: rgba($darkwhite, 0.8);
+      }
+    }
+
+    label {
+      position: absolute;
+      display: flex;
+      align-items: center;
+
+      top: 0;
+      height: calc(100% - 0.5em);
+
+      .score {
+        padding: 0 0.5em;
+      }
+    }
+  }
+}

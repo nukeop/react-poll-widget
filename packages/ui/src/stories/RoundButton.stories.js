@@ -4,7 +4,7 @@ import { Icon } from 'semantic-ui-react';
 import { RoundButton } from '..';
 
 export default {
-  title: 'RoundButton'
+  title: 'Round button'
 }
 
 export const Colors = () => <div style={{ margin: '2em 0 2em 2em' }}>

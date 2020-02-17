@@ -28,7 +28,6 @@ const RadioPoll: React.FC<{
   customSelected,
   selectCustom,
   customContent,
-  setCustomContent,
   onInputChange
 }) => (
       <Form>
@@ -47,7 +46,7 @@ const RadioPoll: React.FC<{
         {
           hasCustomOption &&
           <Checkbox
-          type='radio'
+            type='radio'
             label={
               <Input size='small' onChange={onInputChange} />
             }
