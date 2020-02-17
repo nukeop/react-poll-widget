@@ -9,3 +9,4 @@ export { default as ButtonGroupResults } from './components/ButtonGroupResults';
 export { default as ProgressIndicator } from './components/ProgressIndicator';
 export { default as RadioPoll } from './components/RadioPoll';
 export { default as PollResults } from './components/PollResults';
+export { default as TextAreaPoll } from './components/TextAreaPoll';
