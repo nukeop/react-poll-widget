@@ -2,7 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import { Button, Icon } from 'semantic-ui-react';
 
-import { PanelColor } from '../Panel.types';
+import { PanelColor } from '../../types';
 import './styles.scss';
 
 const PanelContentFooter: React.FC<{

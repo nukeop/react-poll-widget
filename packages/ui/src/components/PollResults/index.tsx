@@ -1,12 +1,8 @@
 import React from 'react';
 import { Progress } from 'semantic-ui-react';
 
+import { PollResult } from '../types';
 import './styles.scss';
-
-type PollResult = {
-  label: string;
-  score: number;
-};
 
 const PollResults: React.FC<{
   results: PollResult[]

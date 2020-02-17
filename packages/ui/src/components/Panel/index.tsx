@@ -3,7 +3,7 @@ import React from 'react';
 import PanelContent from './PanelContent';
 import PanelHeader from './PanelHeader';
 import PanelFooter, { DefaultFooter } from './PanelFooter';
-import { PanelColor } from './Panel.types';
+import { PanelColor } from '../types';
 
 import './styles.scss';
 
