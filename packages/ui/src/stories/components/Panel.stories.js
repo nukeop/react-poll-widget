@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Panel } from '..';
-import PanelContentHeader from '../components/Panel/PanelContentHeader';
-import PanelContentFooter from '../components/Panel/PanelContentFooter';
+import { Panel } from '../..';
+import PanelContentHeader from '../../components/Panel/PanelContentHeader';
+import PanelContentFooter from '../../components/Panel/PanelContentFooter';
 
 export default {
   title: 'Components/Panel'

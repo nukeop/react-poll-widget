@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { PollResults } from '..';
+import { PollResults } from '../..';
 
 export default {
   title: 'Components/Poll results'

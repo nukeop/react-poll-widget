@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { RadioPoll } from '..';
+import { RadioPoll } from '../..';
 
 export default {
   title: 'Components/Radio poll'

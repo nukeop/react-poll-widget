@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon } from 'semantic-ui-react';
 
-import { PollButtonGroup } from '..';
+import { PollButtonGroup } from '../..';
 
 export default {
     title: 'Components/Poll button group'

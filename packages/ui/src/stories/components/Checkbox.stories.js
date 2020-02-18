@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import _ from 'lodash';
 import { Button, Form, Input } from 'semantic-ui-react';
 
-import { Checkbox } from '..';
+import { Checkbox } from '../..';
 
 export default {
   title: 'Components/Checkbox'

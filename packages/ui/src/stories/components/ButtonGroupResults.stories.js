@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ButtonGroupResults } from '..';
+import { ButtonGroupResults } from '../..';
 
 export default {
   title: 'Components/Button group results'

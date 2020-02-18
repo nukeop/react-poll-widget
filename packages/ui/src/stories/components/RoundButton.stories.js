@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Icon } from 'semantic-ui-react';
 
-import { RoundButton } from '..';
+import { RoundButton } from '../..';
 
 export default {
   title: 'Components/Round button'

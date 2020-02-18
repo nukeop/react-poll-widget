@@ -1,15 +1,23 @@
 import React from 'react';
-import { Form, TextArea } from 'semantic-ui-react';
+import { Form } from 'semantic-ui-react';
 
 const TextAreaPoll: React.FC<{
-
+  content: string;
+  onChange: (e: React.FormEvent) => void;
+  onSubmit: (e: React.FormEvent) => void;
 }> = ({
-
+  content,
+  onChange,
+  onSubmit
 }) => (
-<Form>
-  <TextArea />
-  <
-</Form>
-);
+      <Form onSubmit={onSubmit}>
+        <Form.TextArea onChange={onChange}>
+          {content}
+        </Form.TextArea>
+        <Form.Button type='submit' color='green'>
+          Submit
+        </Form.Button>
+      </Form>
+    );
 
 export default TextAreaPoll;

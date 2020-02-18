@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Input, Radio } from 'semantic-ui-react';
+import { Form, Input } from 'semantic-ui-react';
 import { compose, withHandlers, withState } from 'recompose';
 
 import Checkbox from '../Checkbox';
@@ -19,7 +19,11 @@ const RadioPoll: React.FC<{
   selectCustom: () => void,
   customContent: string,
   setCustomContent: (content: string) => void,
-  onInputChange: (e: React.ChangeEvent) => void
+  onInputChange: (e: React.ChangeEvent) => void,
+
+  // Passed from the outside
+  onSelect: (option: RadioPollOption) => void,
+  onChange: (e: React.ChangeEvent) => void
 }> = ({
   options,
   selected,
@@ -28,7 +32,8 @@ const RadioPoll: React.FC<{
   customSelected,
   selectCustom,
   customContent,
-  onInputChange
+  onInputChange,
+  onSelect
 }) => (
       <Form>
         {
@@ -62,14 +67,19 @@ export default compose(
   withState('customSelected', 'setCustomSelected', false),
   withState('customContent', 'setCustomContent', ''),
   withHandlers({
-    selectCustom: ({ setSelected, setCustomSelected }) => () => {
+    selectCustom: ({ setSelected, setCustomSelected, customContent, onSelect }) => () => {
       setCustomSelected(true);
       setSelected(null);
+      onSelect(customContent);
     },
-    selectOption: ({ setSelected, setCustomSelected }) => (option) => {
+    selectOption: ({ selected, setSelected, setCustomSelected, onSelect }) => (option) => {
       setSelected(option);
       setCustomSelected(false);
+      onSelect(option);
     },
-    onInputChange: ({ setCustomContent }) => (e) => setCustomContent(e.target.value)
+    onInputChange: ({ onChange, setCustomContent }) => (e) => {
+      setCustomContent(e.target.value);
+      onChange(e.target.value);
+    }
   })
 )(RadioPoll);
