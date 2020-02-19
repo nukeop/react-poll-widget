@@ -34,8 +34,8 @@ export const PollWithTextArea = () => {
 }
 
 export const PollWithSingleChoiceQuestions = () => {
-  const [choice1, setChoice1] = useState(null);
-  const [choice2, setChoice2] = useState(null);
+  const [choice1, setChoice1] = useState();
+  const [choice2, setChoice2] = useState();
 
   const [step, setStep] = useState(0);
 
@@ -50,6 +50,7 @@ export const PollWithSingleChoiceQuestions = () => {
         { label: 'Nano', value: 'Nano' },
         { label: 'Vim', value: 'Vim' }
       ]}
+      selected={choice1}
       onSelect={setChoice1}
     />
 
@@ -67,6 +68,7 @@ export const PollWithSingleChoiceQuestions = () => {
         { label: 'Spotify', value: 'Spotify' },
         { label: 'Amarok', value: 'Amarok' }
       ]}
+      selected={choice2}
       onSelect={setChoice2}
     />
 

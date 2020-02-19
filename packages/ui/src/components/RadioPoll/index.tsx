@@ -1,6 +1,5 @@
 import React from 'react';
 import { Form, Input } from 'semantic-ui-react';
-import { compose, withHandlers, withState } from 'recompose';
 
 import Checkbox from '../Checkbox';
 import './styles.scss';
@@ -12,28 +11,20 @@ type RadioPollOption = {
 
 const RadioPoll: React.FC<{
   options: RadioPollOption[],
-  selected: RadioPollOption | null,
-  selectOption: (option: RadioPollOption) => void,
-  hasCustomOption: boolean,
-  customSelected: boolean,
-  selectCustom: () => void,
-  customContent: string,
-  setCustomContent: (content: string) => void,
-  onInputChange: (e: React.ChangeEvent) => void,
-
-  // Passed from the outside
+  selected?: RadioPollOption,
   onSelect: (option: RadioPollOption) => void,
-  onChange: (e: React.ChangeEvent) => void
+  onSelectCustom: () =>  void,
+  onChange: (e: React.ChangeEvent) => void,
+  hasCustomOption: boolean,
+  customSelected: boolean
 }> = ({
   options,
   selected,
-  selectOption,
+  onSelect,
+  onSelectCustom,
+  onChange,
   hasCustomOption,
-  customSelected,
-  selectCustom,
-  customContent,
-  onInputChange,
-  onSelect
+  customSelected
 }) => (
       <Form>
         {
@@ -42,44 +33,26 @@ const RadioPoll: React.FC<{
               <Checkbox
                 type='radio'
                 label={option.label}
-                checked={selected !== null && selected.value === option.value}
-                onClick={() => selectOption(option)}
+                checked={selected !== undefined && selected.value === option.value}
+                onClick={() => onSelect(option)}
               />
             </Form.Field>
           ))
         }
         {
           hasCustomOption &&
+          <Form.Field>
           <Checkbox
             type='radio'
             label={
-              <Input size='small' onChange={onInputChange} />
+              <Input size='small' onChange={onChange} />
             }
             checked={customSelected}
-            onClick={selectCustom}
+            onClick={onSelectCustom}
           />
+          </Form.Field>
         }
       </Form>
     )
 
-export default compose(
-  withState('selected', 'setSelected', null),
-  withState('customSelected', 'setCustomSelected', false),
-  withState('customContent', 'setCustomContent', ''),
-  withHandlers({
-    selectCustom: ({ setSelected, setCustomSelected, customContent, onSelect }) => () => {
-      setCustomSelected(true);
-      setSelected(null);
-      onSelect(customContent);
-    },
-    selectOption: ({ selected, setSelected, setCustomSelected, onSelect }) => (option) => {
-      setSelected(option);
-      setCustomSelected(false);
-      onSelect(option);
-    },
-    onInputChange: ({ onChange, setCustomContent }) => (e) => {
-      setCustomContent(e.target.value);
-      onChange(e.target.value);
-    }
-  })
-)(RadioPoll);
+export default RadioPoll;
