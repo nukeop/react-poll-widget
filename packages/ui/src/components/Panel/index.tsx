@@ -1,34 +1,57 @@
 import React from 'react';
+import cx from 'classnames';
+import _ from 'lodash';
 
 import PanelContent from './PanelContent';
 import PanelHeader from './PanelHeader';
 import PanelFooter, { DefaultFooter } from './PanelFooter';
+import ProgressIndicator from '../ProgressIndicator';
 import { PanelColor } from '../types';
 
 import './styles.scss';
 
 const Panel: React.FC<{
-  children: React.ReactNode,
-  hasFooter: boolean,
-  hasHeader: boolean,
-  footerContent: React.ReactNode,
-  headerContent: React.ReactNode,
-  color: PanelColor
+  children: React.ReactNode;
+  className: string;
+  style: React.StyleHTMLAttributes<HTMLElement>;
+  hasFooter: boolean;
+  hasHeader: boolean;
+  hasSteps: boolean;
+  footerContent: React.ReactNode;
+  headerContent: React.ReactNode;
+  color: PanelColor;
+  step?: number;
+  stepsTotal?: number;
 }> = ({
   children,
+  className,
+  style,
   hasFooter,
   hasHeader,
+  hasSteps,
   footerContent,
   headerContent,
-  color
+  color,
+  step,
+  stepsTotal
 }) => (
-      <div className="panel">
+      <div
+        className={cx('panel', className)}
+        style={style}
+      >
         {
           hasHeader &&
           <PanelHeader
             color={color}
           >
             {headerContent}
+            {
+              hasSteps && !_.isNil(step) && !_.isNil(stepsTotal) &&
+              <ProgressIndicator
+                step={step}
+                stepsTotal={stepsTotal}
+              />
+            }
           </PanelHeader>
         }
 

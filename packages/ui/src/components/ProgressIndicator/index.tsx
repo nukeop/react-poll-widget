@@ -23,7 +23,7 @@ const ProgressIndicator: React.FC<{
                         cy='12'
                         r={R}
                         stroke-dasharray={2 * PI * R}
-                        stroke-dashoffset={2 * PI * R * (1 - step / stepsTotal)}
+                        stroke-dashoffset={2 * PI * R * (1 - (step / stepsTotal))}
                     />
                 </svg>
             </div>

@@ -25,6 +25,18 @@ export const PanelWithHeader = () => <div>
   />
 </div>;
 
+export const PanelWithStepIndicator = () => <div>
+  <Panel
+    color='blue'
+    hasHeader
+    hasFooter
+    hasSteps
+    headerContent='Test header'
+    step={2}
+    stepsTotal={5}
+  />
+</div>;
+
 export const PanelWithContent = () => <div>
   <Panel
     color='rose'

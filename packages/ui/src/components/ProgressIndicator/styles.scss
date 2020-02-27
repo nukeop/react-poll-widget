@@ -2,8 +2,11 @@
 @import "../../mixin";
 
 .progress-indicator {
+  position: absolute;
   width: 24px;
   height: 24px;
+  top: 4px;
+  right: 4px;
 
   svg {
     width: 100%;

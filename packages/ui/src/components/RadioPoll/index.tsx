@@ -3,6 +3,7 @@ import { Form, Input } from 'semantic-ui-react';
 
 import Checkbox from '../Checkbox';
 import './styles.scss';
+import { EnumBooleanBody } from '@babel/types';
 
 type RadioPollOption = {
   label: string;
@@ -10,13 +11,14 @@ type RadioPollOption = {
 };
 
 const RadioPoll: React.FC<{
-  options: RadioPollOption[],
-  selected?: RadioPollOption,
-  onSelect: (option: RadioPollOption) => void,
-  onSelectCustom: () =>  void,
-  onChange: (e: React.ChangeEvent) => void,
-  hasCustomOption: boolean,
-  customSelected: boolean
+  options: RadioPollOption[];
+  selected?: RadioPollOption;
+  onSelect: (option: RadioPollOption) => void;
+  onSelectCustom: () =>  void;
+  onChange: (e: React.ChangeEvent) => void;
+  hasCustomOption: boolean;
+  customSelected: boolean;
+  loading: boolean;
 }> = ({
   options,
   selected,
@@ -24,9 +26,10 @@ const RadioPoll: React.FC<{
   onSelectCustom,
   onChange,
   hasCustomOption,
-  customSelected
+  customSelected,
+  loading
 }) => (
-      <Form>
+      <Form loading={loading}>
         {
           options.map(option => (
             <Form.Field>

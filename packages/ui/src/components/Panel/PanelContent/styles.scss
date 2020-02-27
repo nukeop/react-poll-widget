@@ -18,6 +18,7 @@
 
   .panel-content-inner {
     @include roundCorners;
+    @include shadow-1;
     position: relative;
     width: 100%;
     top: -2em;

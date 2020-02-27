@@ -5,10 +5,23 @@ import { Button, Icon } from 'semantic-ui-react';
 import { PanelColor } from '../../types';
 import './styles.scss';
 
+const BackButton: React.FC<{
+  onBack?: () => void
+}> = ({
+onBack
+}) => (
+      <Button basic icon labelPosition='left' size='tiny' onClick={onBack}>
+        Back
+              <Icon name='long arrow alternate left' />
+      </Button>
+    );
+
 const PanelContentFooter: React.FC<{
   hasSubmit: boolean,
   hasNext: boolean,
   hasBack: boolean,
+  nextDisabled: boolean,
+  submitDisabled: boolean,
   onSubmit?: () => void,
   onNext?: () => void,
   onBack?: () => void,
@@ -17,6 +30,8 @@ const PanelContentFooter: React.FC<{
   hasSubmit,
   hasNext = true,
   hasBack,
+  nextDisabled,
+  submitDisabled,
   onSubmit,
   onNext,
   onBack,
@@ -25,30 +40,43 @@ const PanelContentFooter: React.FC<{
       <div className={'panel-content-footer'}>
         <div className={cx(
           'right-aligned row',
-          { 'two-buttons': hasSubmit && hasNext }
+          { 'two-buttons': hasBack || hasSubmit && hasNext }
         )} >
           {
-            hasSubmit &&
-          <Button icon labelPosition='right' color='green' onClick={onSubmit}>
-            Submit
-            <Icon name='checkmark' />
-          </Button>
-        }
+            ((hasBack && !hasNext) || (hasBack && !hasSubmit)) &&
+            <BackButton onBack={onBack} />
+          }
           {
-          hasNext &&
-          <Button icon labelPosition='right' className={color} onClick={onNext}>
-            Next
+            hasSubmit &&
+            <Button
+              disabled={submitDisabled}
+              icon
+              labelPosition='right'
+              color='green'
+              onClick={onSubmit}
+            >
+              Submit
+            <Icon name='checkmark' />
+            </Button>
+          }
+          {
+            hasNext &&
+            <Button
+              disabled={nextDisabled}
+              icon
+              labelPosition='right'
+              className={color}
+              onClick={onNext}
+            >
+              Next
             <Icon name='long arrow alternate right' />
-          </Button>
+            </Button>
           }
         </div>
         {
-          hasBack &&
+          hasBack && hasSubmit && hasNext &&
           <div className='left-aligned row'>
-            <Button basic icon labelPosition='left' size='tiny' onClick={onBack}>
-              Back
-              <Icon name='long arrow alternate left' />
-            </Button>
+            <BackButton onBack={onBack}/>
           </div>
         }
       </div>
