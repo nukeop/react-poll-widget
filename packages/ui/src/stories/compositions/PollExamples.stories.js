@@ -6,6 +6,8 @@ import {
   PanelContentFooter,
   RadioPoll,
   TextAreaPoll,
+  PollButtonGroup,
+  ButtonGroupResults,
   PollResults
 } from '../..';
 
@@ -119,7 +121,7 @@ export const PollWithSingleChoiceQuestions = () => {
   </Panel>;
 }
 
-export const PollWithImmediateResults = () => {
+export const PollWithInstantResults = () => {
   const [showResults, setShowResults] = useState(false);
   const results = [
     { label: 'Vim', score: 30 },
@@ -155,7 +157,7 @@ export const PollWithImmediateResults = () => {
     color='yellow'
     hasHeader
     hasFooter
-    headerContent='Poll with immediate results'
+    headerContent='Poll with instant results'
   >
     {
       showResults
@@ -164,3 +166,46 @@ export const PollWithImmediateResults = () => {
     }
   </Panel>;
 }
+
+export const PollWithInstantResultsAndButtonGroup = () => {
+  const [showResults, setShowResults] = useState(false);
+
+  const Results = () => <>
+    <PanelContentHeader>
+      Poll results:
+    </PanelContentHeader>
+    <ButtonGroupResults
+      results={[
+        { label: 'Yes', score: 64 },
+        { label: 'No', score: 36 }
+      ]}
+    />
+  </>;
+
+  const Question = () => <>
+    <PanelContentHeader>
+      Are you wealthier than you were 5 years ago?
+    </PanelContentHeader>
+
+    <PollButtonGroup
+      buttons={[
+        { content: 'Yes', onClick: setShowResults },
+        { content: 'No', onClick: setShowResults }
+      ]}
+    />
+  </>;
+
+  return <Panel
+    color='peach'
+    hasHeader
+    hasFooter
+    headerContent='Poll with instant results and button groups'
+  >
+    {
+      showResults
+        ? <Results />
+        : <Question />
+    }
+  </Panel>;
+}
+
