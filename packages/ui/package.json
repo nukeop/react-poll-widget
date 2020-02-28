@@ -27,7 +27,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -c .storybook -o .out -s public && bash fix-paths.sh",
+    "build-storybook": "build-storybook -c .storybook -o .out -s public",
     "deploy-storybook": "storybook-to-ghpages -e .out",
     "deploy-storybook-ci": "storybook-to-ghpages -e .out --ci"
   },
