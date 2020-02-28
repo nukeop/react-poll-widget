@@ -27,7 +27,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -c .storybook -o .out -s public && bash fix-paths.sh",
+    "deploy-storybook": "storybook-to-ghpages -e .out"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -50,6 +51,7 @@
     "@storybook/addons": "^5.3.12",
     "@storybook/preset-create-react-app": "^1.5.2",
     "@storybook/react": "^5.3.12",
+    "@storybook/storybook-deployer": "^2.8.3",
     "@types/classnames": "^2.2.9",
     "classnames": "^2.2.6"
   }
