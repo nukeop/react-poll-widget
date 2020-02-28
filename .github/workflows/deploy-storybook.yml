@@ -20,6 +20,6 @@ jobs:
     - run: npm i -g lerna
     - run: lerna bootstrap
     - run: lerna exec --scope '*/ui' npm run build-storybook
-    - run: lerna exec --scope '*/ui' npm run deploy-storybook -- --ci
+    - run: lerna exec --scope '*/ui' npm run deploy-storybook-ci
       env:
         CI: true
