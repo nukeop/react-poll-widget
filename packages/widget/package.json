@@ -1,8 +1,12 @@
 {
-  "name": "@poll-widget/widget",
+  "name": "@react-poll-widget/widget",
   "version": "0.0.0",
+  "description": "React poll widget - Widgets",
+  "author": "nukeop <nukeop@gumblert.tech>",
+  "homepage": "https://github.com/nukeop/react-poll-widget#readme",
+  "license": "AGPL-3.0",
   "dependencies": {
-    "@poll-widget/ui": "0.0.0",
+    "@react-poll-widget/ui": "0.0.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
@@ -37,5 +41,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nukeop/react-poll-widget.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nukeop/react-poll-widget/issues"
   }
 }
