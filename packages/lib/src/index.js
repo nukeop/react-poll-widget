@@ -1,1 +1,1 @@
-'use strict';
+export * from '@react-poll-widget/ui';
