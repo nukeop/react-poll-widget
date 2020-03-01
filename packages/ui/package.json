@@ -6,6 +6,9 @@
   "homepage": "https://github.com/nukeop/react-poll-widget#readme",
   "license": "AGPL-3.0",
   "main": "src/index.tsx",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
