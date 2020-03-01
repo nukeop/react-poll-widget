@@ -1,6 +1,6 @@
 {
   "name": "@react-poll-widget/lib",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "React poll widget - library exports",
   "author": "nukeop <nukeop@gumblert.tech>",
   "homepage": "https://github.com/nukeop/react-poll-widget#readme",
@@ -23,7 +23,7 @@
     "url": "https://github.com/nukeop/react-poll-widget/issues"
   },
   "dependencies": {
-    "@react-poll-widget/ui": "0.0.0"
+    "@react-poll-widget/ui": "^0.0.1"
   },
   "devDependencies": {
     "webpack": "^4.41.6",
