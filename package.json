@@ -1,6 +1,5 @@
 {
-  "name": "root",
-  "private": true,
+  "name": "react-poll-widget",
   "devDependencies": {
     "lerna": "^3.19.0"
   }
