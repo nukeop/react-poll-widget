@@ -6,12 +6,6 @@
   "homepage": "https://github.com/nukeop/react-poll-widget#readme",
   "license": "AGPL-3.0",
   "main": "index.js",
-  "directories": {
-    "lib": "src"
-  },
-  "files": [
-    "src"
-  ],
   "publishConfig": {
     "access": "public"
   },
