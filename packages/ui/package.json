@@ -5,7 +5,8 @@
   "author": "nukeop <nukeop@gumblert.tech>",
   "homepage": "https://github.com/nukeop/react-poll-widget#readme",
   "license": "AGPL-3.0",
-  "main": "src/index.tsx",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "publishConfig": {
     "access": "public"
   },
@@ -26,12 +27,10 @@
     "react-scripts": "3.3.1",
     "recompose": "^0.30.0",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^0.88.2",
-    "typescript": "^3.7.5"
+    "semantic-ui-react": "^0.88.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "tsc",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
@@ -62,7 +61,8 @@
     "@storybook/react": "^5.3.12",
     "@storybook/storybook-deployer": "^2.8.3",
     "@types/classnames": "^2.2.9",
-    "classnames": "^2.2.6"
+    "classnames": "^2.2.6",
+    "typescript": "^3.9.0-dev.20200303"
   },
   "repository": {
     "type": "git",
