@@ -13,9 +13,9 @@ type RadioPollOption = {
 const RadioPoll: React.FC<{
   options: RadioPollOption[];
   selected?: RadioPollOption;
-  onSelect: (option: RadioPollOption) => void;
-  onSelectCustom: () =>  void;
-  onChange: (e: React.ChangeEvent) => void;
+  onSelect?: (option: RadioPollOption) => void;
+  onSelectCustom?: () =>  void;
+  onChange?: (e: React.ChangeEvent) => void;
   hasCustomOption: boolean;
   customSelected: boolean;
   loading: boolean;
@@ -37,7 +37,7 @@ const RadioPoll: React.FC<{
                 type='radio'
                 label={option.label}
                 checked={selected !== undefined && selected.value === option.value}
-                onClick={() => onSelect(option)}
+                onClick={() => onSelect && onSelect(option)}
               />
             </Form.Field>
           ))

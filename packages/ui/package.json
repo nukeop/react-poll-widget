@@ -5,7 +5,7 @@
   "author": "nukeop <nukeop@gumblert.tech>",
   "homepage": "https://github.com/nukeop/react-poll-widget#readme",
   "license": "AGPL-3.0",
-  "main": "dist/bundle.js",
+  "main": "dist/main.js",
   "types": "dist/index.d.ts",
   "publishConfig": {
     "access": "public"
@@ -29,7 +29,7 @@
     "semantic-ui-react": "^0.88.2"
   },
   "scripts": {
-    "build": "webpack -r @babel/register &&tsc --emitDeclarationOnly",
+    "build": "webpack -r @babel/register &&tsc --emitDeclarationOnly --declarationMap",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",

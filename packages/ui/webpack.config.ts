@@ -7,8 +7,10 @@ const config: webpack.Configuration = {
   entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: '[name].js',
+    libraryTarget: 'commonjs'
   },
+  devtool: 'source-map',
   module: {
     rules: [
     {
@@ -19,12 +21,10 @@ const config: webpack.Configuration = {
       {
         test: /\.s?css$/i,
         use: [
-          process.env.NODE_ENV !== 'production'
-            ? 'style-loader'
-            : MiniCssExtractPlugin.loader,
+          MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader',
-        ],
+        ]
       },
       {
         test: /\.(png|jpg|gif|ttf|eot|woff|woff2|svg)$/,
