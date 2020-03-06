@@ -23,7 +23,7 @@ jobs:
     - run: npm i -g lerna
     - run: lerna bootstrap
     - run: lerna exec --scope '*/ui' npm run build
-    - run: lerna publish from-git
+    - run: lerna publish from-git -y
 
     env:
       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
