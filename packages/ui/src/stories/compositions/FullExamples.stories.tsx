@@ -6,7 +6,9 @@ import {
   Panel,
   PanelContentHeader,
   PanelContentFooter,
-  TextAreaPoll
+  TextAreaPoll,
+  RadioPoll,
+  PollResults
 } from '../..';
 import './FullExamples.scss';
 
@@ -46,22 +48,21 @@ export const FullWidget = () => {
         <Transition visible={isOpen} animation='fade up'>
           <Panel
             className='offset-panel'
-            color='blue'
+            color='purple'
             hasHeader
             hasFooter
             headerContent='Open source project feedback'
           >
-            <PanelContentHeader>
-              What area should we focus on in the next release?
-        </PanelContentHeader>
-            {
-              submitted
-                ? <Submitted />
-                : <TextAreaPoll
-                  loading={loading}
-                  onSubmit={submit}
-                />
-            }
+           <PanelContentHeader>
+      Poll results:
+    </PanelContentHeader>
+    <PollResults
+      results={[
+        { label: 'Vim', score: 30 },
+        { label: 'Emacs', score: 60 },
+        { label: 'Sublime Text', score: 10 }
+      ]}
+    />
           </Panel>
         </Transition>
         <RoundButton
@@ -71,8 +72,8 @@ export const FullWidget = () => {
             setOpen(!isOpen);
           }}
           onCloseClick={() => setButtonVisible(false)}
-          Icon={<Icon name={icon} size='large' />}
-          color='blue'
+          Icon={<Icon name={icon as 'question' | 'close'} size='large' />}
+          color='purple'
         />
       </>
     }

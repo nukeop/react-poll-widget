@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent } from 'react';
 
 import {
   Panel,
@@ -15,6 +15,7 @@ export default {
   title: 'Compositions/Poll examples'
 }
 
+type Option = { label: string, value: string };
 export const PollWithTextArea = () => {
   const [text, setText] = useState('');
   const [submitted, setSubmitted] = useState(false);
@@ -46,7 +47,7 @@ export const PollWithTextArea = () => {
         ? <Submitted />
         : <TextAreaPoll
           loading={loading}
-          onChange={e => setText(e.target.value)}
+          onChange={(e: React.FormEvent) => setText((e.target as HTMLTextAreaElement).value)}
           onSubmit={submit}
         />
     }
@@ -54,10 +55,19 @@ export const PollWithTextArea = () => {
 }
 
 export const PollWithSingleChoiceQuestions = () => {
-  const [choice1, setChoice1] = useState();
-  const [choice2, setChoice2] = useState();
+  const [choice1, setChoice1]: [
+    Option | undefined,
+    (arg: Option) => void
+  ] = useState();
+  const [choice2, setChoice2]: [
+    Option | undefined,
+    (arg: Option) => void
+  ] = useState();
 
-  const [step, setStep] = useState(0);
+  const [step, setStep]: [
+    number,
+    (arg: number) => void
+  ] = useState(0);
 
   const FirstQuestion = () => <>
     <PanelContentHeader>
@@ -99,7 +109,7 @@ export const PollWithSingleChoiceQuestions = () => {
       submitDisabled={choice1 === null || choice2 === null}
 
       onBack={() => setStep(0)}
-      onSubmit={() => alert(`Choices: ${choice1.value}, ${choice2.value}`)}
+      onSubmit={() => alert(`Choices: ${choice1?.value}, ${choice2?.value}`)}
     />
   </>;
 
@@ -149,7 +159,7 @@ export const PollWithInstantResults = () => {
         { label: 'Emacs', value: 'Emacs' },
         { label: 'Sublime Text', value: 'Sublime Text' }
       ]}
-      onSelect={setShowResults}
+      onSelect={() => setShowResults(true)}
     />
   </>;
 
@@ -189,8 +199,8 @@ export const PollWithInstantResultsAndButtonGroup = () => {
 
     <PollButtonGroup
       buttons={[
-        { content: 'Yes', onClick: setShowResults },
-        { content: 'No', onClick: setShowResults }
+        { content: 'Yes', onClick: () => setShowResults(true) },
+        { content: 'No', onClick: () => setShowResults(true) }
       ]}
     />
   </>;

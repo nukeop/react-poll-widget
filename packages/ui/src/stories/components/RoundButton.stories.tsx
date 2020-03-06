@@ -37,7 +37,7 @@ export const WithContent = () => <div style={{ margin: '2em 0 2em 2em' }}>
 </div>;
 
 export const WithChangingIcon = () => {
-  const [ icon, setIcon ] = useState('question');
+  const [ icon, setIcon ]: [ 'close' | 'question', Function] = useState('question');
 
   return <div style={{ margin: '2em 0 2em 2em' }}>
   <RoundButton

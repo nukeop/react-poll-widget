@@ -6,8 +6,12 @@ export default {
   title: 'Components/Radio poll'
 };
 
+type Option = {label: string, value: string};
 export const Basic = () => {
-  const [option, select] = useState(undefined);
+  const [option, select]: [
+    Option | undefined,
+    (arg: Option) => void
+  ] = useState();
   return (
     <div>
       <RadioPoll
@@ -39,7 +43,10 @@ export const Loading = () => {
 }
 
 export const WithCustomOption = () => {
-  const [option, select] = useState(undefined);
+  const [option, select]: [
+    Option | undefined,
+    (arg: Option | undefined) => void
+   ] = useState();
   const [customSelected, selectCustom] = useState(false);
   return (
     <div>
@@ -58,7 +65,7 @@ export const WithCustomOption = () => {
         customSelected={customSelected}
         onSelectCustom={() => {
           selectCustom(true)
-          select();
+          select(undefined);
         }}
       />
     </div>

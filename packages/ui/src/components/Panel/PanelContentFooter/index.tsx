@@ -17,15 +17,15 @@ onBack
     );
 
 const PanelContentFooter: React.FC<{
-  hasSubmit: boolean,
-  hasNext: boolean,
-  hasBack: boolean,
-  nextDisabled: boolean,
-  submitDisabled: boolean,
+  hasSubmit?: boolean,
+  hasNext?: boolean,
+  hasBack?: boolean,
+  nextDisabled?: boolean,
+  submitDisabled?: boolean,
   onSubmit?: () => void,
   onNext?: () => void,
   onBack?: () => void,
-  color: PanelColor
+  color?: PanelColor
 }> = ({
   hasSubmit,
   hasNext = true,

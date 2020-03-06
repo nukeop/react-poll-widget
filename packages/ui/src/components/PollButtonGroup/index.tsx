@@ -4,16 +4,16 @@ import { Button } from 'semantic-ui-react';
 import './styles.scss';
 
 type PollButton = {
-    content: string;
-    onClick: () => void
+    content: React.ReactNode;
+    onClick?: () => void
 }
 
 const PollButtonGroup: React.FC<{
     buttons: PollButton[],
-    icons: boolean
+    icons?: boolean
 }> = ({
     buttons,
-    icons
+    icons=false
 }) => (
             <Button.Group 
             fluid 

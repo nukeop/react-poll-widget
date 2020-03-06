@@ -5,11 +5,11 @@ import './styles.scss';
 const PI = 3.1415;
 const R = 10;
 const ProgressIndicator: React.FC<{
-    step: number,
-    stepsTotal: number
+    step?: number,
+    stepsTotal?: number
 }> = ({
-    step,
-    stepsTotal
+    step=0,
+    stepsTotal=0
 }) => (
             <div className="progress-indicator">
                 <svg>

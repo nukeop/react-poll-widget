@@ -16,9 +16,9 @@ const RadioPoll: React.FC<{
   onSelect?: (option: RadioPollOption) => void;
   onSelectCustom?: () =>  void;
   onChange?: (e: React.ChangeEvent) => void;
-  hasCustomOption: boolean;
-  customSelected: boolean;
-  loading: boolean;
+  hasCustomOption?: boolean;
+  customSelected?: boolean;
+  loading?: boolean;
 }> = ({
   options,
   selected,

@@ -6,7 +6,7 @@ import './styles.scss';
 const Checkbox: React.FC<{
   type?: 'checkbox' | 'radio',
   label: React.ReactNode,
-  checked: boolean,
+  checked?: boolean,
   onClick?: (e: React.MouseEvent) => void
 }> = ({
   type = 'checkbox',

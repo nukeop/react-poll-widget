@@ -11,15 +11,15 @@ import { PanelColor } from '../types';
 import './styles.scss';
 
 const Panel: React.FC<{
-  children: React.ReactNode;
-  className: string;
-  style: React.StyleHTMLAttributes<HTMLElement>;
-  hasFooter: boolean;
-  hasHeader: boolean;
-  hasSteps: boolean;
-  footerContent: React.ReactNode;
-  headerContent: React.ReactNode;
-  color: PanelColor;
+  children?: React.ReactNode;
+  className?: string;
+  style?: React.StyleHTMLAttributes<HTMLElement>;
+  hasFooter?: boolean;
+  hasHeader?: boolean;
+  hasSteps?: boolean;
+  footerContent?: React.ReactNode;
+  headerContent?: React.ReactNode;
+  color?: PanelColor;
   step?: number;
   stepsTotal?: number;
 }> = ({
@@ -31,7 +31,7 @@ const Panel: React.FC<{
   hasSteps,
   footerContent,
   headerContent,
-  color,
+  color='blue',
   step,
   stepsTotal
 }) => (

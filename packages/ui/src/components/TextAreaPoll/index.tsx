@@ -3,11 +3,11 @@ import _ from 'lodash';
 import { Form } from 'semantic-ui-react';
 
 const TextAreaPoll: React.FC<{
-  loading: boolean;
-  content: string;
+  loading?: boolean;
+  content?: string;
   error?: string;
-  onChange: (e: React.FormEvent) => void;
-  onSubmit: (e: React.FormEvent) => void;
+  onChange?: (e: React.FormEvent) => void;
+  onSubmit?: (e: React.FormEvent) => void;
 }> = ({
   loading,
   content,

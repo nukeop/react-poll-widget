@@ -44,7 +44,7 @@ export const InputAsLabel = () => {
 };
 
 export const RadioGroup = () => {
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected]: [null | number, Function] = useState(null);
   const options = [
     { label: 'Test 1', value: 1 },
     { label: 'Test 2', value: 2 },
@@ -71,7 +71,7 @@ export const RadioGroup = () => {
 }
 
 export const CheckboxGroup = () => {
-  const [selected, setSelected] = useState([]);
+  const [selected, setSelected]: [number[], Function] = useState([]);
   const options = [
     { label: 'Test 1', value: 1 },
     { label: 'Test 2', value: 2 },
