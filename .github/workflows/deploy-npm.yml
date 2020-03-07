@@ -23,6 +23,8 @@ jobs:
     - run: npm i -g lerna
     - run: lerna bootstrap
     - run: lerna exec --scope '*/ui' npm run build
+    - run: ls .
+    - run: cat .npmrc
     - run: npm whoami
     - run: lerna publish from-git -y
       env:
