@@ -15,7 +15,6 @@ jobs:
         node-version: [12.x]
 
     steps:
-    - name: Checkout and setup
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
       with:
@@ -23,16 +22,17 @@ jobs:
         registry-url: 'https://registry.npmjs.org'
 
     - name: Setup lerna and build
-    - run: npm i -g lerna
-    - run: lerna bootstrap
-    - run: lerna exec --scope '*/ui' npm run build
+      run: |
+          npm i -g lerna
+          lerna bootstrap
+          lerna exec --scope '*/ui' npm run build
 
     - name: Authenticate with registry and publish
-    - run: |
+      run: |
         npm logout
         echo "registry=//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" > ~/.npmrc
         echo "registry=http://registry.npmjs.org/" >> .npmrc
-    - run: npm whoami
-    - run: lerna publish from-git -y
+        npm whoami
+        lerna publish from-git -y
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
