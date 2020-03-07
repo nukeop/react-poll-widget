@@ -1,6 +1,6 @@
 {
   "name": "@react-poll-widget/widget",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "React poll widget - Widgets",
   "author": "nukeop <nukeop@gumblert.tech>",
   "homepage": "https://github.com/nukeop/react-poll-widget#readme",
@@ -9,7 +9,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@react-poll-widget/ui": "^0.0.16",
+    "@react-poll-widget/ui": "^0.0.17",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
