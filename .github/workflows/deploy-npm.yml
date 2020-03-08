@@ -20,22 +20,14 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         registry-url: 'https://registry.npmjs.org'
+        scope: '@react-poll-widget'
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-    - name: Setup lerna and build
-      run: |
+    - run: |
           npm i -g lerna
           lerna bootstrap
           lerna exec --scope '*/ui' npm run build
-
-    - name: Authenticate with registry and publish
-      run: |
-        echo "registry=//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" > .npmrc
-        echo "registry=http://registry.npmjs.org/" >> .npmrc
-        ls -al
-        cat .npmrc
-        npm whoami
-        lerna publish from-git -y
+    - run: lerna publish from-git -y
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
