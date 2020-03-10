@@ -10,7 +10,7 @@ export default {
 export const Colors = () => <div style={{ margin: '2em 0 2em 2em' }}>
   {
     [
-      'red', 'orange', 'yellow', 'olive', 'green', 'teal', 'blue', 'violet', 'purple', 'pink', 'brown', 'grey', 'black'
+      'red', 'orange', 'yellow', 'olive', 'green', 'teal', 'blue', 'violet', 'purple', 'pink', 'peach', 'brown', 'gray', 'black'
     ].map(color => <RoundButton
       onClick={() => alert('Button clicked')}
       color={color}

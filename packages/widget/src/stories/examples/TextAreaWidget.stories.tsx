@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 import '../..';
-import all, { Button, Icon, Transition } from 'semantic-ui-react'
+import { Button, Icon, Transition } from 'semantic-ui-react';
 
 import {
   RoundButton,
@@ -11,13 +11,14 @@ import {
 } from '@react-poll-widget/ui'
 
 export default {
-  title: 'Text area widget'
+  title: 'Examples/Text area poll'
 }
 
-export const TextAreaWidget = () => {
+export const Construction = () => {
   const [isOpen, setOpen] = useState(false);
-  return <div>
+  return <div style={{ padding: '1rem' }}>
     <Button
+      style={{ marginBottom: '2rem' }}
       icon={isOpen ? 'close' : 'add circle'}
       color='purple'
       size='large'
@@ -28,10 +29,14 @@ export const TextAreaWidget = () => {
         color='purple'
         hasHeader
         hasFooter
+        headerContent='We value your feedback'
       >
         <PanelContentHeader>
-          Test
+          We're launching a new product line and considering customer input.
         </PanelContentHeader>
+        <p>
+        Which features of our product are currently the most useful to you?
+        </p>
         <TextAreaPoll />
       </Panel>
     </Transition>

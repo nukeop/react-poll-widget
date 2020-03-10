@@ -28,8 +28,12 @@ button.ui.button {
         color: rgba($darkblack, 0.9);
     }
 
+    &.red {
+        @include buttonColor($red, $darkred);
+    }
+
     &.yellow {
-        @include buttonColor($yellow, $darkyellow)
+        @include buttonColor($yellow, $darkyellow);
     }
 
     &.orange {
@@ -44,6 +48,10 @@ button.ui.button {
         @include buttonColor($teal, $darkteal);
     }
 
+    &.green {
+        @include buttonColor($green, $darkgreen);
+    }
+
     &.pink {
         @include buttonColor($pink, $darkpink);
     }
@@ -52,12 +60,16 @@ button.ui.button {
         @include buttonColor($rose, $darkrose);
     }
 
-    &.red {
+    &.peach {
         @include buttonColor($peach, $darkpeach);
     }
 
     &.purple {
         @include buttonColor($purple, $darkpurple);
+    }
+
+    &.grey {
+        @include buttonColor($gray, $darkgray);
     }
 
     &.black {

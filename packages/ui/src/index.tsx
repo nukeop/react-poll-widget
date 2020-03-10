@@ -8,6 +8,7 @@ export { default as ProgressIndicator } from './components/ProgressIndicator';
 export { default as Panel } from './components/Panel';
 export { default as PanelContentHeader } from './components/Panel/PanelContentHeader';
 export { default as PanelContentFooter } from './components/Panel/PanelContentFooter';
+export * from './components/types';
 
 export { default as RadioPoll } from './components/RadioPoll';
 export { default as PollButtonGroup } from './components/PollButtonGroup';
