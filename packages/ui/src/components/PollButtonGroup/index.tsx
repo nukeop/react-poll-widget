@@ -1,12 +1,8 @@
 import React from 'react';
 import { Button } from 'semantic-ui-react';
 
+import { PollButton } from '../types';
 import './styles.scss';
-
-type PollButton = {
-    content: React.ReactNode;
-    onClick?: () => void
-}
 
 const PollButtonGroup: React.FC<{
     buttons: PollButton[],

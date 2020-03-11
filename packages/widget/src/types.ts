@@ -1,14 +1,14 @@
 import React from 'react';
 
-export type PollType = 'single' | 'button' | 'multi' | 'text';
+import { RadioPollOption, PollButton } from '@react-poll-widget/ui';
+import { Button } from 'semantic-ui-react';
 
-export type PollOption = {
-  text: string
-};
+export type PollType = 'single' | 'button' | 'multi' | 'text';
 
 export type PollStep = {
   title: string;
+  header: string;
   description: React.ReactNode;
   type: PollType;
-  options?: PollOption[];
+  options?: (RadioPollOption | PollButton)[];
 };

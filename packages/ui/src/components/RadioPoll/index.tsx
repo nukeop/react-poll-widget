@@ -1,14 +1,9 @@
 import React from 'react';
 import { Form, Input } from 'semantic-ui-react';
 
+import { RadioPollOption } from '../types';
 import Checkbox from '../Checkbox';
 import './styles.scss';
-import { EnumBooleanBody } from '@babel/types';
-
-type RadioPollOption = {
-  label: string;
-  value: string;
-};
 
 const RadioPoll: React.FC<{
   options: RadioPollOption[];
