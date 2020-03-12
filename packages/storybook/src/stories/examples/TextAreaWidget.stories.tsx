@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 
-import '../..';
+import '@react-poll-widget/ui';
 import { Button, Icon, Transition } from 'semantic-ui-react';
 
 import {
-  RoundButton,
   Panel,
   PanelContentHeader,
   TextAreaPoll
-} from '@react-poll-widget/ui'
+} from '@react-poll-widget/ui';
 
 export default {
-  title: 'Examples/Text area poll'
+  title: 'Examples|Text area poll'
 }
 
 export const Construction = () => {

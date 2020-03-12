@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from 'semantic-ui-react';
 
-import { PollWidget } from '../..';
+import { PollWidget } from '@react-poll-widget/widget';
 
 export default {
   title: 'Widgets|Poll Widget'

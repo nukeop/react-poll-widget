@@ -19,8 +19,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm i -g lerna
     - run: lerna bootstrap
-    - run: lerna exec --scope '*/ui' npm run build-storybook
-    - run: lerna exec --scope '*/ui' npm run deploy-storybook-ci
+    - run: lerna run build
+    - run: lerna exec --scope '*/storybook' npm run build-storybook
+    - run: lerna exec --scope '*/storybook' npm run deploy-storybook-ci
       env:
         CI: true
         GH_TOKEN: MyCompany:${{ secrets.GITHUB_TOKEN }}
