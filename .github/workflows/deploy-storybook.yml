@@ -18,7 +18,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm i -g lerna
-    - run: lerna bootstrap
+    - run: lerna bootstrap --hoist
     - run: lerna run build
     - run: lerna exec --scope '*/storybook' npm run build-storybook
     - run: lerna exec --scope '*/storybook' npm run deploy-storybook-ci

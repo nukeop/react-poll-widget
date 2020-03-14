@@ -26,7 +26,7 @@ jobs:
 
     - run: |
           npm i -g lerna
-          lerna bootstrap
+          lerna bootstrap --hoist
           lerna run build
     - run: lerna publish from-git -y
       env:
