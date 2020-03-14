@@ -16,6 +16,7 @@ import {
   RadioPoll,
   RadioPollOption,
   PollButtonGroup,
+  PollButton,
   TextAreaPoll
 } from '@react-poll-widget/ui';
 
@@ -25,15 +26,15 @@ const PollComponent: React.FC<{ currentStep: PollStep }> = ({ currentStep }) => 
   switch (currentStep.type) {
     case 'single':
       return <RadioPoll
-        options={currentStep.options}
+        options={currentStep.options as RadioPollOption[]}
       />;
     case 'multi':
       return <RadioPoll
-        options={currentStep.options}
+        options={currentStep.options as RadioPollOption[]}
       />;
     case 'button':
       return <PollButtonGroup
-        buttons={currentStep.options}
+        buttons={currentStep.options as PollButton[]}
       />;
     case 'text':
       return <TextAreaPoll />;
@@ -101,11 +102,10 @@ const PollWidget: React.FC<PollWidgetProps> = ({
     )
   }
 
-export default compose(
+export default compose<PollWidgetProps, Omit<PollWidgetProps, 'step' | 'setStep' | 'goBack' | 'goForward'>>(
   withState('step', 'setStep', 0),
   withHandlers({
     goBack: ({ setStep, step }: PollWidgetProps) => () => setStep(Math.max(step - 1, 0)),
     goForward: ({ setStep, step, steps }: PollWidgetProps) => () => setStep(Math.min(step + 1, steps.length - 1))
   })
-)
-  (PollWidget);
+)(PollWidget);

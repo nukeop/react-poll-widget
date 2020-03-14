@@ -17,7 +17,7 @@
     "declaration": true,
     "declarationDir": "dist",
     "isolatedModules": true,
-    "noEmit": true,
+    "noEmit": false,
     "jsx": "react",
     "allowJs": true
   },

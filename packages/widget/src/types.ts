@@ -10,5 +10,5 @@ export type PollStep = {
   header: string;
   description: React.ReactNode;
   type: PollType;
-  options?: (RadioPollOption | PollButton)[];
+  options: (RadioPollOption | PollButton)[];
 };

@@ -5,6 +5,8 @@
   "author": "nukeop <nukeop@gumblert.tech>",
   "homepage": "https://github.com/nukeop/react-poll-widget#readme",
   "license": "AGPL-3.0",
+  "main": "dist/main.js",
+  "types": "dist/index.d.ts",
   "publishConfig": {
     "access": "public"
   },
@@ -17,16 +19,19 @@
     "@types/node": "^12.12.26",
     "@types/react": "^16.9.19",
     "@types/react-dom": "^16.9.5",
+    "@types/recompose": "^0.30.7",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.3.1",
     "recompose": "^0.30.0",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.88.2",
-    "typescript": "^3.7.5"
+    "typescript": "^3.7.5",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
   },
   "scripts": {
-    "build": "react-scripts build",
+    "build": "webpack -r @babel/register && tsc --emitDeclarationOnly --declarationMap",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -53,6 +58,10 @@
     "url": "https://github.com/nukeop/react-poll-widget/issues"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-react": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3",
+    "@babel/register": "^7.8.6",
     "@types/lodash": "^4.14.149",
     "node-sass": "^4.13.1"
   }
