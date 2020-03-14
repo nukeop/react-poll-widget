@@ -13,6 +13,7 @@ export const PopupPoll = () => {
   return <div style={{ margin: '2rem' }}>
     <PollWidget 
       trigger={<Button icon={icon} />}
+      color='blue'
       onOpen={() => setIcon('close')}
       onClose={() => setIcon('question')}
       steps={[
@@ -22,9 +23,9 @@ export const PopupPoll = () => {
           description: <p>Description of the first step</p>,
           type: 'single',
           options: [
-            { label: 'First option', value: 1 }, 
-            { label: 'Second option', value: 2 }, 
-            { label: 'Third option', value: 3 }
+            { label: 'First option', value: '1' }, 
+            { label: 'Second option', value: '2' }, 
+            { label: 'Third option', value: '3' }
           ]
         },
         {
@@ -33,9 +34,9 @@ export const PopupPoll = () => {
           description: <p>Description of the second step</p>,
           type: 'multi',
           options: [
-            { label: 'Option 1', value: 1 }, 
-            { label: 'Option 2', value: 2 }, 
-            { label: 'Option 3', value: 3 }
+            { label: 'Option 1', value: '1' }, 
+            { label: 'Option 2', value: '2' }, 
+            { label: 'Option 3', value: '3' }
           ]
         },
         {

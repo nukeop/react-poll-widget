@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import _ from 'lodash';
 import { Button, Form, Input } from 'semantic-ui-react';
 
-import { Checkbox } from '@react-poll-widget/ui';
+import { Checkbox, RadioPollOption } from '@react-poll-widget/ui';
 
 export default {
   title: 'Components|Checkbox'
@@ -79,10 +79,10 @@ export const CheckboxGroup = () => {
     { label: 'Test 4', value: 4 }
   ];
 
-  const addValue = val => setSelected(_.union(selected, [val]));
-  const removeValue = val => setSelected(_.without(selected, val));
-  const hasValue = val => _.includes(selected, val);
-  const toggleValue = val => hasValue(val) ? removeValue(val) : addValue(val);
+  const addValue = (val: number) => setSelected(_.union(selected, [val]));
+  const removeValue = (val: number) => setSelected(_.without(selected, val));
+  const hasValue = (val: number) => _.includes(selected, val);
+  const toggleValue = (val: number) => hasValue(val) ? removeValue(val) : addValue(val);
 
   return <div style={{ padding: '2em' }}>
     <Form>
