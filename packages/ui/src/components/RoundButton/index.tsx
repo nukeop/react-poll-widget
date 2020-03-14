@@ -6,81 +6,90 @@ import _ from 'lodash';
 
 import './styles.scss';
 
-const RoundButton: React.FC<{
-  Icon?: React.ReactNode,
-  text: string,
-  color: 'red' | 'orange' | 'yellow' | 'green' | 'blue' | 'violet' | 'olive' | 'teal' | 'purple' | 'pink' | 'brown' | 'grey' | 'black',
-  animate?: boolean,
-  collapsed: boolean,
-  withCloseButton?: boolean,
-  onClick?: () => void,
-  onCloseClick?: () => void
-}> = ({
+type RoundButtonProps = {
+  Icon?: React.ReactNode;
+  text: string;
+  color: 'red' | 'orange' | 'yellow' | 'green' | 'blue' | 'violet' | 'olive' | 'teal' | 'purple' | 'pink' | 'brown' | 'grey' | 'black';
+  animate?: boolean;
+  collapsed: boolean;
+  withCloseButton?: boolean;
+  onClick?: () => void;
+  onCloseClick?: () => void;
+  setAnimate: (val: boolean) => void;
+  setCollapsed: (val: boolean) => void;
+  toggleAnimation: () => void;
+  toggleCollapsed: () => void;
+};
+
+const RoundButton: React.FC<RoundButtonProps> = ({
   Icon,
   text,
   color = 'blue',
-  animate=false,
+  animate = false,
   collapsed,
   withCloseButton,
   onClick,
   onCloseClick
 }) => {
-    const textRef = useRef(null);
+  const textRef = useRef(null);
 
-    return (
-      <Button
-        circular
-        icon
-        size='huge'
-        color={color}
-        onClick={onClick}
-        className='round-button'
+  return (
+    <Button
+      circular
+      icon
+      size='huge'
+      color={color}
+      onClick={onClick}
+      className='round-button'
 
-      >
-        <Transition animation='jiggle' visible={animate}>
-          {Icon}
-        </Transition>
-        {
-          text &&
-          <div 
-          className={cx('text-box', { collapsed })} 
+    >
+      <Transition animation='jiggle' visible={animate}>
+        {Icon}
+      </Transition>
+      {
+        text &&
+        <div
+          className={cx('text-box', { collapsed })}
           style={{
             paddingRight: `${
               collapsed ? 0 : _.get(textRef, 'current.offsetWidth')
               }px`
           }}>
-            <h5 ref={textRef} className={cx({ collapsed })} >{text}</h5>
-          </div>
-        }
-        {
-          withCloseButton &&
-          <Button
-            icon='close'
-            basic
-            className='close-button'
-            onClick={onCloseClick}
-          />
-        }
-      </Button>
-    )
-  }
+          <h5 ref={textRef} className={cx({ collapsed })} >{text}</h5>
+        </div>
+      }
+      {
+        withCloseButton &&
+        <Button
+          icon='close'
+          basic
+          className='close-button'
+          onClick={onCloseClick}
+        />
+      }
+    </Button>
+  )
+}
 
-export default compose(
+export default compose<
+  RoundButtonProps,
+  Omit<RoundButtonProps, 'animate' | 'setAnimate' | 'collapsed' | 'setCollapsed' | 'toggleAnimation' | 'toggleCollapsed' | 'onClick' | 'onCloseClick'>
+>(
   withState('animate', 'setAnimate', true),
   withState('collapsed', 'setCollapsed', true),
   withHandlers({
-    toggleAnimation: ({ animate, setAnimate }) => () => setAnimate(!animate),
-    toggleCollapsed: ({ collapsed, setCollapsed }) => () => setCollapsed(!collapsed)
+    toggleAnimation: ({ animate, setAnimate }: RoundButtonProps) => () => setAnimate(!animate),
+    toggleCollapsed: ({ collapsed, setCollapsed }: RoundButtonProps) => () => setCollapsed(!collapsed)
   }),
   withHandlers({
-    onClick: ({ toggleAnimation, toggleCollapsed, onClick }) => () => {
+    onClick: ({ toggleAnimation, toggleCollapsed, onClick }: RoundButtonProps) => () => {
       toggleAnimation();
       toggleCollapsed();
       if (onClick) {
         onClick();
       }
     },
-    onCloseClick: ({ onCloseClick }) => (e: MouseEvent) => {
+    onCloseClick: ({ onCloseClick }: RoundButtonProps) => (e: MouseEvent) => {
       e.stopPropagation();
       if (onCloseClick) {
         onCloseClick();
