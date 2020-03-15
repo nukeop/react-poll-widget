@@ -41,6 +41,9 @@ const config: webpack.Configuration = {
       chunkFilename: '[id].css',
     }),
   ],
+  externals: {
+    react: 'react',
+  }
 };
 
 export default config;
