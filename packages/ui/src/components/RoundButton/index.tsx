@@ -8,8 +8,8 @@ import './styles.scss';
 
 type RoundButtonProps = {
   Icon?: React.ReactNode;
-  text: string;
-  color: 'red' | 'orange' | 'yellow' | 'green' | 'blue' | 'violet' | 'olive' | 'teal' | 'purple' | 'pink' | 'brown' | 'grey' | 'black';
+  text?: string;
+  color?: 'red' | 'orange' | 'yellow' | 'green' | 'blue' | 'violet' | 'olive' | 'teal' | 'purple' | 'pink' | 'brown' | 'grey' | 'black';
   animate?: boolean;
   collapsed: boolean;
   withCloseButton?: boolean;
@@ -73,7 +73,7 @@ const RoundButton: React.FC<RoundButtonProps> = ({
 
 export default compose<
   RoundButtonProps,
-  Omit<RoundButtonProps, 'animate' | 'setAnimate' | 'collapsed' | 'setCollapsed' | 'toggleAnimation' | 'toggleCollapsed' | 'onClick' | 'onCloseClick'>
+  Omit<RoundButtonProps, 'animate' | 'setAnimate' | 'collapsed' | 'setCollapsed' | 'toggleAnimation' | 'toggleCollapsed' >
 >(
   withState('animate', 'setAnimate', true),
   withState('collapsed', 'setCollapsed', true),
