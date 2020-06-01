@@ -23,9 +23,9 @@ export const PopupPoll = () => {
           description: <p>Description of the first step</p>,
           type: 'single',
           options: [
-            { label: 'First option', value: '1' }, 
-            { label: 'Second option', value: '2' }, 
-            { label: 'Third option', value: '3' }
+            { id: '1', label: 'First option', value: '1' }, 
+            { id: '2', label: 'Second option', value: '2' }, 
+            { id: '3', label: 'Third option', value: '3' }
           ]
         },
         {
@@ -34,9 +34,9 @@ export const PopupPoll = () => {
           description: <p>Description of the second step</p>,
           type: 'multi',
           options: [
-            { label: 'Option 1', value: '1' }, 
-            { label: 'Option 2', value: '2' }, 
-            { label: 'Option 3', value: '3' }
+            { id: '1', label: 'Option 1', value: '1' }, 
+            { id: '2', label: 'Option 2', value: '2' }, 
+            { id: '3', label: 'Option 3', value: '3' }
           ]
         },
         {
@@ -45,9 +45,9 @@ export const PopupPoll = () => {
           description: <><h4>Now there's a header.</h4><p>Description of the second step</p></>,
           type: 'button',
           options: [
-            { content: 'Option 1', onClick: () => {} }, 
-            { content: 'Option 2', onClick: () => {} }, 
-            { content: 'Option 3', onClick: () => {} }
+            { id: '1', content: 'Option 1', onClick: () => {} }, 
+            { id: '2', content: 'Option 2', onClick: () => {} }, 
+            { id: '3', content: 'Option 3', onClick: () => {} }
           ]
         },
       ]}

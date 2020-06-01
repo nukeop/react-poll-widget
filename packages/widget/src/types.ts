@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { RadioPollOption, PollButton } from '@react-poll-widget/ui';
-import { Button } from 'semantic-ui-react';
 
 export type PollType = 'single' | 'button' | 'multi' | 'text';
 

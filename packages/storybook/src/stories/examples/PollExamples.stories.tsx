@@ -8,14 +8,14 @@ import {
   TextAreaPoll,
   PollButtonGroup,
   ButtonGroupResults,
-  PollResults
+  PollResults,
+  RadioPollOption
 } from '@react-poll-widget/ui';
 
 export default {
   title: 'Examples|Poll examples'
 }
 
-type Option = { label: string, value: string };
 export const PollWithTextArea = () => {
   const [text, setText] = useState('');
   const [submitted, setSubmitted] = useState(false);
@@ -56,12 +56,12 @@ export const PollWithTextArea = () => {
 
 export const PollWithSingleChoiceQuestions = () => {
   const [choice1, setChoice1]: [
-    Option | undefined,
-    (arg: Option) => void
+    RadioPollOption | undefined,
+    (arg: RadioPollOption) => void
   ] = useState();
   const [choice2, setChoice2]: [
-    Option | undefined,
-    (arg: Option) => void
+    RadioPollOption | undefined,
+    (arg: RadioPollOption) => void
   ] = useState();
 
   const [step, setStep]: [
@@ -76,9 +76,9 @@ export const PollWithSingleChoiceQuestions = () => {
 
     <RadioPoll
       options={[
-        { label: 'Emacs', value: 'Emacs' },
-        { label: 'Nano', value: 'Nano' },
-        { label: 'Vim', value: 'Vim' }
+        { id: 'emacs', label: 'Emacs', value: 'Emacs' },
+        { id: 'nano', label: 'Nano', value: 'Nano' },
+        { id: 'vim', label: 'Vim', value: 'Vim' }
       ]}
       selected={choice1}
       onSelect={setChoice1}
@@ -94,9 +94,9 @@ export const PollWithSingleChoiceQuestions = () => {
 
     <RadioPoll
       options={[
-        { label: 'Nuclear', value: 'Nuclear' },
-        { label: 'Spotify', value: 'Spotify' },
-        { label: 'Amarok', value: 'Amarok' }
+        { id: 'nuclear', label: 'Nuclear', value: 'Nuclear' },
+        { id: 'spotify', label: 'Spotify', value: 'Spotify' },
+        { id: 'amarok', label: 'Amarok', value: 'Amarok' }
       ]}
       selected={choice2}
       onSelect={setChoice2}
@@ -134,9 +134,9 @@ export const PollWithSingleChoiceQuestions = () => {
 export const PollWithInstantResults = () => {
   const [showResults, setShowResults] = useState(false);
   const results = [
-    { label: 'Vim', score: 30 },
-    { label: 'Emacs', score: 60 },
-    { label: 'Sublime Text', score: 10 }
+    { id: 'vim', label: 'Vim', score: 30 },
+    { id: 'emacs', label: 'Emacs', score: 60 },
+    { id: 'sublime text', label: 'Sublime Text', score: 10 }
   ];
 
   const Results = () => <>
@@ -155,9 +155,9 @@ export const PollWithInstantResults = () => {
 
     <RadioPoll
       options={[
-        { label: 'Vim', value: 'Vim' },
-        { label: 'Emacs', value: 'Emacs' },
-        { label: 'Sublime Text', value: 'Sublime Text' }
+        { id: 'vim', label: 'Vim', value: 'Vim' },
+        { id: 'emacs', label: 'Emacs', value: 'Emacs' },
+        { id: 'sublime text', label: 'Sublime Text', value: 'Sublime Text' }
       ]}
       onSelect={() => setShowResults(true)}
     />
@@ -186,8 +186,8 @@ export const PollWithInstantResultsAndButtonGroup = () => {
     </PanelContentHeader>
     <ButtonGroupResults
       results={[
-        { label: 'Yes', score: 64 },
-        { label: 'No', score: 36 }
+        { id: 'yes', label: 'Yes', score: 64 },
+        { id: 'no', label: 'No', score: 36 }
       ]}
     />
   </>;
@@ -199,8 +199,8 @@ export const PollWithInstantResultsAndButtonGroup = () => {
 
     <PollButtonGroup
       buttons={[
-        { content: 'Yes', onClick: () => setShowResults(true) },
-        { content: 'No', onClick: () => setShowResults(true) }
+        { id: 'yes', content: 'Yes', onClick: () => setShowResults(true) },
+        { id: 'no', content: 'No', onClick: () => setShowResults(true) }
       ]}
     />
   </>;
