@@ -9,30 +9,21 @@ export default {
 
 export const YesNo = () => <div style={{padding: '2em'}}>
     <PollButtonGroup
-        buttons={[
-            { content: 'Yes' },
-            { content: 'No' }
+        options={[
+            { id: '1', value: 'Yes', label: 'Yes' },
+            { id: '2', value: 'No', label: 'No' }
         ]}
+        selectOption={() => {}}
     />
 </div>
 
 export const YesNoMaybe = () => <div style={{padding: '2em'}}>
     <PollButtonGroup
-        buttons={[
-            { content: 'Yes' },
-            { content: 'Maybe' },
-            { content: 'No' }
+        options={[
+            { id: '1', value: 'Yes', label: 'Yes' },
+            { id: '2', value: 'Maybe', label: 'Maybe' },
+            { id: '3', value: 'No', label: 'No' }
         ]}
-    />
-</div>
-
-export const WithIcons = () => <div style={{padding: '2em'}}>
-    <PollButtonGroup
-        icons
-        buttons={[
-            { content: <Icon size='big' name='smile' /> },
-            { content: <Icon size='big' name='meh' /> },
-            { content: <Icon size='big' name='frown' /> }
-        ]}
+        selectOption={() => {}}
     />
 </div>

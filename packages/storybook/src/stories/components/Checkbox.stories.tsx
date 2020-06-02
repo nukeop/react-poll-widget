@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import _ from 'lodash';
 import { Button, Form, Input } from 'semantic-ui-react';
 
-import { Checkbox, RadioPollOption } from '@react-poll-widget/ui';
+import { Checkbox } from '@react-poll-widget/ui';
 
 export default {
   title: 'Components|Checkbox'

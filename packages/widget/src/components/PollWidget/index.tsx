@@ -13,9 +13,8 @@ import {
   PanelContentHeader,
   PanelContentFooter,
   RadioPoll,
-  RadioPollOption,
+  PollOption,
   PollButtonGroup,
-  PollButton,
   TextAreaPoll
 } from '@react-poll-widget/ui';
 
@@ -25,15 +24,15 @@ const PollComponent: React.FC<{ currentStep: PollStep }> = ({ currentStep }) => 
   switch (currentStep.type) {
     case 'single':
       return <RadioPoll
-        options={currentStep.options as RadioPollOption[]}
+        options={currentStep.options}
       />;
     case 'multi':
       return <RadioPoll
-        options={currentStep.options as RadioPollOption[]}
+        options={currentStep.options}
       />;
     case 'button':
       return <PollButtonGroup
-        buttons={currentStep.options as PollButton[]}
+        options={currentStep.options}
       />;
     case 'text':
       return <TextAreaPoll />;

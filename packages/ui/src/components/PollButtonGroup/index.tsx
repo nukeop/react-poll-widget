@@ -1,27 +1,35 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Button } from 'semantic-ui-react';
 
-import { PollButton } from '../types';
+import { PollOption, SelectOption } from '../types';
 import './styles.scss';
 
 const PollButtonGroup: React.FC<{
-    buttons: PollButton[],
+    options: PollOption[],
+    selectOption: SelectOption,
     icons?: boolean
 }> = ({
-    buttons,
-    icons=false
+    options,
+    selectOption,
+    icons = false
 }) => (
-            <Button.Group 
-            fluid 
-            icon={icons}
-            className='poll-button-group'
+            <Button.Group
+                fluid
+                icon={icons}
+                className='poll-button-group'
             >
                 {
-                    buttons.map(button => (
-                        <Button onClick={button.onClick}>
-                            {button.content}
-                        </Button>
-                    ))
+                    options.map(option => {
+                        const handleClick = useCallback(
+                            () => selectOption(option),
+                            [option, selectOption]
+                        );
+                        return (
+                            <Button onClick={handleClick}>
+                                {option.label}
+                            </Button>
+                        )
+                    })
                 }
             </Button.Group>
         )

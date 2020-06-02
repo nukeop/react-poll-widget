@@ -24,7 +24,7 @@ const ButtonGroupResults: React.FC<{
               style={{ flex: `1 1 ${result.score}%` }}
             >
               <label>
-                <span className='label'>{result.label}</span>
+                <span className='label'>{result.option.label}</span>
                 <span className='score'>{result.score}%</span>
               </label>
             </div>

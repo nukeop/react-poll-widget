@@ -3,7 +3,7 @@ import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 const config: webpack.Configuration = {
-  mode: 'production',
+  mode: 'development',
   entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -16,7 +16,7 @@ const config: webpack.Configuration = {
     {
        test: /\.(js|jsx|tsx|ts)$/,
        exclude: /node_modules/,
-       loader: 'ts-loader'
+       loader: 'babel-loader'
       },
       {
         test: /\.s?css$/i,

@@ -9,8 +9,8 @@ export default {
 export const Right = () => <div style={{padding: '2em'}}>
   <ButtonGroupResults
     results={[
-      { label: 'Test 1', score: 25 },
-      { label: 'Test 2', score: 75 },
+      { option: { id: '1', value: '1', label: 'Test 1' }, score: 25 },
+      { option: { id: '2', value: '2',  label: 'Test 2' }, score: 75 },
     ]}
   />
 </div>;
@@ -18,8 +18,8 @@ export const Right = () => <div style={{padding: '2em'}}>
 export const Left = () => <div style={{padding: '2em'}}>
   <ButtonGroupResults
     results={[
-      { label: 'Test 1', score: 66 },
-      { label: 'Test 2', score: 33 },
+      { option: { id: '1', value: '1', label: 'Test 1' }, score: 66 },
+      { option: { id: '2', value: '2', label: 'Test 2' }, score: 33 },
     ]}
   />
 </div>;

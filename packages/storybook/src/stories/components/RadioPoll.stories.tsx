@@ -1,24 +1,23 @@
 import React, { useState } from 'react';
 
-import { RadioPoll } from '@react-poll-widget/ui';
+import { RadioPoll, PollOption } from '@react-poll-widget/ui';
 
 export default {
   title: 'Components|Radio poll'
 };
 
-type Option = {label: string, value: string};
 export const Basic = () => {
   const [option, select]: [
-    Option | undefined,
-    (arg: Option) => void
+    PollOption | undefined,
+    (arg: PollOption) => void
   ] = useState();
   return (
     <div>
       <RadioPoll
         options={[
-          { label: 'Test 1', value: '1' },
-          { label: 'Test 2', value: '2' },
-          { label: 'Test 3', value: '3' }
+          { id:'1', label: 'Test 1', value: '1' },
+          { id:'2', label: 'Test 2', value: '2' },
+          { id:'3', label: 'Test 3', value: '3' }
         ]}
         selected={option}
         onSelect={select}
@@ -32,9 +31,9 @@ export const Loading = () => {
     <div>
       <RadioPoll
         options={[
-          { label: 'Test 1', value: '1' },
-          { label: 'Test 2', value: '2' },
-          { label: 'Test 3', value: '3' }
+          { id:'1', label: 'Test 1', value: '1' },
+          { id:'2', label: 'Test 2', value: '2' },
+          { id:'3', label: 'Test 3', value: '3' }
         ]}
         loading
       />
@@ -44,17 +43,17 @@ export const Loading = () => {
 
 export const WithCustomOption = () => {
   const [option, select]: [
-    Option | undefined,
-    (arg: Option | undefined) => void
+    PollOption | undefined,
+    (arg: PollOption | undefined) => void
    ] = useState();
   const [customSelected, selectCustom] = useState(false);
   return (
     <div>
       <RadioPoll
         options={[
-          { label: 'Test 1', value: '1' },
-          { label: 'Test 2', value: '2' },
-          { label: 'Test 3', value: '3' }
+          { id:'1', label: 'Test 1', value: '1' },
+          { id:'2', label: 'Test 2', value: '2' },
+          { id:'3', label: 'Test 3', value: '3' }
         ]}
         selected={option}
         onSelect={option => {

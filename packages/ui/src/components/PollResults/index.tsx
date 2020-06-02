@@ -21,7 +21,7 @@ const PollResults: React.FC<{
                   {result.score}%
                 </span>
                 <span className="label">
-                  {result.label}
+                  {result.option.label}
                 </span>
               </label>
             </div>

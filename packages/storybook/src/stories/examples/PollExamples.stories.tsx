@@ -9,7 +9,7 @@ import {
   PollButtonGroup,
   ButtonGroupResults,
   PollResults,
-  RadioPollOption
+  PollOption
 } from '@react-poll-widget/ui';
 
 export default {
@@ -56,12 +56,12 @@ export const PollWithTextArea = () => {
 
 export const PollWithSingleChoiceQuestions = () => {
   const [choice1, setChoice1]: [
-    RadioPollOption | undefined,
-    (arg: RadioPollOption) => void
+    PollOption | undefined,
+    (arg: PollOption) => void
   ] = useState();
   const [choice2, setChoice2]: [
-    RadioPollOption | undefined,
-    (arg: RadioPollOption) => void
+    PollOption | undefined,
+    (arg: PollOption) => void
   ] = useState();
 
   const [step, setStep]: [

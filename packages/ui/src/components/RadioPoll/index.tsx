@@ -1,14 +1,14 @@
 import React from 'react';
 import { Form, Input } from 'semantic-ui-react';
 
-import { RadioPollOption } from '../types';
+import { PollOption } from '../types';
 import Checkbox from '../Checkbox';
 import './styles.scss';
 
 const RadioPoll: React.FC<{
-  options: RadioPollOption[];
-  selected?: RadioPollOption;
-  onSelect?: (option: RadioPollOption) => void;
+  options: PollOption[];
+  selected?: PollOption;
+  onSelect?: (option: PollOption) => void;
   onSelectCustom?: () =>  void;
   onChange?: (e: React.ChangeEvent) => void;
   hasCustomOption?: boolean;
