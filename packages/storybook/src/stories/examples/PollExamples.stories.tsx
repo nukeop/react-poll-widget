@@ -186,8 +186,8 @@ export const PollWithInstantResultsAndButtonGroup = () => {
     </PanelContentHeader>
     <ButtonGroupResults
       results={[
-        { id: 'yes', label: 'Yes', score: 64 },
-        { id: 'no', label: 'No', score: 36 }
+        { option: { id: 'yes', label: 'Yes', value: 'No' }, score: 64 },
+        { option: { id: 'no', label: 'No' , value: 'No' }, score: 36 }
       ]}
     />
   </>;
@@ -198,10 +198,11 @@ export const PollWithInstantResultsAndButtonGroup = () => {
     </PanelContentHeader>
 
     <PollButtonGroup
-      buttons={[
-        { id: 'yes', content: 'Yes', onClick: () => setShowResults(true) },
-        { id: 'no', content: 'No', onClick: () => setShowResults(true) }
+      options={[
+        { id: 'yes', label: 'Yes', value: 'No' },
+        { id: 'no', label: 'No', value: 'No' }
       ]}
+      selectOption={() => setShowResults(true)}
     />
   </>;
 

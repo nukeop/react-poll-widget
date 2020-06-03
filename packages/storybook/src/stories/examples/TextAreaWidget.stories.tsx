@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import '@react-poll-widget/ui';
-import { Button, Icon, Transition } from 'semantic-ui-react';
+import { Button, Transition } from 'semantic-ui-react';
 
 import {
   Panel,
