@@ -55,9 +55,9 @@ export const FullWidget = () => {
     </PanelContentHeader>
     <PollResults
       results={[
-        { id: 'vim', label: 'Vim', score: 30 },
-        { id: 'emacs', label: 'Emacs', score: 60 },
-        { id: 'sublime text', label: 'Sublime Text', score: 10 }
+        { option: { id: 'vim', label: 'Vim', value: '1' }, score: 30 },
+        { option: { id: 'emacs', label: 'Emacs', value: '2' }, score: 60 },
+        { option: { id: 'sublime text', label: 'Sublime Text', value: '3' }, score: 10 }
       ]}
     />
           </Panel>
