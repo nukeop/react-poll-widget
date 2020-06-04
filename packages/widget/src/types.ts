@@ -11,3 +11,6 @@ export type PollStep = {
   type: PollType;
   options: PollOption[];
 };
+
+export type PollStepState = PollOption | PollOption[] | string | undefined;
+export type PollStateReturnType = [PollStepState, React.Dispatch<React.SetStateAction<PollStepState>>];1

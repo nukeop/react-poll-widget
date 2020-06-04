@@ -18,7 +18,7 @@ import {
   TextAreaPoll
 } from '@react-poll-widget/ui';
 
-import { PollStep, PollType } from '../../types';
+import { PollStep } from '../../types';
 
 const PollComponent: React.FC<{ currentStep: PollStep }> = ({ currentStep }) => {
   switch (currentStep.type) {
@@ -33,6 +33,7 @@ const PollComponent: React.FC<{ currentStep: PollStep }> = ({ currentStep }) => 
     case 'button':
       return <PollButtonGroup
         options={currentStep.options}
+        selectOption={() => {}}
       />;
     case 'text':
       return <TextAreaPoll />;

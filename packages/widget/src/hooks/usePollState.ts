@@ -1,20 +1,22 @@
+import React, { useState } from 'react';
+import { PollOption } from '@react-poll-widget/ui';
 import _ from 'lodash';
-import { PollStep } from "../types";
-import { useState } from 'react';
+import {
+  PollStep,
+  PollStepState,
+  PollStateReturnType
+} from '../types';
 
-export const usePollState: ((steps: PollStep[]) => void) = steps => {
-  const pollState = _.map(steps, step => {
-    const abc = useState();
-    switch(step.type) {
+export const usePollState: ((steps: PollStep[]) => PollStateReturnType[]) = steps => {
+  return _.map(steps, step => {
+    switch (step.type) {
       case 'single':
-        return useState(_.head(step.options));
       case 'button':
-        return useState(_.head(step.options));
+        return useState<PollStepState>(_.head(step.options));
       case 'multi':
-        return useState([]);
-      default:
+        return useState<PollStepState>([]);
+      case 'text':
+        return useState<PollStepState>('');
     }
   });
-
-  return pollState;
 }
