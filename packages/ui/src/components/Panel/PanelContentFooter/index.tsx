@@ -40,7 +40,7 @@ const PanelContentFooter: React.FC<{
       <div className={'panel-content-footer'}>
         <div className={cx(
           'right-aligned row',
-          { 'two-buttons': hasBack || hasSubmit && hasNext }
+          { 'two-buttons': hasBack || (hasSubmit && hasNext) }
         )} >
           {
             ((hasBack && !hasNext) || (hasBack && !hasSubmit)) &&

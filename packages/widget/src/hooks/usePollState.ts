@@ -4,10 +4,11 @@ import _ from 'lodash';
 import {
   PollStep,
   PollStepState,
-  PollStateReturnType
+  PollStateReturnType,
+  PollWidgetState
 } from '../types';
 
-export const usePollState: ((steps: PollStep[]) => PollStateReturnType[]) = steps => {
+export const usePollState: ((steps: PollStep[]) => PollWidgetState) = steps => {
   return _.map(steps, step => {
     switch (step.type) {
       case 'single':

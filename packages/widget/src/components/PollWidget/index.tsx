@@ -18,13 +18,23 @@ import {
   TextAreaPoll
 } from '@react-poll-widget/ui';
 
-import { PollStep } from '../../types';
+import { PollStep, PollWidgetState, PollStateReturnType } from '../../types';
+import { usePollState } from '../../hooks/usePollState';
 
-const PollComponent: React.FC<{ currentStep: PollStep }> = ({ currentStep }) => {
+type PollComponentProps = {
+  currentStep: PollStep,
+  currentStepState: PollStateReturnType
+};
+const PollComponent: React.FC<PollComponentProps> = ({
+  currentStep,
+  currentStepState
+}) => {
   switch (currentStep.type) {
     case 'single':
+      const onSelect = currentStepState[1];
       return <RadioPoll
         options={currentStep.options}
+        onSelect={onSelect}
       />;
     case 'multi':
       return <RadioPoll
@@ -33,7 +43,7 @@ const PollComponent: React.FC<{ currentStep: PollStep }> = ({ currentStep }) => 
     case 'button':
       return <PollButtonGroup
         options={currentStep.options}
-        selectOption={() => {}}
+        selectOption={() => { }}
       />;
     case 'text':
       return <TextAreaPoll />;
@@ -72,6 +82,8 @@ const PollWidgetComponent: React.FC<PollWidgetComponentProps> = ({
   goForward
 }) => {
   const currentStep: PollStep = steps[step];
+  const pollState: PollWidgetState = usePollState(steps);
+
   return (
     <TransitionablePortal
       closeOnTriggerClick
@@ -92,7 +104,9 @@ const PollWidgetComponent: React.FC<PollWidgetComponentProps> = ({
           {currentStep?.header}
         </PanelContentHeader>
         {currentStep?.description}
-        <PollComponent currentStep={currentStep} />
+        <PollComponent
+          currentStep={currentStep}
+        />
         <PanelContentFooter
           hasNext={step < steps.length - 1}
           hasBack={step > 0}

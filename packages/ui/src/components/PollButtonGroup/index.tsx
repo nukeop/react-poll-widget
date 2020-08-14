@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { Button } from 'semantic-ui-react';
 
 import { PollOption, SelectOption } from '../types';
@@ -20,10 +20,7 @@ const PollButtonGroup: React.FC<{
             >
                 {
                     options.map(option => {
-                        const handleClick = useCallback(
-                            () => selectOption(option),
-                            [option, selectOption]
-                        );
+                        const handleClick = () => selectOption(option);
                         return (
                             <Button onClick={handleClick}>
                                 {option.label}
