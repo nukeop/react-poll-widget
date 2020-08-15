@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from 'semantic-ui-react';
 
-import { PollWidget } from '@react-poll-widget/widget';
+import { PollWidget, PollType } from '@react-poll-widget/widget';
 
 export default {
   title: 'Widgets|Poll Widget'
@@ -21,7 +21,7 @@ export const PopupPoll = () => {
           title: 'First step',
           header: 'This is the first step',
           description: <p>Description of the first step</p>,
-          type: 'single',
+          type: 'single' as PollType,
           options: [
             { id: '1', label: 'First option', value: '1' }, 
             { id: '2', label: 'Second option', value: '2' }, 
@@ -32,7 +32,7 @@ export const PopupPoll = () => {
           title: 'Second step',
           header: 'This is the second step',
           description: <p>Description of the second step</p>,
-          type: 'multi',
+          type: 'multi' as PollType,
           options: [
             { id: '1', label: 'Option 1', value: '1' }, 
             { id: '2', label: 'Option 2', value: '2' }, 
@@ -43,11 +43,11 @@ export const PopupPoll = () => {
           title: 'Third step',
           header: 'This is the third step',
           description: <><h4>Now there's a header.</h4><p>Description of the second step</p></>,
-          type: 'button',
+          type: 'button' as PollType,
           options: [
-            { id: '1', content: 'Option 1', onClick: () => {} }, 
-            { id: '2', content: 'Option 2', onClick: () => {} }, 
-            { id: '3', content: 'Option 3', onClick: () => {} }
+            { id: '1', label: 'Option 1', value: 'Option 1' }, 
+            { id: '2', label: 'Option 2', value: 'Option 2' }, 
+            { id: '3', label: 'Option 3', value: 'Option 3' }
           ]
         },
       ]}

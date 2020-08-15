@@ -13,7 +13,6 @@ import {
   PanelContentHeader,
   PanelContentFooter,
   RadioPoll,
-  PollOption,
   PollButtonGroup,
   TextAreaPoll
 } from '@react-poll-widget/ui';
