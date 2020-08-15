@@ -16,7 +16,11 @@ const config: webpack.Configuration = {
     {
        test: /\.(js|jsx|tsx|ts)$/,
        exclude: /node_modules/,
-       loader: 'babel-loader'
+       loader: 'ts-loader',
+       include: [
+         path.resolve(__dirname, 'src'),
+         /ui\/src/
+       ]
       },
       {
         test: /\.s?css$/i,

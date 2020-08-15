@@ -17,7 +17,7 @@ import {
   TextAreaPoll
 } from '@react-poll-widget/ui';
 
-import { PollStep, PollWidgetState, PollStateReturnType } from '../../types';
+import { PollStep, PollWidgetState, PollStateReturnType, PollStepState } from '../../types';
 import { usePollState } from '../../hooks/usePollState';
 
 type PollComponentProps = {
@@ -62,7 +62,7 @@ type PollWidgetContainerProps = {
 }
 
 type PollWidgetComponentProps = PollWidgetContainerProps & {
-  step: number;
+  currentStepIndex: number;
   setStep: (i: number) => void;
   goBack: () => void;
   goForward: () => void;
@@ -73,14 +73,15 @@ const PollWidgetComponent: React.FC<PollWidgetComponentProps> = ({
   transition,
   color,
   steps,
-  step,
+  currentStepIndex,
   setStep,
   onOpen,
   onClose,
   goBack,
   goForward
 }) => {
-  const currentStep: PollStep = steps[step];
+  const currentStep: PollStep = steps[currentStepIndex];
+  const stepsStates = steps.map(step => useState<PollStepState>());
   const pollState: PollWidgetState = usePollState(steps);
 
   return (
@@ -105,11 +106,12 @@ const PollWidgetComponent: React.FC<PollWidgetComponentProps> = ({
         {currentStep?.description}
         <PollComponent
           currentStep={currentStep}
+          currentStepState={stepsStates[currentStepIndex]}
         />
         <PanelContentFooter
-          hasNext={step < steps.length - 1}
-          hasBack={step > 0}
-          hasSubmit={step === steps.length - 1}
+          hasNext={currentStepIndex < steps.length - 1}
+          hasBack={currentStepIndex > 0}
+          hasSubmit={currentStepIndex === steps.length - 1}
           onBack={goBack}
           onNext={goForward}
         />
@@ -122,20 +124,20 @@ const PollWidget: React.FC<PollWidgetContainerProps> = ({
   steps,
   ...rest
 }) => {
-  const [step, setStep] = useState(0);
+  const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const goBack = useCallback(
-    () => setStep(Math.max(step - 1, 0)),
-    [step, setStep]
+    () => setCurrentStepIndex(Math.max(currentStepIndex - 1, 0)),
+    [currentStepIndex, setCurrentStepIndex]
   );
   const goForward = useCallback(
-    () => setStep(Math.min(step + 1, steps.length - 1)),
-    [steps, step, setStep]
+    () => setCurrentStepIndex(Math.min(currentStepIndex + 1, steps.length - 1)),
+    [steps, currentStepIndex, setCurrentStepIndex]
   );
 
   return <PollWidgetComponent
     steps={steps}
-    step={step}
-    setStep={setStep}
+    currentStepIndex={currentStepIndex}
+    setStep={setCurrentStepIndex}
     goBack={goBack}
     goForward={goForward}
     {...rest}
