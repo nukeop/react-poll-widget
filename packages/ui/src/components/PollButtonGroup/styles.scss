@@ -1,7 +1,11 @@
-@import '../../colors';
+@import "../../colors";
 
 .poll-button-group {
-    button.ui.button:not(:last-child) {
-        border-right: 1px solid $darkwhite;
-    }
+  button.ui.button {
+    width: 0;
+  }
+
+  button.ui.button:not(:last-child) {
+    border-right: 1px solid $darkwhite;
+  }
 }

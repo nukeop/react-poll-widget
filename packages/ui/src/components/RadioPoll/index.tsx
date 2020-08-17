@@ -1,19 +1,20 @@
 import React from 'react';
 import { Form, Input } from 'semantic-ui-react';
 
-import { PollOption } from '../types';
+import { PollOption, SelectOption } from '../types';
 import Checkbox from '../Checkbox';
 import './styles.scss';
 
 const RadioPoll: React.FC<{
   options: PollOption[];
-  selected?: PollOption;
-  onSelect?: (option: PollOption) => void;
+  selected?: PollOption | PollOption[];
+  onSelect?: SelectOption;
   onSelectCustom?: () =>  void;
   onChange?: (e: React.ChangeEvent) => void;
   hasCustomOption?: boolean;
   customSelected?: boolean;
   loading?: boolean;
+  multi?: boolean;
 }> = ({
   options,
   selected,
@@ -22,16 +23,21 @@ const RadioPoll: React.FC<{
   onChange,
   hasCustomOption,
   customSelected,
-  loading
+  loading,
+  multi
 }) => (
       <Form loading={loading}>
         {
           options.map(option => (
             <Form.Field>
               <Checkbox
-                type='radio'
+                type={multi ? 'checkbox' : 'radio'}
                 label={option.label}
-                checked={selected !== undefined && selected.value === option.value}
+                checked={
+                  selected !== undefined && 
+                  (!Array.isArray(selected) && selected.value === option.value) ||
+                  (Array.isArray(selected) && selected.includes(option))
+                }
                 onClick={() => onSelect && onSelect(option)}
               />
             </Form.Field>
@@ -41,7 +47,7 @@ const RadioPoll: React.FC<{
           hasCustomOption &&
           <Form.Field>
           <Checkbox
-            type='radio'
+            type={multi ? 'checkbox' : 'radio'}
             label={
               <Input size='small' onChange={onChange} />
             }

@@ -5,30 +5,34 @@ import { PollOption, SelectOption } from '../types';
 import './styles.scss';
 
 const PollButtonGroup: React.FC<{
-    options: PollOption[],
-    selectOption: SelectOption,
-    icons?: boolean
+  options: PollOption[],
+  selected?: PollOption;
+  onSelect: SelectOption,
+  icons?: boolean,
+  loading?: boolean
 }> = ({
-    options,
-    selectOption,
-    icons = false
-}) => (
-            <Button.Group
-                fluid
-                icon={icons}
-                className='poll-button-group'
-            >
-                {
-                    options.map(option => {
-                        const handleClick = () => selectOption(option);
-                        return (
-                            <Button onClick={handleClick}>
-                                {option.label}
-                            </Button>
-                        )
-                    })
-                }
-            </Button.Group>
-        )
+  options,
+  selected,
+  onSelect,
+  icons = false,
+  loading = false
+}) => <Button.Group
+  fluid
+  icon={icons}
+  className='poll-button-group'
+  loading={loading}
+>
+      {
+        options.map(option => {
+          const handleClick = () => onSelect(option);
+          return (
+            <Button onClick={handleClick} active={selected?.value === option.value}>
+              {option.label}
+            </Button>
+          )
+        })
+      }
+    </Button.Group>
+
 
 export default PollButtonGroup

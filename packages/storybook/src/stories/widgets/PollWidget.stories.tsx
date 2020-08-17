@@ -16,10 +16,11 @@ export const PopupPoll = () => {
       color='blue'
       onOpen={() => setIcon('close')}
       onClose={() => setIcon('question')}
+      onSubmit={console.log}
       steps={[
         {
           title: 'First step',
-          header: 'This is the first step',
+          header: 'This is a single choice (radio) poll',
           description: <p>Description of the first step</p>,
           type: 'single' as PollType,
           options: [
@@ -30,7 +31,7 @@ export const PopupPoll = () => {
         },
         {
           title: 'Second step',
-          header: 'This is the second step',
+          header: 'This is a multiple choice poll',
           description: <p>Description of the second step</p>,
           type: 'multi' as PollType,
           options: [
@@ -41,7 +42,7 @@ export const PopupPoll = () => {
         },
         {
           title: 'Third step',
-          header: 'This is the third step',
+          header: 'This is the third step. You can pick only one option',
           description: <><h4>Now there's a header.</h4><p>Description of the second step</p></>,
           type: 'button' as PollType,
           options: [

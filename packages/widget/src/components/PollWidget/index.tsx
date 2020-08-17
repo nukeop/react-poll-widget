@@ -14,7 +14,8 @@ import {
   PanelContentFooter,
   RadioPoll,
   PollButtonGroup,
-  TextAreaPoll
+  TextAreaPoll,
+  PollOption
 } from '@react-poll-widget/ui';
 
 import { PollStep, PollWidgetState, PollStateReturnType, PollStepState } from '../../types';
@@ -28,21 +29,38 @@ const PollComponent: React.FC<PollComponentProps> = ({
   currentStep,
   currentStepState
 }) => {
+  const selected = currentStepState[0];
+  const select = currentStepState[1];
   switch (currentStep.type) {
+
+
     case 'single':
-      const onSelect = currentStepState[1];
       return <RadioPoll
         options={currentStep.options}
-        onSelect={onSelect}
+        selected={selected as PollOption}
+        onSelect={select}
       />;
     case 'multi':
+      const onSelect = (option: PollOption) => {
+        if (Array.isArray(selected)) {
+          if (selected.includes(option)) {
+            select(selected.filter(value => value !== option));
+          } else {
+            select([...selected, option]);
+          }
+        }
+      }
       return <RadioPoll
         options={currentStep.options}
+        selected={selected as PollOption[]}
+        onSelect={onSelect}
+        multi
       />;
     case 'button':
       return <PollButtonGroup
         options={currentStep.options}
-        selectOption={() => { }}
+        selected={selected as PollOption}
+        onSelect={select}
       />;
     case 'text':
       return <TextAreaPoll />;
@@ -59,11 +77,11 @@ type PollWidgetContainerProps = {
 
   onOpen: (event: null, data: PortalProps & TransitionablePortalState) => void;
   onClose: (event: null, data: PortalProps & TransitionablePortalState) => void;
+  onSubmit: (state: PollStepState[]) => void;
 }
 
 type PollWidgetComponentProps = PollWidgetContainerProps & {
   currentStepIndex: number;
-  setStep: (i: number) => void;
   goBack: () => void;
   goForward: () => void;
 };
@@ -74,15 +92,17 @@ const PollWidgetComponent: React.FC<PollWidgetComponentProps> = ({
   color,
   steps,
   currentStepIndex,
-  setStep,
   onOpen,
   onClose,
+  onSubmit,
   goBack,
   goForward
 }) => {
   const currentStep: PollStep = steps[currentStepIndex];
-  const stepsStates = steps.map(step => useState<PollStepState>());
   const pollState: PollWidgetState = usePollState(steps);
+  const submitHandler = useCallback(() => onSubmit(
+    pollState.map(item => item[0])
+  ), [onSubmit, pollState]);
 
   return (
     <TransitionablePortal
@@ -106,7 +126,7 @@ const PollWidgetComponent: React.FC<PollWidgetComponentProps> = ({
         {currentStep?.description}
         <PollComponent
           currentStep={currentStep}
-          currentStepState={stepsStates[currentStepIndex]}
+          currentStepState={pollState[currentStepIndex]}
         />
         <PanelContentFooter
           hasNext={currentStepIndex < steps.length - 1}
@@ -114,6 +134,7 @@ const PollWidgetComponent: React.FC<PollWidgetComponentProps> = ({
           hasSubmit={currentStepIndex === steps.length - 1}
           onBack={goBack}
           onNext={goForward}
+          onSubmit={submitHandler}
         />
       </Panel>
     </TransitionablePortal>
