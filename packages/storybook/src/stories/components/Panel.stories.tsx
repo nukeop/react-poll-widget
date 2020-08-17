@@ -56,3 +56,19 @@ export const PanelWithContent = () => <div>
     <PanelContentFooter hasSubmit hasBack />
   </Panel>
 </div>;
+
+export const PanelWithContentWithError = () => <div>
+  <Panel
+    color='rose'
+    hasHeader
+    hasFooter
+    headerContent='Test header'
+  >
+    <PanelContentHeader>
+      This is the header.
+    </PanelContentHeader>
+    Ths is the content of the panel.
+
+    <PanelContentFooter hasSubmit hasBack error='An error has occurred.'/>
+  </Panel>
+</div>;

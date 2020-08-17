@@ -26,7 +26,11 @@ const PollButtonGroup: React.FC<{
         options.map(option => {
           const handleClick = () => onSelect(option);
           return (
-            <Button onClick={handleClick} active={selected?.value === option.value}>
+            <Button
+              key={option.value}
+              onClick={handleClick}
+              active={selected?.value === option.value}
+            >
               {option.label}
             </Button>
           )

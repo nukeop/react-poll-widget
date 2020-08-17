@@ -29,7 +29,7 @@ const RadioPoll: React.FC<{
       <Form loading={loading}>
         {
           options.map(option => (
-            <Form.Field>
+            <Form.Field key={option.value}>
               <Checkbox
                 type={multi ? 'checkbox' : 'radio'}
                 label={option.label}

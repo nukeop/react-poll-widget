@@ -1,6 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
-import { Button, Icon } from 'semantic-ui-react';
+import _ from 'lodash';
+import { Button, Icon, Message } from 'semantic-ui-react';
 
 import { PanelColor } from '../../types';
 import './styles.scss';
@@ -22,6 +23,7 @@ const PanelContentFooter: React.FC<{
   hasBack?: boolean,
   nextDisabled?: boolean,
   submitDisabled?: boolean,
+  error?: string,
   onSubmit?: () => void,
   onNext?: () => void,
   onBack?: () => void,
@@ -32,12 +34,20 @@ const PanelContentFooter: React.FC<{
   hasBack,
   nextDisabled,
   submitDisabled,
+  error,
   onSubmit,
   onNext,
   onBack,
   color = 'black'
 }) => (
-      <div className={'panel-content-footer'}>
+      <div className='panel-content-footer'>
+        {
+          !_.isNil(error) &&
+          <Message color='red'>
+            <Icon name='warning circle'/>
+            {error}
+            </Message>
+        }
         <div className={cx(
           'right-aligned row',
           { 'two-buttons': hasBack || (hasSubmit && hasNext) }
@@ -49,7 +59,7 @@ const PanelContentFooter: React.FC<{
           {
             hasSubmit &&
             <Button
-              disabled={submitDisabled}
+              disabled={submitDisabled || !_.isNil(error)}
               icon
               labelPosition='right'
               color='green'
@@ -62,7 +72,7 @@ const PanelContentFooter: React.FC<{
           {
             hasNext &&
             <Button
-              disabled={nextDisabled}
+              disabled={nextDisabled || !_.isNil(error)}
               icon
               labelPosition='right'
               className={color}
