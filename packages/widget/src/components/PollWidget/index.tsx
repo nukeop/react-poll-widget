@@ -104,6 +104,8 @@ const PollWidgetComponent: React.FC<PollWidgetComponentProps> = ({
     pollState.map(item => item[0])
   ), [onSubmit, pollState]);
 
+  const cannotProceed = currentStep.type === 'single' && pollState[currentStepIndex][0] === undefined;
+
   return (
     <TransitionablePortal
       closeOnTriggerClick
@@ -135,6 +137,9 @@ const PollWidgetComponent: React.FC<PollWidgetComponentProps> = ({
           onBack={goBack}
           onNext={goForward}
           onSubmit={submitHandler}
+          nextDisabled={cannotProceed}
+          submitDisabled={cannotProceed}
+          error={cannotProceed ? 'Select an answer to proceed' : undefined}
         />
       </Panel>
     </TransitionablePortal>
@@ -158,7 +163,6 @@ const PollWidget: React.FC<PollWidgetContainerProps> = ({
   return <PollWidgetComponent
     steps={steps}
     currentStepIndex={currentStepIndex}
-    setStep={setCurrentStepIndex}
     goBack={goBack}
     goForward={goForward}
     {...rest}
