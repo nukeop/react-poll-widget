@@ -98,13 +98,15 @@ const PollWidgetComponent: React.FC<PollWidgetComponentProps> = ({
   goBack,
   goForward
 }) => {
-  const currentStep: PollStep = steps[currentStepIndex];
-  const pollState: PollWidgetState = usePollState(steps);
-  const submitHandler = useCallback(() => onSubmit(
-    pollState.map(item => item[0])
-  ), [onSubmit, pollState]);
+  const currentStep = steps[currentStepIndex];
+  const pollState = usePollState(steps);
 
-  const cannotProceed = currentStep.type === 'single' && pollState[currentStepIndex][0] === undefined;
+  const submitHandler = useCallback(
+    () => onSubmit(
+    pollState.map(item => (item as PollStateReturnType)[0])), 
+    [onSubmit, pollState]);
+
+  const cannotProceed = currentStep.type === 'single' && (pollState[currentStepIndex] as PollStateReturnType)[0] === undefined;
 
   return (
     <TransitionablePortal
@@ -128,7 +130,7 @@ const PollWidgetComponent: React.FC<PollWidgetComponentProps> = ({
         {currentStep?.description}
         <PollComponent
           currentStep={currentStep}
-          currentStepState={pollState[currentStepIndex]}
+          currentStepState={pollState[currentStepIndex] as PollStateReturnType}
         />
         <PanelContentFooter
           hasNext={currentStepIndex < steps.length - 1}

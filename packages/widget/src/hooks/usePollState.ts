@@ -13,6 +13,7 @@ export const usePollState: ((steps: PollStep[]) => PollWidgetState) = steps => {
     switch (step.type) {
       case 'single':
       case 'button':
+      default:
         return useState<PollStepState>();
       case 'multi':
         return useState<PollStepState>([]);

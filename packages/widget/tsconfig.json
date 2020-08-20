@@ -16,11 +16,13 @@
     "resolveJsonModule": true,
     "declaration": true,
     "declarationDir": "dist",
-    "isolatedModules": true,
     "jsx": "react",
     "allowJs": true
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "src/tests"
   ]
 }

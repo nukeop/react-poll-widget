@@ -49,9 +49,9 @@ const steps: {[key: string]: PollStep} = {
 describe('usePollState hook test', () =>  {
   it('single step with single selection', () => {
     const { result } = renderHook<{}, PollStateReturnType[]>(() => usePollState([steps.single]))
-    
+
     act(() => {
-      expect(result.current[0][0]).toBe(steps.single.options[0]);
+      expect(result.current[0][0]).toBe(undefined);
       expect(result.current[0][1]).toBeInstanceOf(Function);
     })
   });
@@ -60,6 +60,7 @@ describe('usePollState hook test', () =>  {
     const { result } = renderHook<{}, PollStateReturnType[]>(() => usePollState([steps.multi]))
     
     act(() => {
+      expect(result.current[0][0]).toBeInstanceOf(Array)
       expect(result.current[0][0]).toHaveLength(0);
       expect(result.current[0][1]).toBeInstanceOf(Function);
     })

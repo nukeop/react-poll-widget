@@ -15,11 +15,16 @@ module.exports = {
     const rules = config.module.rules;
     rules[3].oneOf[1].include.push(path.resolve(__dirname, '..', '..', 'ui'))
     rules[3].oneOf[1].include.push(path.resolve(__dirname, '..', '..', 'widget'))
+    
     return {
       ...config,
       module: {
         ...config.module,
         rules: [ ...rules ]
+      },
+      resolve: {
+        ...config.resolve,
+        symlinks: false
       }
     };
   }

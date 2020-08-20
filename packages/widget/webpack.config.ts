@@ -15,11 +15,14 @@ const config: webpack.Configuration = {
     rules: [
     {
        test: /\.(js|jsx|tsx|ts)$/,
-       exclude: /node_modules/,
        loader: 'ts-loader',
        include: [
          path.resolve(__dirname, 'src'),
          /ui\/src/
+       ],
+        exclude: [
+          /node_modules/,
+         path.resolve(__dirname, 'src', 'tests')
        ]
       },
       {
