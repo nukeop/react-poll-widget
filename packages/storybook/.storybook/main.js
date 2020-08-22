@@ -13,8 +13,13 @@ module.exports = {
   ],
   webpackFinal: async (config, { configType }) => {
     const rules = config.module.rules;
-    rules[3].oneOf[1].include.push(path.resolve(__dirname, '..', '..', 'ui'))
-    rules[3].oneOf[1].include.push(path.resolve(__dirname, '..', '..', 'widget'))
+    const uiPath = path.resolve('node_modules', '@react-poll-widget', 'ui');
+    const widgetPath = path.resolve('node_modules', '@react-poll-widget', 'widget');
+    rules[3].oneOf[1].include.push(uiPath);
+    rules[3].oneOf[1].include.push(widgetPath);
+    rules[3].oneOf[5].include = [];
+    rules[3].oneOf[5].include.push(uiPath);
+    rules[3].oneOf[5].include.push(widgetPath);
     
     return {
       ...config,
