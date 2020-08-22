@@ -1,4 +1,3 @@
-import 'semantic-ui-css/semantic.min.css';
 import './overrides.scss';
 
 export { default as Checkbox } from './components/Checkbox';
