@@ -202,7 +202,7 @@ export const PollWithInstantResultsAndButtonGroup = () => {
         { id: 'yes', label: 'Yes', value: 'No' },
         { id: 'no', label: 'No', value: 'No' }
       ]}
-      selectOption={() => setShowResults(true)}
+      onSelect={() => setShowResults(true)}
     />
   </>;
 
