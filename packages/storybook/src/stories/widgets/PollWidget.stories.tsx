@@ -16,7 +16,7 @@ export const PopupPoll = () => {
       color='blue'
       onOpen={() => setIcon('close')}
       onClose={() => setIcon('question')}
-      onSubmit={console.log}
+      onSubmit={results => alert(JSON.stringify(results))}
       steps={[
         {
           title: 'First step',

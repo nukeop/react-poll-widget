@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { PollOption } from '@react-poll-widget/ui';
 import _ from 'lodash';
 import {
   PollStep,
   PollStepState,
-  PollStateReturnType,
   PollWidgetState
 } from '../types';
 

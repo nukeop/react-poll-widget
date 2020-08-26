@@ -18,7 +18,7 @@ import {
   PollOption
 } from '@react-poll-widget/ui';
 
-import { PollStep, PollWidgetState, PollStateReturnType, PollStepState } from '../../types';
+import { PollStep, PollStateReturnType, PollStepState } from '../../types';
 import { usePollState } from '../../hooks/usePollState';
 
 type PollComponentProps = {
@@ -119,10 +119,12 @@ const PollWidgetComponent: React.FC<PollWidgetComponentProps> = ({
     >
       <Panel
         color={color}
-        hasHeader={!_.isNull(currentStep?.description)}
+        hasHeader={!_.isNil(currentStep?.description)}
         hasFooter
         hasSteps={steps.length > 1}
         headerContent={currentStep?.title}
+        step={currentStepIndex}
+        stepsTotal={steps.length}
       >
         <PanelContentHeader>
           {currentStep?.header}
