@@ -14,15 +14,17 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "noEmit": false,
+    "noEmit": true,
     "noImplicitAny": false,
     "declaration": true,
     "declarationDir": "dist",
     "outDir": "dist",
-    "jsx": "react"
+    "jsx": "react",
+    "allowJs": true,
+    "isolatedModules": true
   },
   "include": [
     "./src/**/*.tsx",
     "./src/**/*.ts"
-  ],
+  ]
 }

@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import cx from 'classnames';
 import { Button, Transition } from 'semantic-ui-react';
 import { withState, withHandlers, compose } from 'recompose';
-import _ from 'lodash';
+import get from 'lodash/get';
 
 import './styles.scss';
 
@@ -52,7 +52,7 @@ const RoundButton: React.FC<RoundButtonProps> = ({
           className={cx('text-box', { collapsed })}
           style={{
             paddingRight: `${
-              collapsed ? 0 : _.get(textRef, 'current.offsetWidth')
+              collapsed ? 0 : get(textRef, 'current.offsetWidth')
               }px`
           }}>
           <h5 ref={textRef} className={cx({ collapsed })} >{text}</h5>

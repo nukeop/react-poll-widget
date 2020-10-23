@@ -1,6 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
-import _ from 'lodash';
+import isNil from 'lodash/isNil';
 import { Button, Icon, Message } from 'semantic-ui-react';
 
 import { PanelColor } from '../../types';
@@ -42,7 +42,7 @@ const PanelContentFooter: React.FC<{
 }) => (
       <div className='panel-content-footer'>
         {
-          !_.isNil(error) &&
+          !isNil(error) &&
           <Message color='red'>
             <Icon name='warning circle'/>
             {error}
@@ -59,7 +59,7 @@ const PanelContentFooter: React.FC<{
           {
             hasSubmit &&
             <Button
-              disabled={submitDisabled || !_.isNil(error)}
+              disabled={submitDisabled || !isNil(error)}
               icon
               labelPosition='right'
               color='green'
@@ -72,7 +72,7 @@ const PanelContentFooter: React.FC<{
           {
             hasNext &&
             <Button
-              disabled={nextDisabled || !_.isNil(error)}
+              disabled={nextDisabled || !isNil(error)}
               icon
               labelPosition='right'
               className={color}

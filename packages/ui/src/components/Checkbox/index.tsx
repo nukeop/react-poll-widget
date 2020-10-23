@@ -7,7 +7,7 @@ const Checkbox: React.FC<{
   type?: 'checkbox' | 'radio',
   label: React.ReactNode,
   checked?: boolean,
-  onClick?: (e: React.MouseEvent) => void
+  onClick?: React.MouseEventHandler;
 }> = ({
   type = 'checkbox',
   label,

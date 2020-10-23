@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import _ from 'lodash';
 import {
   PollStep,
   PollStepState,
@@ -7,7 +6,7 @@ import {
 } from '../types';
 
 export const usePollState: ((steps: PollStep[]) => PollWidgetState) = steps => {
-  return _.map(steps, step => {
+  return steps.map(step => {
     switch (step.type) {
       case 'single':
       case 'button':

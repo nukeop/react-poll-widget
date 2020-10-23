@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(Snapshot) Checkbox should render 1`] = `
+<DocumentFragment>
+  <div
+    class="poll-widget-checkbox checkbox checked"
+  >
+    Test
+  </div>
+</DocumentFragment>
+`;
+
+exports[`(Snapshot) Radio checkbox should render 1`] = `
+<DocumentFragment>
+  <div
+    class="poll-widget-checkbox radio checked"
+  >
+    Test
+  </div>
+</DocumentFragment>
+`;

@@ -5,7 +5,7 @@ import {
   PortalProps,
   TransitionablePortalState
 } from 'semantic-ui-react';
-import _ from 'lodash';
+import isNil from 'lodash/isNil';
 
 import { PanelColor, Panel, PanelContentHeader, RadioPoll, PollButtonGroup } from '@react-poll-widget/ui';
 
@@ -58,7 +58,7 @@ const SingleQuestionPollComponent: React.FC<SingleQuestionPollComponentProps> = 
     >
       <Panel
         color={color}
-        hasHeader={!_.isNil(step.description)}
+        hasHeader={!isNil(step.description)}
         hasFooter
         headerContent={step.title}
       >

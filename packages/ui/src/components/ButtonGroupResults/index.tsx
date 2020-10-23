@@ -1,6 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
-import _ from 'lodash';
+import map from 'lodash/map';
+import max from 'lodash/max';
 
 import './styles.scss';
 
@@ -10,8 +11,8 @@ const ButtonGroupResults: React.FC<{
 }> = ({
   results
 }) => {
-    const scores = _.map(results, 'score');
-    const maxScore = _.max(scores);
+    const scores = map(results, result => result.score);
+    const maxScore = max(scores);
     return (
       <div className='button-group-results'>
         {

@@ -1,6 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
-import _ from 'lodash';
+import isNil from 'lodash/isNil';
 
 import PanelContent from './PanelContent';
 import PanelHeader from './PanelHeader';
@@ -46,7 +46,7 @@ const Panel: React.FC<{
           >
             {headerContent}
             {
-              hasSteps && !_.isNil(step) && !_.isNil(stepsTotal) &&
+              hasSteps && !isNil(step) && !isNil(stepsTotal) &&
               <ProgressIndicator
                 step={step}
                 stepsTotal={stepsTotal}

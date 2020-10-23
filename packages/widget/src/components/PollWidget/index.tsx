@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import _ from 'lodash';
+import isNil from 'lodash/isNil';
 import {
   Message,
   TransitionablePortal,
@@ -119,7 +119,7 @@ const PollWidgetComponent: React.FC<PollWidgetComponentProps> = ({
     >
       <Panel
         color={color}
-        hasHeader={!_.isNil(currentStep?.description)}
+        hasHeader={!isNil(currentStep?.description)}
         hasFooter
         hasSteps={steps.length > 1}
         headerContent={currentStep?.title}

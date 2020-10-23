@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(Snapshot) Empty panel should render 1`] = `
+<DocumentFragment>
+  <div
+    class="panel"
+  >
+    <div
+      class="panel-content blue"
+    >
+      <div
+        class="panel-content-inner"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`(Snapshot) Panel with footer should render 1`] = `
+<DocumentFragment>
+  <div
+    class="panel"
+  >
+    <div
+      class="panel-content blue"
+    >
+      <div
+        class="panel-content-inner"
+      />
+    </div>
+    <div
+      class="panel-footer default-footer"
+    >
+      This poll widget was created by
+      <a
+        href="https://github.com/nukeop/"
+      >
+        nukeop
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`(Snapshot) Panel with header should render 1`] = `
+<DocumentFragment>
+  <div
+    class="panel"
+  >
+    <div
+      class="panel-header blue"
+    >
+      <h3>
+        Snapshot test header
+      </h3>
+    </div>
+    <div
+      class="panel-content blue"
+    >
+      <div
+        class="panel-content-inner"
+      />
+    </div>
+    <div
+      class="panel-footer default-footer"
+    >
+      This poll widget was created by
+      <a
+        href="https://github.com/nukeop/"
+      >
+        nukeop
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`(Snapshot) Panel with step indicator should render 1`] = `
+<DocumentFragment>
+  <div
+    class="panel"
+  >
+    <div
+      class="panel-header blue"
+    >
+      <h3>
+        Snapshot test header
+        <div
+          class="progress-indicator"
+        >
+          <svg>
+            <circle
+              cx="12"
+              cy="12"
+              r="10"
+            />
+            <circle
+              cx="12"
+              cy="12"
+              r="10"
+              stroke-dasharray="62.830000000000005"
+              stroke-dashoffset="37.698"
+            />
+          </svg>
+        </div>
+      </h3>
+    </div>
+    <div
+      class="panel-content blue"
+    >
+      <div
+        class="panel-content-inner"
+      />
+    </div>
+    <div
+      class="panel-footer default-footer"
+    >
+      This poll widget was created by
+      <a
+        href="https://github.com/nukeop/"
+      >
+        nukeop
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;

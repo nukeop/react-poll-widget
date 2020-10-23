@@ -1,13 +1,13 @@
 import React from 'react';
-import _ from 'lodash';
+import isNil from 'lodash/isNil'
 import { Form } from 'semantic-ui-react';
 
 const TextAreaPoll: React.FC<{
   loading?: boolean;
   content?: string;
   error?: string;
-  onChange?: (e: React.FormEvent) => void;
-  onSubmit?: (e: React.FormEvent) => void;
+  onChange?: React.FormEventHandler;
+  onSubmit?: React.FormEventHandler;
 }> = ({
   loading,
   content,
@@ -19,7 +19,7 @@ const TextAreaPoll: React.FC<{
         <Form.TextArea onChange={onChange} error={error}>
           {content}
         </Form.TextArea>
-        <Form.Button type='submit' color='green' disabled={!_.isNil(error)}>
+        <Form.Button type='submit' color='green' disabled={!isNil(error)}>
           Submit
         </Form.Button>
       </Form>
