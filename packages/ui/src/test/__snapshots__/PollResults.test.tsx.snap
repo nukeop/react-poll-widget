@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(Snapshot) Poll results should render 1`] = `
+<DocumentFragment>
+  <div
+    class="poll-results"
+  >
+    <div
+      class="poll-result"
+    >
+      <div
+        class="ui progress"
+        data-percent="15"
+      >
+        <div
+          class="bar"
+          style="width: 15%;"
+        />
+      </div>
+      <label>
+        <span
+          class="score"
+        >
+          15%
+        </span>
+        <span
+          class="label"
+        >
+          Test 1
+        </span>
+      </label>
+    </div>
+    <div
+      class="poll-result"
+    >
+      <div
+        class="ui progress"
+        data-percent="65"
+      >
+        <div
+          class="bar"
+          style="width: 65%;"
+        />
+      </div>
+      <label>
+        <span
+          class="score"
+        >
+          65%
+        </span>
+        <span
+          class="label"
+        >
+          Test 2
+        </span>
+      </label>
+    </div>
+    <div
+      class="poll-result"
+    >
+      <div
+        class="ui progress"
+        data-percent="25"
+      >
+        <div
+          class="bar"
+          style="width: 25%;"
+        />
+      </div>
+      <label>
+        <span
+          class="score"
+        >
+          25%
+        </span>
+        <span
+          class="label"
+        >
+          Test 3
+        </span>
+      </label>
+    </div>
+    <div
+      class="poll-result"
+    >
+      <div
+        class="ui progress"
+        data-percent="75"
+      >
+        <div
+          class="bar"
+          style="width: 75%;"
+        />
+      </div>
+      <label>
+        <span
+          class="score"
+        >
+          75%
+        </span>
+        <span
+          class="label"
+        >
+          Test 4
+        </span>
+      </label>
+    </div>
+  </div>
+</DocumentFragment>
+`;

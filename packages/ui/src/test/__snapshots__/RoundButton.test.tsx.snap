@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(Snapshot) Basic should render 1`] = `
+<DocumentFragment>
+  <button
+    class="ui red huge circular icon button round-button"
+  >
+    <i
+      aria-hidden="true"
+      class="chart bar icon jiggle"
+    />
+  </button>
+</DocumentFragment>
+`;
+
+exports[`(Snapshot) With close button should render 1`] = `
+<DocumentFragment>
+  <button
+    class="ui red huge circular icon button round-button"
+  >
+    <i
+      aria-hidden="true"
+      class="chart bar icon jiggle"
+    />
+  </button>
+  <button
+    class="ui basic icon button close-button"
+  >
+    <i
+      aria-hidden="true"
+      class="close icon"
+    />
+  </button>
+</DocumentFragment>
+`;
+
+exports[`(Snapshot) With content should render 1`] = `
+<DocumentFragment>
+  <button
+    class="ui red huge circular icon button round-button"
+  >
+    <i
+      aria-hidden="true"
+      class="chart bar icon jiggle"
+    />
+    <div
+      class="text-box collapsed"
+      style="padding-right: 0px;"
+    >
+      <h5
+        class="collapsed"
+      >
+        Long test
+      </h5>
+    </div>
+  </button>
+</DocumentFragment>
+`;

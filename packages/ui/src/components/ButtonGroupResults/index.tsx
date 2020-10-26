@@ -18,6 +18,7 @@ const ButtonGroupResults: React.FC<{
         {
           results.map(result => (
             <div
+              key={result.option.id}
               className={cx(
                 'button-group-result',
                 { winner: maxScore === result.score }

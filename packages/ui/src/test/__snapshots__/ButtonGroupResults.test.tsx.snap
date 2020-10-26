@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(Snapshot) Left should render 1`] = `
+<DocumentFragment>
+  <div
+    class="button-group-results"
+  >
+    <div
+      class="button-group-result winner"
+      style="flex: 1 1 66%;"
+    >
+      <label>
+        <span
+          class="label"
+        >
+          Test 1
+        </span>
+        <span
+          class="score"
+        >
+          66%
+        </span>
+      </label>
+    </div>
+    <div
+      class="button-group-result"
+      style="flex: 1 1 33%;"
+    >
+      <label>
+        <span
+          class="label"
+        >
+          Test 2
+        </span>
+        <span
+          class="score"
+        >
+          33%
+        </span>
+      </label>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`(Snapshot) Right should render 1`] = `
+<DocumentFragment>
+  <div
+    class="button-group-results"
+  >
+    <div
+      class="button-group-result"
+      style="flex: 1 1 25%;"
+    >
+      <label>
+        <span
+          class="label"
+        >
+          Test 1
+        </span>
+        <span
+          class="score"
+        >
+          25%
+        </span>
+      </label>
+    </div>
+    <div
+      class="button-group-result winner"
+      style="flex: 1 1 75%;"
+    >
+      <label>
+        <span
+          class="label"
+        >
+          Test 2
+        </span>
+        <span
+          class="score"
+        >
+          75%
+        </span>
+      </label>
+    </div>
+  </div>
+</DocumentFragment>
+`;

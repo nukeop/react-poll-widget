@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(Snapshot) Loading text area poll should render 1`] = `
+<DocumentFragment>
+  <form
+    class="ui loading form"
+  >
+    <div
+      class="field"
+    >
+      <textarea
+        rows="3"
+      />
+    </div>
+    <div
+      class="field"
+    >
+      <button
+        class="ui green button"
+        type="submit"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`(Snapshot) Text area poll should render 1`] = `
+<DocumentFragment>
+  <form
+    class="ui form"
+  >
+    <div
+      class="field"
+    >
+      <textarea
+        rows="3"
+      />
+    </div>
+    <div
+      class="field"
+    >
+      <button
+        class="ui green button"
+        type="submit"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`(Snapshot) Text area poll with error should render 1`] = `
+<DocumentFragment>
+  <form
+    class="ui form"
+  >
+    <div
+      class="error field"
+    >
+      <textarea
+        aria-invalid="true"
+        rows="3"
+      />
+      <div
+        aria-atomic="true"
+        class="ui pointing above prompt label"
+        role="alert"
+      >
+        Error
+      </div>
+    </div>
+    <div
+      class="disabled field"
+    >
+      <button
+        class="ui green disabled button"
+        disabled=""
+        tabindex="-1"
+        type="submit"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</DocumentFragment>
+`;

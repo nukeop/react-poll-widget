@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(Snapshot) Basic should render 1`] = `
+<DocumentFragment>
+  <form
+    class="ui form"
+  >
+    <div
+      class="field"
+    >
+      <div
+        class="poll-widget-checkbox radio"
+      >
+        Test 1
+      </div>
+    </div>
+    <div
+      class="field"
+    >
+      <div
+        class="poll-widget-checkbox radio"
+      >
+        Test 2
+      </div>
+    </div>
+    <div
+      class="field"
+    >
+      <div
+        class="poll-widget-checkbox radio"
+      >
+        Test 3
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;

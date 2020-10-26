@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(Snapshot) Loading should render 1`] = `
+<DocumentFragment>
+  <div
+    class="ui fluid buttons poll-button-group"
+  >
+    <button
+      class="ui button"
+    >
+      Yes
+    </button>
+    <button
+      class="ui button"
+    >
+      No
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`(Snapshot) Yes/No should render 1`] = `
+<DocumentFragment>
+  <div
+    class="ui fluid buttons poll-button-group"
+  >
+    <button
+      class="ui button"
+    >
+      Yes
+    </button>
+    <button
+      class="ui button"
+    >
+      No
+    </button>
+  </div>
+</DocumentFragment>
+`;

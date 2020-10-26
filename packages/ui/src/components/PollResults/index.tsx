@@ -12,7 +12,10 @@ const PollResults: React.FC<{
       <div className='poll-results'>
         {
           results.map(result => (
-            <div className='poll-result'>
+            <div
+              key={result.option.id}
+              className='poll-result'
+            >
               <Progress
                 percent={result.score}
               />

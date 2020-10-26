@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(Snapshot) Empty should render 1`] = `
+<DocumentFragment>
+  <div
+    class="progress-indicator"
+  >
+    <svg>
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+      />
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+        stroke-dasharray="62.830000000000005"
+        stroke-dashoffset="NaN"
+      />
+    </svg>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`(Snapshot) Half should render 1`] = `
+<DocumentFragment>
+  <div
+    class="progress-indicator"
+  >
+    <svg>
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+      />
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+        stroke-dasharray="62.830000000000005"
+        stroke-dashoffset="31.415000000000003"
+      />
+    </svg>
+  </div>
+</DocumentFragment>
+`;
