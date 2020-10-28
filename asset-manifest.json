@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.js": "/nukeop/react-poll-widget/main.b7264a700ef6c3e3a0f5.bundle.js",
+    "main.js.map": "/nukeop/react-poll-widget/main.b7264a700ef6c3e3a0f5.bundle.js.map",
+    "runtime~main.js": "/nukeop/react-poll-widget/runtime~main.b7264a700ef6c3e3a0f5.bundle.js",
+    "runtime~main.js.map": "/nukeop/react-poll-widget/runtime~main.b7264a700ef6c3e3a0f5.bundle.js.map",
+    "vendors~main.css": "/nukeop/react-poll-widget/static/css/vendors~main.ab262b49.chunk.css",
+    "vendors~main.js": "/nukeop/react-poll-widget/vendors~main.b7264a700ef6c3e3a0f5.bundle.js",
+    "vendors~main.css.map": "/nukeop/react-poll-widget/static/css/vendors~main.ab262b49.chunk.css.map",
+    "vendors~main.js.map": "/nukeop/react-poll-widget/vendors~main.b7264a700ef6c3e3a0f5.bundle.js.map",
+    "iframe.html": "/nukeop/react-poll-widget/iframe.html",
+    "precache-manifest.acc646658efc5e81265874d0908a3564.js": "/nukeop/react-poll-widget/precache-manifest.acc646658efc5e81265874d0908a3564.js",
+    "service-worker.js": "/nukeop/react-poll-widget/service-worker.js",
+    "static/media/FullExamples.scss": "/nukeop/react-poll-widget/static/media/FullExamples.ffb5981d.scss",
+    "vendors~main.b7264a700ef6c3e3a0f5.bundle.js.LICENSE.txt": "/nukeop/react-poll-widget/vendors~main.b7264a700ef6c3e3a0f5.bundle.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "runtime~main.b7264a700ef6c3e3a0f5.bundle.js",
+    "static/css/vendors~main.ab262b49.chunk.css",
+    "vendors~main.b7264a700ef6c3e3a0f5.bundle.js",
+    "main.b7264a700ef6c3e3a0f5.bundle.js"
+  ]
+}
