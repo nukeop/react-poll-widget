@@ -1,37 +1,57 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useCallback } from 'react';
 import cx from 'classnames';
 import { Button, Transition } from 'semantic-ui-react';
-import { withState, withHandlers, compose } from 'recompose';
 import get from 'lodash/get';
 
 import './styles.scss';
+import { SemanticCOLORS } from 'semantic-ui-react/dist/commonjs/generic';
 
 type RoundButtonProps = {
   Icon?: React.ReactNode;
   text?: string;
-  color?: 'red' | 'orange' | 'yellow' | 'green' | 'blue' | 'violet' | 'olive' | 'teal' | 'purple' | 'pink' | 'brown' | 'grey' | 'black';
+  color?: SemanticCOLORS |  'red' | 'orange' | 'yellow' | 'green' | 'blue' | 'violet' | 'olive' | 'teal' | 'purple' | 'pink' | 'brown' | 'grey' | 'black' | 'peach';
   animate?: boolean;
-  collapsed: boolean;
+  collapsed?: boolean;
   withCloseButton?: boolean;
   onClick?: () => void;
   onCloseClick?: () => void;
-  setAnimate: (val: boolean) => void;
-  setCollapsed: (val: boolean) => void;
-  toggleAnimation: () => void;
-  toggleCollapsed: () => void;
+  setAnimate?: (val: boolean) => void;
+  setCollapsed?: (val: boolean) => void;
+  toggleAnimation?: () => void;
+  toggleCollapsed?: () => void;
 };
 
 const RoundButton: React.FC<RoundButtonProps> = ({
   Icon,
   text,
   color = 'blue',
-  animate = false,
-  collapsed,
   withCloseButton,
   onClick,
   onCloseClick
 }) => {
   const textRef = useRef(null);
+
+  const [animate, setAnimate] = useState(true);
+  const [collapsed, setCollapsed] = useState(true);
+
+  const toggleAnimation = useCallback(() => setAnimate(!animate), [animate, setAnimate]);
+  const toggleCollapsed = useCallback(() => setCollapsed(!collapsed), [collapsed, setCollapsed]);
+
+
+  const onClickCallback = useCallback(() => {
+    toggleAnimation();
+    toggleCollapsed();
+    if (onClick) {
+      onClick();
+    }
+  }, [toggleAnimation, toggleCollapsed, onClick]);
+
+  const onCloseClickCallback = useCallback((e: MouseEvent) => {
+    e.stopPropagation();
+    if (onCloseClick) {
+      onCloseClick();
+    }
+  }, [onCloseClick]);
 
   return (
     <Button
@@ -51,8 +71,7 @@ const RoundButton: React.FC<RoundButtonProps> = ({
         <div
           className={cx('text-box', { collapsed })}
           style={{
-            paddingRight: `${
-              collapsed ? 0 : get(textRef, 'current.offsetWidth')
+            paddingRight: `${collapsed ? 0 : get(textRef, 'current.offsetWidth')
               }px`
           }}>
           <h5 ref={textRef} className={cx({ collapsed })} >{text}</h5>
@@ -71,29 +90,4 @@ const RoundButton: React.FC<RoundButtonProps> = ({
   )
 }
 
-export default compose<
-  RoundButtonProps,
-  Omit<RoundButtonProps, 'animate' | 'setAnimate' | 'collapsed' | 'setCollapsed' | 'toggleAnimation' | 'toggleCollapsed' >
->(
-  withState('animate', 'setAnimate', true),
-  withState('collapsed', 'setCollapsed', true),
-  withHandlers({
-    toggleAnimation: ({ animate, setAnimate }: RoundButtonProps) => () => setAnimate(!animate),
-    toggleCollapsed: ({ collapsed, setCollapsed }: RoundButtonProps) => () => setCollapsed(!collapsed)
-  }),
-  withHandlers({
-    onClick: ({ toggleAnimation, toggleCollapsed, onClick }: RoundButtonProps) => () => {
-      toggleAnimation();
-      toggleCollapsed();
-      if (onClick) {
-        onClick();
-      }
-    },
-    onCloseClick: ({ onCloseClick }: RoundButtonProps) => (e: MouseEvent) => {
-      e.stopPropagation();
-      if (onCloseClick) {
-        onCloseClick();
-      }
-    }
-  })
-)(RoundButton)
+export default RoundButton;
