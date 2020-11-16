@@ -10,15 +10,15 @@ type RoundButtonProps = {
   Icon?: React.ReactNode;
   text?: string;
   color?: SemanticCOLORS |  'red' | 'orange' | 'yellow' | 'green' | 'blue' | 'violet' | 'olive' | 'teal' | 'purple' | 'pink' | 'brown' | 'grey' | 'black' | 'peach';
-  animate?: boolean;
-  collapsed?: boolean;
+  animate: boolean;
+  collapsed: boolean;
   withCloseButton?: boolean;
-  onClick?: () => void;
-  onCloseClick?: () => void;
-  setAnimate?: (val: boolean) => void;
-  setCollapsed?: (val: boolean) => void;
-  toggleAnimation?: () => void;
-  toggleCollapsed?: () => void;
+  onClick: () => void;
+  onCloseClick: () => void;
+  setAnimate: (val: boolean) => void;
+  setCollapsed: (val: boolean) => void;
+  toggleAnimation: () => void;
+  toggleCollapsed: () => void;
 };
 
 const RoundButton: React.FC<RoundButtonProps> = ({
@@ -46,22 +46,23 @@ const RoundButton: React.FC<RoundButtonProps> = ({
     }
   }, [toggleAnimation, toggleCollapsed, onClick]);
 
-  const onCloseClickCallback = useCallback((e: MouseEvent) => {
+  const onCloseClickCallback = useCallback((e: React.MouseEvent) => {
     e.stopPropagation();
     if (onCloseClick) {
       onCloseClick();
     }
   }, [onCloseClick]);
 
+  console.log("dupa");
+  console.log("dupa2");
   return (
     <Button
       circular
       icon
       size='huge'
       color={color}
-      onClick={onClick}
+      onClick={onClickCallback}
       className='round-button'
-
     >
       <Transition animation='jiggle' visible={animate}>
         {Icon}
@@ -83,7 +84,7 @@ const RoundButton: React.FC<RoundButtonProps> = ({
           icon='close'
           basic
           className='close-button'
-          onClick={onCloseClick}
+          onClick={onCloseClickCallback}
         />
       }
     </Button>
