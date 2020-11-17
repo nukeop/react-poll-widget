@@ -9,7 +9,7 @@ import { SemanticCOLORS } from 'semantic-ui-react/dist/commonjs/generic';
 type RoundButtonProps = {
   Icon?: React.ReactNode;
   text?: string;
-  color?: SemanticCOLORS |  'red' | 'orange' | 'yellow' | 'green' | 'blue' | 'violet' | 'olive' | 'teal' | 'purple' | 'pink' | 'brown' | 'grey' | 'black' | 'peach';
+  color?: SemanticCOLORS | 'red' | 'orange' | 'yellow' | 'green' | 'blue' | 'violet' | 'olive' | 'teal' | 'purple' | 'pink' | 'brown' | 'grey' | 'black' | 'peach';
   animate: boolean;
   collapsed: boolean;
   withCloseButton?: boolean;
@@ -53,8 +53,6 @@ const RoundButton: React.FC<RoundButtonProps> = ({
     }
   }, [onCloseClick]);
 
-  console.log("dupa");
-  console.log("dupa2");
   return (
     <Button
       circular
