@@ -20,6 +20,11 @@ $shadowAmbient: 0.12;
               0 24px 24px rgba($black, $shadowAmbient);
 }
 
+@mixin shadow-3 {
+  box-shadow: 0 1px 1px rgba($black, $shadowAmbient),
+              0 2px 2px rgba($black, $shadowAmbient);
+}
+
 @mixin upwards-shadow {
   box-shadow: 0 -0.625rem 1.25rem 0rem rgba($black, $shadowAmbient)
 }

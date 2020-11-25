@@ -19,3 +19,6 @@ export { default as PollButtonGroup } from './components/PollButtonGroup';
 export { default as ButtonGroupResults } from './components/ButtonGroupResults';
 export { default as PollResults } from './components/PollResults';
 export { default as TextAreaPoll } from './components/TextAreaPoll';
+
+export { default as WizardPanel } from './components/WizardUi/WizardPanel';
+export { default as WizardSidebar } from './components/WizardUi/WizardSidebar';

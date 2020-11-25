@@ -1,0 +1,9 @@
+@import "../../../colors";
+@import "../../../mixin";
+
+.wizard-panel {
+  @include shadow-3;
+  @include roundCorners;
+
+  padding: 1em;
+}
