@@ -1,6 +1,8 @@
 import React from "react";
 import { Divider, Dropdown, DropdownProps, Menu } from "semantic-ui-react";
 
+import './styles.scss';
+
 export type WizardSidebarProps = {
   selectedPollOptions: DropdownProps['options'];
   selectedPoll: DropdownProps['value'];
@@ -14,13 +16,16 @@ const WizardSidebar: React.FC<WizardSidebarProps> = ({
 }) => <Menu vertical inverted>
     <Menu.Item>
       <Dropdown
+      className='poll-dropdown'
         selection
         options={selectedPollOptions}
         value={selectedPoll}
         onChange={onSelectedPollChange}
       />
     </Menu.Item>
-    <Divider />
+    <Menu.Item>
+      test
+    </Menu.Item>
   </Menu>
 
 export default WizardSidebar;
