@@ -40,6 +40,9 @@ return <Menu vertical inverted>
     <Menu.Item>
       General
     </Menu.Item>
+    <Menu.Item>
+      Steps
+    </Menu.Item>
   </Menu>
 }
 

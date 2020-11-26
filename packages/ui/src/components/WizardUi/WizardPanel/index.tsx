@@ -1,10 +1,16 @@
 import React from 'react';
+import cx from 'classnames';
 
 import './styles.scss';
 
-const WizardPanel: React.FC = ({
+export type WizardPanelProps = {
+  className?: string;
+}
+
+const WizardPanel: React.FC<WizardPanelProps> = ({
+  className,
   children
-}) => <div className='wizard-panel'>
+}) => <div className={cx('wizard-panel', className)}>
     {children}
   </div>
 
