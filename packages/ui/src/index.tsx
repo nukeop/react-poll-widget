@@ -22,3 +22,5 @@ export { default as TextAreaPoll } from './components/TextAreaPoll';
 
 export { default as WizardPanel } from './components/WizardUi/WizardPanel';
 export { default as WizardSidebar } from './components/WizardUi/WizardSidebar';
+export { default as WizardFormContainer } from './components/WizardUi/WizardFormContainer';
+export { default as CreateNewPoll } from './components/WizardUi/Forms/CreateNewPoll';

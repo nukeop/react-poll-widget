@@ -1,0 +1,11 @@
+@import "../../../colors.scss";
+
+.wizard-form-container {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  height: 100%;
+  background: rgba($white, 0.6);
+  padding: 1em;
+}

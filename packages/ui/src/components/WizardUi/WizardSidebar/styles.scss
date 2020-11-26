@@ -1,4 +1,11 @@
+@import '../../../colors.scss';
+
 .ui.dropdown.poll-dropdown {
   width: 100%;
   min-width: 0;
+
+  .visible.menu>.item:last-child {
+    background: $darkgreen !important;
+    color: $truewhite !important;
+  }
 }

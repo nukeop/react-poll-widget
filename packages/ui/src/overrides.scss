@@ -1,16 +1,16 @@
-@import './colors';
+@import "./colors";
 
 @mixin buttonColor($color, $darkcolor) {
     background: $color;
 
-        &:hover {
-            background: rgba($darkcolor, 1);
-        }
+    &:hover {
+        background: rgba($darkcolor, 1);
+    }
 
-        &:focus,
-        &:active {
-            background: rgba($darkcolor, 1);     
-        }
+    &:focus,
+    &:active {
+        background: rgba($darkcolor, 1);
+    }
 }
 
 button.ui.button {
@@ -75,6 +75,10 @@ button.ui.button {
     &.black {
         @include buttonColor($black, $darkblack);
     }
+}
 
-
+h1.ui.header,
+h2.ui.header,
+h3.ui.header {
+    color: $black;
 }

@@ -5,7 +5,7 @@ import {
 } from '@react-poll-widget/ui';
 
 export default {
-  title: 'Wizard UI|Wizard Panel'
+  title: 'Wizard UI|Components/Wizard Panel'
 }
 
 export const EmptyPanel = () => <WizardPanel />

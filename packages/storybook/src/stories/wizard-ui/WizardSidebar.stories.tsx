@@ -6,7 +6,7 @@ import {
 import { DropdownProps } from 'semantic-ui-react';
 
 export default {
-  title: 'Wizard UI|Wizard Sidebar'
+  title: 'Wizard UI|Components/Wizard Sidebar'
 }
 
 export const WizardSidebarDemo = () => {
@@ -25,5 +25,6 @@ console.log({selectedPoll})
     }]}
     selectedPoll={selectedPoll}
     onSelectedPollChange={(e, { value }) => setSelectedPoll(value)}
+    onCreateNewPoll={() => alert('Create a new poll clicked')}
   />
 }
