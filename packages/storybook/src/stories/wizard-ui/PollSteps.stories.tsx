@@ -39,7 +39,7 @@ export const ManagePollSteps = () => {
   {
     id: '3',
     title: 'step 3',
-    header: 'header of step 2',
+    header: 'header of step 3',
     description: 'test desc',
     type: 'multi',
     options: [],

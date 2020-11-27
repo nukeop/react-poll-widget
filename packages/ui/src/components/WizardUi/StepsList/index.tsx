@@ -85,7 +85,7 @@ const StepsList: React.FC<StepsListProps> = ({
   steps = [],
   onDragEnd
 }) => {
-  const [expandedStep, setExpandedStep] = useState<number | undefined>();
+  const [expandedStep, setExpandedStep] = useState<string | undefined>();
   return <DragDropContext
     onDragEnd={onDragEnd}
   >
@@ -103,8 +103,8 @@ const StepsList: React.FC<StepsListProps> = ({
             {steps.map((step, i) => <StepsListItem
               key={step.id}
               index={i}
-              isExpanded={i === expandedStep}
-              onExpand={() => i === expandedStep ? setExpandedStep(undefined) : setExpandedStep(i)}
+              isExpanded={step.id === expandedStep}
+              onExpand={() => step.id === expandedStep ? setExpandedStep(undefined) : setExpandedStep(step.id)}
               {...step}
             />)}
             {provided.placeholder}
