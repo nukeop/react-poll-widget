@@ -1,7 +1,8 @@
 import React from 'react';
-import { Button, Header, Message } from 'semantic-ui-react';
+import { Button, Header, Icon, Message } from 'semantic-ui-react';
 
 import { PollStep } from '../../../types';
+import StepsList from '../../StepsList';
 import WizardFormContainer from '../../WizardFormContainer';
 import WizardPanel from '../../WizardPanel';
 
@@ -25,7 +26,11 @@ const PollSteps: React.FC<PollStepsProps> = ({
       Manage poll steps
   </Header>
     {steps.length < 1 && <EmptyState />}
-    <Button color='green' size='big' icon='plus'>Add a new step</Button>
+    <StepsList steps={steps} />
+    <Button color='green' size='huge'>
+      <Icon name='plus' />
+      Add a new step
+      </Button>
   </WizardFormContainer>
 
 export default PollSteps;

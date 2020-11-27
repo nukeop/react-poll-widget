@@ -3,6 +3,7 @@ export type PanelColor =  'blue' | 'teal' | 'pink' | 'yellow' | 'green' | 'purpl
 export type StepType = 'single' | 'button' | 'multi' | 'text';
 
 export type PollStep = {
+  id: string;
   title: string;
   header: string;
   description: string;

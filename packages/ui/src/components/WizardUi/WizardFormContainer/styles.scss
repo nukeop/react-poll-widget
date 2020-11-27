@@ -8,4 +8,11 @@
   height: 100%;
   background: rgba($white, 0.6);
   padding: 1em;
+
+  .content {
+    width:100%;
+    max-width: 766px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

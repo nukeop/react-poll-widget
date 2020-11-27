@@ -60,6 +60,7 @@
     "@storybook/react": "^5.3.14",
     "@storybook/storybook-deployer": "^2.8.3",
     "@types/lodash": "^4.14.159",
+    "@types/react-beautiful-dnd": "^13.0.0",
     "node-sass": "^4.14.1"
   }
 }
