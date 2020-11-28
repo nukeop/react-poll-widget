@@ -1,6 +1,11 @@
-export type PanelColor =  'blue' | 'teal' | 'pink' | 'yellow' | 'green' | 'purple' | 'orange' | 'red' | 'rose' | 'peach' | 'gray' | 'black';
+export type PanelColor = 'blue' | 'teal' | 'pink' | 'yellow' | 'green' | 'purple' | 'orange' | 'red' | 'rose' | 'peach' | 'gray' | 'black';
 
-export type StepType = 'single' | 'button' | 'multi' | 'text';
+export enum StepType {
+  SINGLE = 'single',
+  BUTTON = 'button',
+  MULTI = 'multi',
+  TEXT = 'text'
+}
 
 export type PollStep = {
   id: string;

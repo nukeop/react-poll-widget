@@ -1,0 +1,26 @@
+@import '../../../../colors.scss';
+
+.step-options {
+  flex: 1 1 auto;
+
+  .option-field {
+    display: flex;
+    flex-flow: row;
+
+    .ui.input input {
+      border-right: 0;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  .delete-button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 0;
+    
+    .icon {
+      color: $white;
+    }
+  }
+}

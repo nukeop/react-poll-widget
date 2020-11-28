@@ -26,11 +26,10 @@ const WizardSidebar: React.FC<WizardSidebarProps> = ({
   ]
 
 
-return <Menu vertical inverted>
+  return <Menu vertical inverted>
     <Menu.Item>
       <Dropdown
-      inverted
-      className='poll-dropdown'
+        className='poll-dropdown'
         selection
         options={pollDropdownOptions}
         value={selectedPoll}

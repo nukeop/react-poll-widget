@@ -1,89 +1,26 @@
 import React, { useState } from "react";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-import { Icon } from "semantic-ui-react";
+import { DragDropContext, Droppable } from "react-beautiful-dnd";
 
 import { PollStep } from "../../types";
-import WizardPanel from "../WizardPanel";
+import { StepDetailsProps } from "./StepDetails";
+import StepsListItem from "./StepsListItem";
 import './styles.scss';
 
-export type StepsListProps = {
+export type StepsListProps = Pick<StepDetailsProps, 'onChangeOption' | 'onDeleteOption'> &
+{
   steps?: PollStep[];
-  onDragEnd: (result: any) => void;
+  onDragEnd?: (result: any) => void;
+  onAddOption?: (stepId: string) => void;
 };
 
 const ITEM_HEIGHT = 62;
-const StepsListItem: React.FC<PollStep & {
-  index: number;
-  isExpanded: boolean;
-  onExpand: React.MouseEventHandler;
-}> = ({
-  id, 
-  title,
-  type, 
-  index, 
-  isExpanded=false,
-  onExpand,
-  ...stepProps
-}) => <Draggable
-  draggableId={id}
-  index={index}
->
-      {
-        (provided, snapshot) => (
-          <div
-            {...provided.draggableProps}
-            ref={provided.innerRef}
-            className='steps-list-item'
-          >
-            <WizardPanel
-              className='draggable-panel'
-            >
-              <span
-                className='drag-handle'
-                {...provided.dragHandleProps}
-              >
-                <Icon
-                  name='ellipsis vertical'
-                />
-                <Icon
-                  name='ellipsis vertical'
-                />
-              </span>
-              <span className='title'>
-                {title}
-              </span>
-              <span className='spacer' />
-              <span className='type'>
-                {type}
-              </span>
-              <Icon
-                className='expand'
-                name={isExpanded ? 'chevron up' : 'chevron down'}
-                onClick={onExpand}
-              />
-            </WizardPanel>
-            {
-              isExpanded && <StepDetails
-              id={id}
-              title={title}
-              type={type}
-                {...stepProps}
-              />
-            }
-          </div>
-        )
-      }
-    </Draggable>
-
-const StepDetails: React.FC<PollStep> = ({
-  header
-}) => <WizardPanel className='step-details'>
-  {header}
-</WizardPanel>
 
 const StepsList: React.FC<StepsListProps> = ({
   steps = [],
-  onDragEnd
+  onDragEnd,
+  onChangeOption,
+  onDeleteOption,
+  onAddOption
 }) => {
   const [expandedStep, setExpandedStep] = useState<string | undefined>();
   return <DragDropContext
@@ -105,6 +42,9 @@ const StepsList: React.FC<StepsListProps> = ({
               index={i}
               isExpanded={step.id === expandedStep}
               onExpand={() => step.id === expandedStep ? setExpandedStep(undefined) : setExpandedStep(step.id)}
+              onChangeOption={onChangeOption}
+              onDeleteOption={onDeleteOption}
+              onAddOption={onAddOption}
               {...step}
             />)}
             {provided.placeholder}

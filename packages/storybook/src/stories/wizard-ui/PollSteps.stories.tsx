@@ -3,6 +3,7 @@ import React, { useCallback, useState } from 'react';
 import {
   PollSteps
 } from '@react-poll-widget/ui';
+import { PollStep, StepType } from '@react-poll-widget/ui/src/components/types';
 
 export default {
   title: 'Wizard UI|Forms/Poll steps'
@@ -18,13 +19,21 @@ export const ManagePollSteps = () => {
 
     return result;
   };
-  const [steps, setSteps] = useState([{
+  const [steps, setSteps] = useState<(PollStep & { href: string; })[]>([{
     id: '1',
     title: 'step 1',
     header: 'header of step 1',
     description: 'test desc',
-    type: 'single',
-    options: [],
+    type: StepType.SINGLE,
+    options: [{
+      id: '1',
+      label: 'Option 1',
+      value: '1'
+    }, {
+      id: '2',
+      label: 'Option 2',
+      value: '2'
+    }],
     href: 'step1'
   },
   {
@@ -32,7 +41,7 @@ export const ManagePollSteps = () => {
     title: 'step 2',
     header: 'header of step 2',
     description: 'test desc',
-    type: 'multi',
+    type: StepType.MULTI,
     options: [],
     href: 'step2'
   },
@@ -41,7 +50,7 @@ export const ManagePollSteps = () => {
     title: 'step 3',
     header: 'header of step 3',
     description: 'test desc',
-    type: 'multi',
+    type: StepType.BUTTON,
     options: [],
     href: 'step3'
   }
@@ -58,5 +67,8 @@ export const ManagePollSteps = () => {
   return <PollSteps
     steps={steps}
     onDragEnd={onDragEnd}
+    onChangeOption={(optionId, newValue) => console.log(optionId, newValue)}
+    onDeleteOption={alert}
+    onAddOption={alert}
   />;
 }
