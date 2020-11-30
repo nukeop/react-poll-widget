@@ -1,9 +1,11 @@
-import './App.css';
+import { Switch } from 'react-router';
 
 function App() {
   return (
     <div>
-      test
+      <Switch>
+
+      </Switch>
     </div>
   );
 }
