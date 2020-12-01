@@ -16,11 +16,11 @@ module.exports = {
     const rules = config.module.rules;
     const uiPath = path.resolve('..', 'ui');
     const widgetPath = path.resolve('..', 'widget');
-    rules[3].oneOf[1].include.push(uiPath);
-    rules[3].oneOf[1].include.push(widgetPath);
-    rules[3].oneOf[5].include = [];
-    rules[3].oneOf[5].include.push(uiPath);
-    rules[3].oneOf[5].include.push(widgetPath);
+    rules[2].oneOf[2].include.push(uiPath);
+    rules[2].oneOf[2].include.push(widgetPath);
+    rules[2].oneOf[7].include = [];
+    rules[2].oneOf[7].include.push(uiPath);
+    rules[2].oneOf[7].include.push(widgetPath);
 
     return {
       ...config,

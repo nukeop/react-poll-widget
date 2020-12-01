@@ -1,6 +1,7 @@
 {
   "name": "react-poll-widget",
   "devDependencies": {
-    "lerna": "^3.19.0"
+    "lerna": "^3.19.0",
+    "lerna-update-wizard": "^0.17.8"
   }
 }

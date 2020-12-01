@@ -1,5 +1,5 @@
 {
-  "name": "storybook",
+  "name": "@react-poll-widget/storybook",
   "version": "0.0.21",
   "description": "Storybook for all the components and widgets",
   "author": "nukeop <nukeop@gumblert.tech>",
@@ -15,19 +15,19 @@
   "dependencies": {
     "@react-poll-widget/ui": "0.0.21",
     "@react-poll-widget/widget": "0.0.21",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "react-scripts": "3.4.0",
+    "@testing-library/jest-dom": "5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "12.3.0",
+    "@types/jest": "^26.0.16",
+    "@types/node": "14.14.10",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "17.0.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-scripts": "4.0.1",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.88.2",
-    "typescript": "^4.1.2"
+    "typescript": "4.1.2"
   },
   "scripts": {
     "test": "react-scripts test",
@@ -53,14 +53,14 @@
     ]
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^5.3.14",
-    "@storybook/addon-links": "^5.3.14",
-    "@storybook/addons": "^5.3.14",
-    "@storybook/preset-create-react-app": "^2.0.0",
-    "@storybook/react": "^5.3.14",
-    "@storybook/storybook-deployer": "^2.8.3",
-    "@types/lodash": "^4.14.159",
+    "@storybook/addon-actions": "6.1.9",
+    "@storybook/addon-links": "6.1.9",
+    "@storybook/addons": "6.1.9",
+    "@storybook/preset-create-react-app": "3.1.5",
+    "@storybook/react": "6.1.9",
+    "@storybook/storybook-deployer": "2.8.7",
+    "@types/lodash": "4.14.165",
     "@types/react-beautiful-dnd": "^13.0.0",
-    "node-sass": "^4.14.1"
+    "node-sass": "4.14.1"
   }
 }
