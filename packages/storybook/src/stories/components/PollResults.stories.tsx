@@ -3,7 +3,7 @@ import React from 'react';
 import { PollResults } from '@react-poll-widget/ui';
 
 export default {
-  title: 'Components|Poll results'
+  title: 'Components/Poll results'
 }
 
 export const FourResults = () => <div style={{padding: '2em'}}>

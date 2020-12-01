@@ -6,7 +6,7 @@ import {
 import { PollStep, StepType } from '@react-poll-widget/ui/src/components/types';
 
 export default {
-  title: 'Wizard UI|Forms/Poll steps'
+  title: 'Wizard UI/Forms/Poll steps'
 }
 
 export const Empty = () => <PollSteps />;

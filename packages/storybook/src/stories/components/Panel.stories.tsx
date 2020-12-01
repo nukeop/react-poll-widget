@@ -7,7 +7,7 @@ import {
 } from '@react-poll-widget/ui';
 
 export default {
-  title: 'Components|Panel'
+  title: 'Components/Panel'
 }
 
 export const EmptyPanel = () => <div>

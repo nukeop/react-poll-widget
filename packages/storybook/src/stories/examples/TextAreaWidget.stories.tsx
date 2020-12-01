@@ -10,7 +10,7 @@ import {
 } from '@react-poll-widget/ui';
 
 export default {
-  title: 'Examples|Text area poll'
+  title: 'Examples/Text area poll'
 }
 
 export const Construction = () => {

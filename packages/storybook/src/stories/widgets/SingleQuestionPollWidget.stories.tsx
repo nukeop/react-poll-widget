@@ -5,7 +5,7 @@ import { SingleQuestionPollWidget, PollType } from '@react-poll-widget/widget';
 import { RoundButton } from '@react-poll-widget/ui';
 
 export default {
-  title: 'Widgets|Single question poll widget'
+  title: 'Widgets/Single question poll widget'
 }
 
 export const PopupPoll = () => {

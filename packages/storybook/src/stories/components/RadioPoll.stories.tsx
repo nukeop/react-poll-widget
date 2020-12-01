@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { RadioPoll, PollOption } from '@react-poll-widget/ui';
 
 export default {
-  title: 'Components|Radio poll'
+  title: 'Components/Radio poll'
 };
 
 export const Basic = () => {

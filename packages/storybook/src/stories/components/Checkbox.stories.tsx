@@ -5,7 +5,7 @@ import { Button, Form, Input } from 'semantic-ui-react';
 import { Checkbox } from '@react-poll-widget/ui';
 
 export default {
-  title: 'Components|Checkbox'
+  title: 'Components/Checkbox'
 };
 
 export const SquareCheckbox = () => {

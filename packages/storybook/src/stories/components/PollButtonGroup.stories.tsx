@@ -3,7 +3,7 @@ import React from 'react';
 import { PollButtonGroup } from '@react-poll-widget/ui';
 
 export default {
-  title: 'Components|Poll button group'
+  title: 'Components/Poll button group'
 }
 
 export const YesNo = () => <div style={{ padding: '2em' }}>

@@ -4,7 +4,7 @@ import { Button } from 'semantic-ui-react';
 import { ProgressIndicator } from '@react-poll-widget/ui';
 
 export default {
-  title: 'Components|Progress indicator'
+  title: 'Components/Progress indicator'
 };
 
 export const Empty = () => <div style={{

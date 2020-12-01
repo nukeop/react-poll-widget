@@ -4,7 +4,7 @@ import { Icon, SemanticCOLORS } from 'semantic-ui-react';
 import { RoundButton } from '@react-poll-widget/ui';
 
 export default {
-  title: 'Components|Round button'
+  title: 'Components/Round button'
 }
 
 export const Colors = () => <div style={{ margin: '2em 0 2em 2em' }}>

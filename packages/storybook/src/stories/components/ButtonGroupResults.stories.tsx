@@ -3,7 +3,7 @@ import React from 'react';
 import { ButtonGroupResults } from '@react-poll-widget/ui';
 
 export default {
-  title: 'Components|Button group results'
+  title: 'Components/Button group results'
 }
 
 export const Right = () => <div style={{padding: '2em'}}>

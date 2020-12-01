@@ -4,7 +4,7 @@ import { Button } from 'semantic-ui-react';
 import { PollWidget, PollType } from '@react-poll-widget/widget';
 
 export default {
-  title: 'Widgets|Poll Widget'
+  title: 'Widgets/Poll Widget'
 }
 
 export const PopupPoll = () => {

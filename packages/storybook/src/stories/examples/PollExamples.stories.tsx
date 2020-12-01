@@ -13,7 +13,7 @@ import {
 } from '@react-poll-widget/ui';
 
 export default {
-  title: 'Examples|Poll examples'
+  title: 'Examples/Poll examples'
 }
 
 export const PollWithTextArea = () => {

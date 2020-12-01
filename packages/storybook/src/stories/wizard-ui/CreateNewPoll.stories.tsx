@@ -5,7 +5,7 @@ import {
 } from '@react-poll-widget/ui';
 
 export default {
-  title: 'Wizard UI|Forms/Create a new poll'
+  title: 'Wizard UI/Forms/Create a new poll'
 }
 
 export const CreateNewPollStory = () => {

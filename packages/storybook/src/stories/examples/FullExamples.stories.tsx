@@ -10,7 +10,7 @@ import {
 import './FullExamples.scss';
 
 export default {
-  title: 'Examples|Full widget examples'
+  title: 'Examples/Full widget examples'
 }
 
 export const FullWidget = () => {

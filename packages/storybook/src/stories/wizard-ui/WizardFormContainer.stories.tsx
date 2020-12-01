@@ -6,7 +6,7 @@ import {
 } from '@react-poll-widget/ui';
 
 export default {
-  title: 'Wizard UI|Components/Wizard Form Container'
+  title: 'Wizard UI/Components/Wizard Form Container'
 }
 
 export const ContainerWithPanel = () => <WizardFormContainer>

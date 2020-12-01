@@ -6,7 +6,7 @@ import {
 import { DropdownProps } from 'semantic-ui-react';
 
 export default {
-  title: 'Wizard UI|Components/Wizard Sidebar'
+  title: 'Wizard UI/Components/Wizard Sidebar'
 }
 
 export const WizardSidebarDemo = () => {
