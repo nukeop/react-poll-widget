@@ -1,16 +1,12 @@
 import React from 'react'
 import { Switch } from 'react-router';
-import { PageWithSidebar } from './layouts/PageWithSidebar';
+import { CreateNewPollView } from './views/CreateNewPollView';
 
 function App() {
   return (
-    <div>
-      <Switch>
-        <PageWithSidebar>
-          content
-  </PageWithSidebar>
-      </Switch>
-    </div>
+    <Switch>
+      <CreateNewPollView />
+    </Switch>
   );
 }
 

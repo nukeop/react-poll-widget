@@ -1,4 +1,5 @@
 import './overrides.scss';
+import 'semantic-ui-css/semantic.min.css';
 
 export { default as Checkbox } from './components/Checkbox';
 export { default as RoundButton } from './components/RoundButton';

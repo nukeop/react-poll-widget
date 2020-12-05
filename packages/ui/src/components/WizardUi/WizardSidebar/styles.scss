@@ -1,5 +1,10 @@
 @import '../../../colors.scss';
 
+.wizard-sidebar.ui.menu {
+  border-radius: 0;
+  margin: 0;
+}
+
 .ui.dropdown.poll-dropdown {
   width: 100%;
   min-width: 0;
