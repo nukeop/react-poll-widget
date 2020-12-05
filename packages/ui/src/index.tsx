@@ -7,7 +7,7 @@ export { default as ProgressIndicator } from './components/ProgressIndicator';
 export { default as Panel } from './components/Panel';
 export { default as PanelContentHeader } from './components/Panel/PanelContentHeader';
 export { default as PanelContentFooter } from './components/Panel/PanelContentFooter';
-export {
+export type {
   PanelColor,
   PollOption,
   PollResult,

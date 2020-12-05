@@ -9,16 +9,10 @@ import { SemanticCOLORS } from 'semantic-ui-react/dist/commonjs/generic';
 type RoundButtonProps = {
   Icon?: React.ReactNode;
   text?: string;
-  color?: SemanticCOLORS | 'red' | 'orange' | 'yellow' | 'green' | 'blue' | 'violet' | 'olive' | 'teal' | 'purple' | 'pink' | 'brown' | 'grey' | 'black' | 'peach';
-  animate: boolean;
-  collapsed: boolean;
+  color?: SemanticCOLORS;
   withCloseButton?: boolean;
-  onClick: () => void;
-  onCloseClick: () => void;
-  setAnimate: (val: boolean) => void;
-  setCollapsed: (val: boolean) => void;
-  toggleAnimation: () => void;
-  toggleCollapsed: () => void;
+  onClick?: () => void;
+  onCloseClick?: () => void;
 };
 
 const RoundButton: React.FC<RoundButtonProps> = ({

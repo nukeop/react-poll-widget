@@ -49,7 +49,7 @@ export const StepOptions: React.FC<StepOptionsProps> = ({
         label={`Option #${i + 1}`}
         control={OptionField}
         option={option}
-        onChange={(e, { value }) => onChangeOption(option.id, value)}
+        onChange={(e: any, { value }: { value: string }) => onChangeOption(option.id, value)}
         onDelete={() => onDeleteOption(option.id)}
       />)
     }

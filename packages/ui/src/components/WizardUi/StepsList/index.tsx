@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { DragDropContext, Droppable } from "react-beautiful-dnd";
+import { DragDropContext, DragDropContextProps, Droppable } from "react-beautiful-dnd";
 
 import { PollStep } from "../../types";
 import { StepDetailsProps } from "./StepDetails";
@@ -9,7 +9,7 @@ import './styles.scss';
 export type StepsListProps = Pick<StepDetailsProps, 'onChangeOption' | 'onDeleteOption'> &
 {
   steps?: PollStep[];
-  onDragEnd?: (result: any) => void;
+  onDragEnd: DragDropContextProps['onDragEnd'];
   onAddOption?: (stepId: string) => void;
 };
 
