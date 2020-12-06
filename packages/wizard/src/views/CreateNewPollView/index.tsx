@@ -8,4 +8,4 @@ export const CreateNewPollView: React.FC = () => <PageWithSidebar>
     onPollNameChange={() => { }}
     onCreate={() => { }}
   />
-</PageWithSidebar>
+</PageWithSidebar>;
