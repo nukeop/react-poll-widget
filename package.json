@@ -1,5 +1,9 @@
 {
   "name": "react-poll-widget",
+  "scripts": {
+    "build:ui": "lerna run build --scope \"@react-poll-widget/ui\"",
+    "build:app": "lerna run build --scope \"@react-poll-widget/wizard\""
+  },
   "devDependencies": {
     "lerna": "^3.19.0",
     "lerna-update-wizard": "^0.17.8"
