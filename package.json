@@ -1,6 +1,8 @@
 {
   "name": "react-poll-widget",
   "scripts": {
+    "postinstall": "lerna bootstrap",
+    "build:storybook": "lerna run build-storybook --scope \"@react-poll-widget/storybook\"",
     "build:ui": "lerna run build --scope \"@react-poll-widget/ui\"",
     "build:app": "lerna run build --scope \"@react-poll-widget/wizard\""
   },
