@@ -1,11 +1,11 @@
 import React from 'react'
 import { Switch } from 'react-router';
-import { CreateNewPollView } from './views/CreateNewPollView';
+import { CreateNewPollViewContainer } from './views/CreateNewPollView/CreateNewPollViewContainer';
 
 function App() {
   return (
     <Switch>
-      <CreateNewPollView />
+      <CreateNewPollViewContainer />
     </Switch>
   );
 }

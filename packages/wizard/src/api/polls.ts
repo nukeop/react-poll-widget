@@ -1,3 +1,3 @@
-import { buildUrl } from ".";
+import { buildUrl, getJson } from ".";
 
-export const findAllPolls = () => fetch(buildUrl('polls'));
+export const findAllPolls = async () => await getJson(fetch(buildUrl('polls')));
