@@ -11,7 +11,6 @@ export default {
 
 export const WizardSidebarDemo = () => {
 let [selectedPoll, setSelectedPoll] = useState<DropdownProps['value']>('1');
-console.log({selectedPoll})
   return <WizardSidebar
     selectedPollOptions={[{
       key: '1',

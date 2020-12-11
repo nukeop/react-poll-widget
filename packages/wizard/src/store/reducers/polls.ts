@@ -7,7 +7,7 @@ import { Loadable } from "../types";
 import { Poll } from "../../models/polls";
 
 export class PollsStore {
-  polls: Loadable<{ [k: string]: Poll }> = loadableDefaultState({});
+  polls: Loadable<Poll[]> = loadableDefaultState([]);
 };
 
 const initialState = { ...new PollsStore() };

@@ -1,11 +1,20 @@
 import React from 'react'
-import { Switch } from 'react-router';
+import { Redirect, Route, Switch, useHistory } from 'react-router';
+
 import { CreateNewPollViewContainer } from './views/CreateNewPollView/CreateNewPollViewContainer';
 
 function App() {
+
+  console.log(useHistory())
   return (
     <Switch>
-      <CreateNewPollViewContainer />
+      <Route path='/'>
+        <Redirect to='/create-new-poll' />
+      </Route>
+      <Route path='/create-new-poll'>
+        <div>test</div>
+        <CreateNewPollViewContainer />
+      </Route>
     </Switch>
   );
 }

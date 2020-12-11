@@ -3,15 +3,10 @@ import { CreateNewPoll } from '@react-poll-widget/ui';
 
 import { CreateNewPollViewProps } from './CreateNewPollViewContainer';
 import { PageWithSidebar } from '../../layouts/PageWithSidebar';
-import { Loadable } from '../../store/types';
-import { Poll } from '../../models/polls';
 
-export type CreateNewPollViewComponentProps = CreateNewPollViewProps & {
-  polls: Loadable<{ [k: string]: Poll }>;
-}
+export type CreateNewPollViewComponentProps = CreateNewPollViewProps
 
 export const CreateNewPollViewComponent: React.FC<CreateNewPollViewComponentProps> = ({
-  polls,
   fieldsProps,
   onSubmit,
   isSubmitting
