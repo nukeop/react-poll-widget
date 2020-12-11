@@ -28,3 +28,16 @@ export type PollResult = {
 };
 
 export type SelectOption = (option: PollOption) => void;
+
+export type FormValue = string | number | boolean
+export type FieldsPropsType = {
+    [k: string]: {
+      name: string;
+      label: string;
+      placeholder: string;
+      value: FormValue;
+      error: boolean | string;
+      onChange: React.ChangeEventHandler;
+      onBlur: React.FocusEventHandler;
+    }
+  };

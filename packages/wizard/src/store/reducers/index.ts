@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux';
 import { StateType } from 'typesafe-actions';
+import { storeKeys } from '../consts/keys';
 
 import { pollsReducer } from './polls';
 
 const rootReducer = combineReducers({
-  polls: pollsReducer
+  [storeKeys.polls]: pollsReducer
 });
 
 export default rootReducer;

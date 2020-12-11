@@ -4,7 +4,7 @@ import { findAllPolls } from '../../api/polls';
 import { Polls } from '../consts/actionTypes';
 import { fetchAllPolls } from '../actions/polls';
 
-function* fetchAllPollsSaga() {
+function * fetchAllPollsSaga() {
   try {
     const polls = yield call(findAllPolls);
     yield put(fetchAllPolls.success(polls));

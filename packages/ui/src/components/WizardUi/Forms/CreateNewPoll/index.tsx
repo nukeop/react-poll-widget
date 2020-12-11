@@ -1,18 +1,21 @@
 import React from 'react';
-import { Form, FormInputProps, Header } from 'semantic-ui-react';
+import { Form, Header } from 'semantic-ui-react';
+import { FieldsPropsType } from '../../../types';
 import WizardFormContainer from '../../WizardFormContainer';
 import WizardPanel from '../../WizardPanel';
 
 export type CreateNewPollProps = {
-  pollName?: string;
-  onPollNameChange: FormInputProps['onChange'];
-  onCreate: React.MouseEventHandler;
+  fieldsProps: FieldsPropsType;
+  onSubmit: (e?: React.FormEvent<HTMLFormElement>) => void;
+  isSubmitting?: boolean;
+  isLoading?: boolean;
 }
 
 const CreateNewPoll: React.FC<CreateNewPollProps> = ({
-  pollName,
-  onPollNameChange,
-  onCreate
+  fieldsProps,
+  isSubmitting,
+  isLoading,
+  onSubmit
 }) => <WizardFormContainer>
     <Header as='h1'>
       Create a new poll
@@ -21,15 +24,13 @@ const CreateNewPoll: React.FC<CreateNewPollProps> = ({
       <Form>
         <Form.Input
           fluid
-          label='Poll name'
-          placeholder='Poll name'
-          onChange={onPollNameChange}
-          value={pollName}
+          {...fieldsProps.name}
         />
         <Form.Button
           className='create-new-poll-button'
           color='green'
-          onClick={onCreate}
+          type='submit'
+          onClick={() => onSubmit()}
         >
           Create
       </Form.Button>
