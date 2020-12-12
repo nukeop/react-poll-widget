@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useCallback } from "react";
+import { useHistory } from "react-router";
 
 import { useCreateNewPollViewProps } from "./CreateNewPollView.hooks"
 import { CreateNewPollViewComponent } from "./CreateNewPollViewComponent"
@@ -24,11 +25,11 @@ export const CreateNewPollView: React.FC<CreateNewPollViewProps> = (props) => {
   />
 }
 
-export const CreateNewPollViewContainer = withForm(
-  fields,
-  async (values, { setSubmitting }) => {
+export const CreateNewPollViewContainer = withForm({
+  initialFields: fields,
+  onSubmit: async (values, { setSubmitting }) => {
     setSubmitting(true);
     await createPoll(values.name);
     setSubmitting(false);
   }
-)(CreateNewPollView)
+})(CreateNewPollView)

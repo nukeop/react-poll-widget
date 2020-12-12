@@ -21,7 +21,9 @@ const CreateNewPoll: React.FC<CreateNewPollProps> = ({
       Create a new poll
   </Header>
     <WizardPanel>
-      <Form>
+      <Form
+      loading={isSubmitting || isLoading}
+      >
         <Form.Input
           fluid
           {...fieldsProps.name}

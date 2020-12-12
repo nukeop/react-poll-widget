@@ -25,13 +25,17 @@ export type WithFormProps = {
   fieldsProps: FieldsPropsType;
 }
 
-export const withForm = (
+export const withForm = ({
+  initialFields,
+  onSubmit,
+  validationSchema
+}: {
   initialFields: InitialFormFields,
   onSubmit: (values: SubmitValues, formikHelpers: FormikHelpers<any>) => void | Promise<any>,
   validationSchema?: Yup.AnySchema
-) =>
-  <P extends object>(Component: React.ComponentType<P & WithFormProps>): React.ComponentType<P> => {
-    return ({ ...props }) => <Formik
+}) =>
+<P extends object>(Component: React.ComponentType<P & WithFormProps>): React.ComponentType<P> => {
+    return (props) => <Formik
       initialValues={_.chain(initialFields).map((field, key) => [key, field.initialValue]).fromPairs().value()}
       onSubmit={onSubmit}
       validationSchema={validationSchema}
