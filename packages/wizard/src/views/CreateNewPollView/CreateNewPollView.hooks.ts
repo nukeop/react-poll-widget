@@ -1,12 +1,10 @@
-import { useCallback } from "react";
-import { useDispatch } from "react-redux"
-import { postPoll } from "../../store/actions/polls";
+import { useCallback } from "react"
+import { createPoll } from '../../api/polls';
 
 export const useCreateNewPollViewProps = () => {
-  const dispatch = useDispatch();
-  const onCreateNewPoll = useCallback((name: string) => dispatch(postPoll.request(name)),
-    [dispatch]);
-
+  const onCreateNewPoll = useCallback(async (name: string) => {
+    return await createPoll(name);
+  }, []);
   return {
     onCreateNewPoll
   }
