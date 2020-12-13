@@ -1,5 +1,5 @@
 import React from 'react'
-import { Redirect, Route, Switch, useHistory, useLocation, useRouteMatch } from 'react-router';
+import { Redirect, Route, Switch } from 'react-router';
 
 import { CreateNewPollViewContainer } from './views/CreateNewPollView/CreateNewPollViewContainer';
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import 'lodash'
 
 import { WizardSidebar } from '@react-poll-widget/ui'
@@ -25,7 +25,7 @@ export const SidebarContainer: React.FC = () => {
 
   }, [
     polls
-  ])  
+  ])
 
 
   return <WizardSidebar

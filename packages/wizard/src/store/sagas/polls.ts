@@ -1,8 +1,10 @@
 import { all, takeLatest, call, put } from 'redux-saga/effects';
+import { push } from 'connected-react-router';
 
-import { findAllPolls } from '../../api/polls';
+import { createPoll, findAllPolls } from '../../api/polls';
 import { Polls } from '../consts/actionTypes';
-import { fetchAllPolls } from '../actions/polls';
+import { postPoll, fetchAllPolls } from '../actions/polls';
+import { Poll } from '../../models/polls';
 
 function * fetchAllPollsSaga() {
   try {
@@ -13,8 +15,19 @@ function * fetchAllPollsSaga() {
   }
 }
 
+function * createPollSaga({ payload }: { payload: string }) {
+  try {
+    const newPoll: Poll = yield call(createPoll, payload);
+    yield put(postPoll.success(newPoll));
+    yield push(`/polls/${newPoll.id}`);
+  } catch(e) {
+    yield put(postPoll.failure(e));
+  }
+}
+
 export function* pollsSaga() {
   yield all([
-    takeLatest(Polls.FETCH_ALL_POLLS, fetchAllPollsSaga)
+    takeLatest(fetchAllPolls.request, fetchAllPollsSaga),
+    takeLatest(postPoll.request, createPollSaga)
   ]);
 }

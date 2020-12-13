@@ -1,10 +1,8 @@
-import React, { useCallback } from "react";
-import { useHistory } from "react-router";
+import React from "react";
 
 import { useCreateNewPollViewProps } from "./CreateNewPollView.hooks"
 import { CreateNewPollViewComponent } from "./CreateNewPollViewComponent"
-import { createPoll } from "../../api/polls"
-import { withForm, WithFormProps } from "../../hoc/withForm"
+import { useForm } from "../../hooks/useForm";
 
 export const fields = {
   name: {
@@ -15,21 +13,21 @@ export const fields = {
   }
 }
 
-export type CreateNewPollViewProps = WithFormProps
-
-export const CreateNewPollView: React.FC<CreateNewPollViewProps> = (props) => {
+export const CreateNewPollViewContainer: React.FC = () => {
   const createNewPollViewProps = useCreateNewPollViewProps();
+  const formProps = useForm({
+    initialFields: fields,
+    
+    onSubmit: async(values, { setSubmitting }) => {
+      console.log('setting submitting')
+      setSubmitting(true)
+      await createNewPollViewProps.onCreateNewPoll(values.name);
+      console.log('setting submitting false')
+      setSubmitting(false)
+    }
+  })
   return <CreateNewPollViewComponent
-    {...props}
+    {...formProps}
     {...createNewPollViewProps}
-  />
+  />;
 }
-
-export const CreateNewPollViewContainer = withForm({
-  initialFields: fields,
-  onSubmit: async (values, { setSubmitting }) => {
-    setSubmitting(true);
-    await createPoll(values.name);
-    setSubmitting(false);
-  }
-})(CreateNewPollView)
