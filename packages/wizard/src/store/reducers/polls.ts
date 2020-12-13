@@ -1,10 +1,10 @@
 import { createReducer, ActionType } from "typesafe-actions";
 import produce from 'immer';
+import { Poll } from "@react-poll-widget/core/src/models/polls";
 
 import * as actions from '../actions/polls'
 import { loadableDefaultState } from "../helpers";
 import { Loadable } from "../types";
-import { Poll } from "../../models/polls";
 
 export class PollsStore {
   polls: Loadable<Poll[]> = loadableDefaultState([]);

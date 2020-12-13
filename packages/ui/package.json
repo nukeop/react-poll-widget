@@ -10,6 +10,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@react-poll-widget/core": "0.0.21",
     "@testing-library/jest-dom": "5.11.6",
     "@testing-library/user-event": "12.3.0",
     "@types/jest": "^26.0.16",

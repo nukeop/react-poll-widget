@@ -25,4 +25,5 @@ export { default as WizardPanel } from './components/WizardUi/WizardPanel';
 export { default as WizardSidebar } from './components/WizardUi/WizardSidebar';
 export { default as WizardFormContainer } from './components/WizardUi/WizardFormContainer';
 export { default as CreateNewPoll } from './components/WizardUi/Forms/CreateNewPoll';
+export { default as PollGeneral } from './components/WizardUi/Forms/PollGeneral';
 export { default as PollSteps } from './components/WizardUi/Forms/PollSteps';

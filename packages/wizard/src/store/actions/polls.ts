@@ -1,5 +1,6 @@
 import { createAsyncAction } from "typesafe-actions";
-import { Poll } from "../../models/polls";
+import { Poll } from "@react-poll-widget/core/src/models/polls";
+
 import { Polls } from "../consts/actionTypes";
 
 export const fetchAllPolls = createAsyncAction(

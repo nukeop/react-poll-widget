@@ -13,6 +13,7 @@ function App() {
       <Route path='/create-new-poll'>
         <CreateNewPollViewContainer />
       </Route>
+      <Route></Route>
     </Switch>
   );
 }

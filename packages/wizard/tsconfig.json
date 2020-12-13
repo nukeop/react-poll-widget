@@ -22,6 +22,7 @@
   },
   "include": [
     "src",
-    "../ui/src"
+    "../ui/src", 
+    "../core/src"
   ]
 }

@@ -11,8 +11,18 @@ export default {
 export const CreateNewPollStory = () => {
   const [name, setName] = useState('');
   return <CreateNewPoll
-    pollName={name}
-    onPollNameChange={(e, { value }) => setName(value)}
-    onCreate={() => alert(`Poll ${name} created.`)}
+    fieldsProps={{
+      name: {
+        name: 'name',
+        label: 'Poll name',
+        placeholder: 'Enter poll name',
+        onChange: (e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value),
+        onBlur: () => { },
+        value: name,
+        error: false
+      }
+    }}
+    isSubmitting={false}
+    onSubmit={() => alert(`Poll ${name} created.`)}
   />
 }

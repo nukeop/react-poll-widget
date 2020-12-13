@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Form, Header } from 'semantic-ui-react';
 import { FieldsPropsType } from '../../../types';
 import WizardFormContainer from '../../WizardFormContainer';
@@ -32,7 +32,7 @@ const CreateNewPoll: React.FC<CreateNewPollProps> = ({
           className='create-new-poll-button'
           color='green'
           type='submit'
-          onClick={() => onSubmit()}
+          onClick={useCallback(() => onSubmit(), [onSubmit])}
         >
           Create
       </Form.Button>

@@ -83,6 +83,10 @@ h3.ui.header {
     color: $black;
 }
 
+.ui.header h2.sub.header {
+    color: rgba($black, 0.8);
+}
+
 .ui.warning.message {
     background: lighten($yellow, 25%);
     box-shadow: 0 0 0 1px darken($darkyellow, 10%) inset;

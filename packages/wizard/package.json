@@ -3,6 +3,7 @@
   "version": "0.0.21",
   "private": true,
   "dependencies": {
+    "@react-poll-widget/core": "0.0.21",
     "@react-poll-widget/ui": "0.0.21",
     "@testing-library/jest-dom": "5.11.6",
     "@testing-library/react": "^11.2.2",
