@@ -8,11 +8,13 @@ import { FieldsPropsType } from '../../../types';
 import Paragraph from '../../../Paragraph';
 
 export type PollGeneralProps = {
+  isLoading?: boolean;
   poll: Poll;
   fieldsProps: FieldsPropsType;
 }
 
 const PollGeneral: React.FC<PollGeneralProps> = ({
+  isLoading,
   poll,
   fieldsProps
 }) => <WizardFormContainer>
@@ -22,7 +24,7 @@ const PollGeneral: React.FC<PollGeneralProps> = ({
         Selected poll: {poll.name}
       </Header.Subheader>
     </Header>
-    <WizardPanel>
+    <WizardPanel isLoading={isLoading}>
       <Form>
         <Form.Input
           fluid
@@ -36,7 +38,7 @@ const PollGeneral: React.FC<PollGeneralProps> = ({
       </Form.Button>
       </Form>
     </WizardPanel>
-    <WizardPanel>
+    <WizardPanel isLoading={isLoading}>
       <Button
         color='red'
       >

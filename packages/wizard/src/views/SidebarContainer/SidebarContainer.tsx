@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react'
-import 'lodash'
+import React, { useCallback, useEffect } from 'react'
+import { useRouteMatch } from 'react-router';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { WizardSidebar } from '@react-poll-widget/ui'
-import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllPolls } from '../../store/actions/polls';
 import { pollsSelector } from '../../store/selectors/polls';
-import { useCallback } from 'react';
 
 export const SidebarContainer: React.FC = () => {
+  const match = useRouteMatch();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -26,7 +26,6 @@ export const SidebarContainer: React.FC = () => {
   }, [
     polls
   ])
-
 
   return <WizardSidebar
     selectedPollOptions={pollOptions}

@@ -9,3 +9,4 @@ export default {
 }
 
 export const EmptyPanel = () => <WizardPanel />
+export const Loading = () => <WizardPanel isLoading />

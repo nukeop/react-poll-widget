@@ -10,8 +10,7 @@ export const CreateNewPollViewComponent: React.FC<CreateNewPollViewComponentProp
   fieldsProps,
   onSubmit,
   isSubmitting
-}) => {
-  return <PageWithSidebar>
+}) => <PageWithSidebar>
     <CreateNewPoll
       isLoading={isSubmitting}
       fieldsProps={fieldsProps}
@@ -19,4 +18,3 @@ export const CreateNewPollViewComponent: React.FC<CreateNewPollViewComponentProp
       onSubmit={onSubmit}
     />
   </PageWithSidebar>
-}

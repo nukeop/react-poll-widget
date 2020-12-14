@@ -1,5 +1,5 @@
 import React from "react";
-import { Divider, Dropdown, DropdownItemProps, DropdownProps, Menu } from "semantic-ui-react";
+import { Dropdown, DropdownItemProps, DropdownProps, Menu } from "semantic-ui-react";
 
 import './styles.scss';
 
@@ -24,7 +24,6 @@ const WizardSidebar: React.FC<WizardSidebarProps> = ({
       onClick: onCreateNewPoll
     }
   ]
-
 
   return <Menu 
   vertical 

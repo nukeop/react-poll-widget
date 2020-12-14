@@ -32,7 +32,7 @@ const CreateNewPoll: React.FC<CreateNewPollProps> = ({
           className='create-new-poll-button'
           color='green'
           type='submit'
-          onClick={useCallback(() => onSubmit(), [onSubmit])}
+          onClick={() => onSubmit()}
         >
           Create
       </Form.Button>

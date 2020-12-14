@@ -5,6 +5,7 @@
   @include shadow-3;
   @include roundCorners;
 
+  position: relative;
   padding: 1em;
   margin-bottom: 1em;
   background: $truewhite;
