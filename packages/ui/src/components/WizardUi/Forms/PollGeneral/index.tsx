@@ -5,6 +5,7 @@ import { Poll } from '@react-poll-widget/core/src/models/polls';
 import WizardFormContainer from '../../WizardFormContainer';
 import WizardPanel from '../../WizardPanel';
 import { FieldsPropsType } from '../../../types';
+import Paragraph from '../../../Paragraph';
 
 export type PollGeneralProps = {
   poll: Poll;
@@ -22,29 +23,28 @@ const PollGeneral: React.FC<PollGeneralProps> = ({
       </Header.Subheader>
     </Header>
     <WizardPanel>
-    <Form>
-      <Form.Input 
-      fluid
-      {...fieldsProps.name}
-      />
-      <Form.Button
-      color='blue'
-      type='submit'
-      >
-        Save
+      <Form>
+        <Form.Input
+          fluid
+          {...fieldsProps.name}
+        />
+        <Form.Button
+          color='blue'
+          type='submit'
+        >
+          Save
       </Form.Button>
-    </Form>
-    </WizardPanel>
-    <WizardPanel>
-      <Button>Manage steps</Button>
+      </Form>
     </WizardPanel>
     <WizardPanel>
       <Button
-      color='red'
+        color='red'
       >
         Delete poll
       </Button>
-      This will completely delete the poll and all its content.
+      <Paragraph inline>
+        This will completely delete the poll and all its content.
+      </Paragraph>
     </WizardPanel>
   </WizardFormContainer>
 

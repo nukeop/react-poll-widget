@@ -5,6 +5,7 @@ export { default as Checkbox } from './components/Checkbox';
 export { default as RoundButton } from './components/RoundButton';
 export { default as ProgressIndicator } from './components/ProgressIndicator';
 
+export { default as Paragraph } from './components/Paragraph';
 export { default as Panel } from './components/Panel';
 export { default as PanelContentHeader } from './components/Panel/PanelContentHeader';
 export { default as PanelContentFooter } from './components/Panel/PanelContentFooter';

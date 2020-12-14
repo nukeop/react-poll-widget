@@ -1,0 +1,11 @@
+@import '../../colors.scss';
+
+.paragraph {
+  color: $black;
+
+  &.inline {
+    display: inline-block;
+    margin-left: 1em;
+    color: rgba($black, 0.8);
+  }
+}
