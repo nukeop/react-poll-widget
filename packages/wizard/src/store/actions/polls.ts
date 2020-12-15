@@ -8,3 +8,9 @@ export const fetchAllPolls = createAsyncAction(
   Polls.FETCH_ALL_POLLS_OK,
   Polls.FETCH_ALL_POLLS_ERROR
 )<undefined, Poll[], Error>();
+
+export const fetchPoll = createAsyncAction(
+  Polls.FETCH_POLL,
+  Polls.FETCH_POLL_OK,
+  Polls.FETCH_POLL_ERROR
+)<string, Poll, Error>()

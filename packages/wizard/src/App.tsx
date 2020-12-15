@@ -17,6 +17,7 @@ function App() {
       <Route path='/poll/:id'>
         <PollGeneralSettingsViewContainer />
       </Route>
+      
     </Switch>
   );
 }

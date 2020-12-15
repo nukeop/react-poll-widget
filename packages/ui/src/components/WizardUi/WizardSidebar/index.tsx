@@ -8,13 +8,17 @@ export type WizardSidebarProps = {
   selectedPoll: DropdownProps['value'];
   onSelectedPollChange: DropdownProps['onChange'];
   onCreateNewPoll: DropdownItemProps['onClick'];
+  GeneralLink: React.FC;
+  StepsLink: React.FC;
 };
 
 const WizardSidebar: React.FC<WizardSidebarProps> = ({
   selectedPollOptions,
   selectedPoll,
   onSelectedPollChange,
-  onCreateNewPoll
+  onCreateNewPoll,
+  GeneralLink,
+  StepsLink
 }) => {
   const pollDropdownOptions = [
     ...(selectedPollOptions || []),
@@ -25,10 +29,10 @@ const WizardSidebar: React.FC<WizardSidebarProps> = ({
     }
   ]
 
-  return <Menu 
-  vertical 
-  inverted
-  className='wizard-sidebar'
+  return <Menu
+    vertical
+    inverted
+    className='wizard-sidebar'
   >
     <Menu.Item>
       <Dropdown
@@ -40,10 +44,10 @@ const WizardSidebar: React.FC<WizardSidebarProps> = ({
       />
     </Menu.Item>
     <Menu.Item>
-      General
+      <GeneralLink />
     </Menu.Item>
     <Menu.Item>
-      Steps
+      <StepsLink />
     </Menu.Item>
   </Menu>
 }

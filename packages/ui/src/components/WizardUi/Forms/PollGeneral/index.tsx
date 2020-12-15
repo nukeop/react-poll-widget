@@ -9,7 +9,7 @@ import Paragraph from '../../../Paragraph';
 
 export type PollGeneralProps = {
   isLoading?: boolean;
-  poll: Poll;
+  poll?: Poll;
   fieldsProps: FieldsPropsType;
 }
 
@@ -20,9 +20,12 @@ const PollGeneral: React.FC<PollGeneralProps> = ({
 }) => <WizardFormContainer>
     <Header as='h1'>
       Poll - general settings
-      <Header.Subheader as='h2'>
-        Selected poll: {poll.name}
-      </Header.Subheader>
+      {
+        poll &&
+        <Header.Subheader as='h2'>
+          Selected poll: {poll?.name}
+        </Header.Subheader>
+      }
     </Header>
     <WizardPanel isLoading={isLoading}>
       <Form>

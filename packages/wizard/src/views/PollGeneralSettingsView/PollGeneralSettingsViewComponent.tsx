@@ -6,7 +6,7 @@ import { Poll } from '@react-poll-widget/core/src/models/polls';
 import { PageWithSidebar } from '../../layouts/PageWithSidebar';
 
 export type PollGeneralSettingsViewComponentProps = {
-  poll: Poll;
+  poll?: Poll;
   fieldsProps: FieldsPropsType;
 }
 
