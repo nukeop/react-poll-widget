@@ -13,4 +13,4 @@ export const fetchPoll = createAsyncAction(
   Polls.FETCH_POLL,
   Polls.FETCH_POLL_OK,
   Polls.FETCH_POLL_ERROR
-)<string, Poll, Error>()
+)<string, Poll, Error>();

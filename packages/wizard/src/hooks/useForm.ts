@@ -32,16 +32,19 @@ export const useForm: ({
 }: {
   onSubmit: (values: SubmitValues, formikHelpers: FormikHelpers<any>) => void | Promise<any>,
   initialFields: InitialFormFields,
-  validationSchema?: Yup.AnySchema
+  validationSchema?: Yup.AnySchema,
+  enableReinitialize?: boolean
 }) => UseFormProps = ({
   onSubmit,
   initialFields,
-  validationSchema
+  validationSchema,
+  enableReinitialize=false
 }) => {
     const formik = useFormik({
       initialValues: _.chain(initialFields).map((field, key) => [key, field.initialValue]).fromPairs().value(),
       onSubmit,
-      validationSchema
+      validationSchema,
+      enableReinitialize
     });
 
     return {

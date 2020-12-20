@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { Form, Header } from 'semantic-ui-react';
 import { FieldsPropsType } from '../../../types';
 import WizardFormContainer from '../../WizardFormContainer';

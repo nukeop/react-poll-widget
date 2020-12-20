@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Form, Header } from 'semantic-ui-react';
+import { Button, ButtonProps, Form, Header } from 'semantic-ui-react';
 import { Poll } from '@react-poll-widget/core/src/models/polls';
 
 import WizardFormContainer from '../../WizardFormContainer';
@@ -11,12 +11,14 @@ export type PollGeneralProps = {
   isLoading?: boolean;
   poll?: Poll;
   fieldsProps: FieldsPropsType;
+  onSave: ButtonProps['onClick'];
 }
 
 const PollGeneral: React.FC<PollGeneralProps> = ({
   isLoading,
   poll,
-  fieldsProps
+  fieldsProps,
+  onSave
 }) => <WizardFormContainer>
     <Header as='h1'>
       Poll - general settings
@@ -36,6 +38,7 @@ const PollGeneral: React.FC<PollGeneralProps> = ({
         <Form.Button
           color='blue'
           type='submit'
+          onClick={onSave}
         >
           Save
       </Form.Button>
@@ -51,6 +54,6 @@ const PollGeneral: React.FC<PollGeneralProps> = ({
         This will completely delete the poll and all its content.
       </Paragraph>
     </WizardPanel>
-  </WizardFormContainer>
+  </WizardFormContainer>;
 
 export default PollGeneral;

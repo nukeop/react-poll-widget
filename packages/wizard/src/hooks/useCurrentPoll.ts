@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouteMatch } from "react-router"
 import { fetchPoll } from "../store/actions/polls";
-import { pollSelector } from "../store/selectors/polls";
+import { pollSelector, pollsSelector } from "../store/selectors/polls";
 
 export const useCurrentPoll = () => {
   const dispatch = useDispatch();
@@ -15,5 +15,10 @@ export const useCurrentPoll = () => {
   ]);
 
   const poll = useSelector(pollSelector(params.id));
-  return { poll }
+  const polls = useSelector(pollsSelector);
+  
+  return { 
+    poll,
+    isLoading: polls.isLoading
+  }
 }

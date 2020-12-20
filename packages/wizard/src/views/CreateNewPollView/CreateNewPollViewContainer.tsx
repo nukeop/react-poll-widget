@@ -1,9 +1,9 @@
 import React from "react";
 
-import { useCreateNewPollViewProps } from "./CreateNewPollView.hooks"
 import { CreateNewPollViewComponent } from "./CreateNewPollViewComponent"
 import { useForm } from "../../hooks/useForm";
 import { useHistory } from "react-router";
+import { useCreateNewPoll } from "../../hooks/useCreateNewPoll";
 
 export const fields = {
   name: {
@@ -16,7 +16,7 @@ export const fields = {
 
 export const CreateNewPollViewContainer: React.FC = () => {
   const history = useHistory();
-  const createNewPollViewProps = useCreateNewPollViewProps();
+  const createNewPollViewProps = useCreateNewPoll();
   const formProps = useForm({
     initialFields: fields,
     onSubmit: async (values, { setSubmitting }) => {
