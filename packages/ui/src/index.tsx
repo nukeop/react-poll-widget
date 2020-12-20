@@ -22,6 +22,7 @@ export { default as ButtonGroupResults } from './components/ButtonGroupResults';
 export { default as PollResults } from './components/PollResults';
 export { default as TextAreaPoll } from './components/TextAreaPoll';
 
+export { default as ConfirmationModal } from './components/ConfirmationModal';
 export { default as WizardPanel } from './components/WizardUi/WizardPanel';
 export { default as WizardSidebar } from './components/WizardUi/WizardSidebar';
 export { default as WizardFormContainer } from './components/WizardUi/WizardFormContainer';
