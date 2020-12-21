@@ -14,4 +14,5 @@ export const requestWithBody = (method: HttpMethod) => (url: string, body?: any)
 
 export const post = requestWithBody('POST');
 export const put = requestWithBody('PUT');
+export const deleteRequest = requestWithBody('DELETE');
 export const getJson = async (response: Promise<Response>) => await (await response).json();

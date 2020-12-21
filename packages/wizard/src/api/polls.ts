@@ -1,4 +1,4 @@
-import { buildUrl, getJson, post, get, put } from ".";
+import { buildUrl, getJson, post, get, put, deleteRequest } from ".";
 
 export type UpdatePollDto = Partial<{
   name: string;
@@ -12,3 +12,4 @@ export const createPoll = async (name: string) => await getJson(
 export const updatePoll = async (id: string, dto: UpdatePollDto) => await getJson(
   put(buildUrl(`polls/${id}`), dto)
 );
+export const deletePoll = async (id: string) => await deleteRequest(buildUrl(`polls/${id}`));
