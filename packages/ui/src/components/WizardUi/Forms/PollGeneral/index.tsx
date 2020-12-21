@@ -12,13 +12,15 @@ export type PollGeneralProps = {
   poll?: Poll;
   fieldsProps: FieldsPropsType;
   onSave: ButtonProps['onClick'];
+  onDelete: ButtonProps['onClick'];
 }
 
 const PollGeneral: React.FC<PollGeneralProps> = ({
   isLoading,
   poll,
   fieldsProps,
-  onSave
+  onSave,
+  onDelete
 }) => <WizardFormContainer>
     <Header as='h1'>
       Poll - general settings
@@ -47,6 +49,7 @@ const PollGeneral: React.FC<PollGeneralProps> = ({
     <WizardPanel isLoading={isLoading}>
       <Button
         color='red'
+        onClick={onDelete}
       >
         Delete poll
       </Button>

@@ -1,5 +1,6 @@
 import React from "react"
 import { useDispatch } from "react-redux";
+import { useConfirmationModal } from "../../hooks/useConfirmationModal";
 
 import { useCurrentPoll } from "../../hooks/useCurrentPoll";
 import { useForm } from "../../hooks/useForm";
@@ -35,9 +36,17 @@ export const PollGeneralSettingsViewContainer: React.FC = () => {
     enableReinitialize: true
   });
 
-  return <PollGeneralSettingsViewComponent
+  const { openModal, renderModal } = useConfirmationModal({
+    onConfirm: () => alert('test')
+  });
+
+  return <>
+  {renderModal()}
+  <PollGeneralSettingsViewComponent
     {...formProps}
     isLoading={isLoading}
     poll={poll}
-  />;
+    onDelete={openModal}
+  />
+  </>;
 }

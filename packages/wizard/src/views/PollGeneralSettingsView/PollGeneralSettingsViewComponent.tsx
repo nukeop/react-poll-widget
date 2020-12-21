@@ -8,12 +8,14 @@ import { UseFormProps } from '../../hooks/useForm';
 export type PollGeneralSettingsViewComponentProps = UseFormProps & {
   poll?: Poll;
   isLoading?: boolean;
+  onDelete: React.MouseEventHandler;
 }
 
 export const PollGeneralSettingsViewComponent: React.FC<PollGeneralSettingsViewComponentProps> = ({
   poll,
   fieldsProps,
   onSubmit,
+  onDelete,
   isSubmitting,
   isLoading
 }) => {
@@ -24,6 +26,7 @@ export const PollGeneralSettingsViewComponent: React.FC<PollGeneralSettingsViewC
       fieldsProps={fieldsProps}
       isLoading={isLoading || isSubmitting}
       onSave={onSave}
+      onDelete={onDelete}
     />
   </PageWithSidebar>
 }
