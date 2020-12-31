@@ -29,3 +29,4 @@ export { default as WizardFormContainer } from './components/WizardUi/WizardForm
 export { default as CreateNewPoll } from './components/WizardUi/Forms/CreateNewPoll';
 export { default as PollGeneral } from './components/WizardUi/Forms/PollGeneral';
 export { default as PollSteps } from './components/WizardUi/Forms/PollSteps';
+export { default as PollsDashboard } from './components/WizardUi/Forms/PollsDashboard';

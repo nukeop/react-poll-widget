@@ -7,9 +7,13 @@ import { PollStep, StepType } from '@react-poll-widget/ui/src/components/types';
 
 export default {
   title: 'Wizard UI/Forms/Poll steps'
-}
+};
 
-export const Empty = () => <PollSteps />;
+export const Empty = () => <PollSteps
+  onChangeOption={() => { }}
+  onDeleteOption={() => { }}
+  onDragEnd={() => { }}
+/>;
 
 export const ManagePollSteps = () => {
   const reorder = (list: any[], startIndex: number, endIndex: number) => {
